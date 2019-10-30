@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/authenticate/authenticate.dart';
 import 'package:project/screens/home/home.dart';
 
 class Wrapper extends StatelessWidget {
@@ -7,6 +8,6 @@ class Wrapper extends StatelessWidget {
 
     //if auth return home or auth widget
 
-    return Home();
+    return Authenticate();
   }
 }
