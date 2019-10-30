@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:project/services/auth.dart';
 import 'package:project/screens/home/home.dart';
+
+//TODO: needs sign up button & redirect. Should be implemented as refactopred login Anynymnous button.
 
 class SignIn extends StatefulWidget {
   @override
@@ -13,14 +16,19 @@ class _SignInState extends State<SignIn> {
 
   TextStyle style = TextStyle(fontSize: 20.0);
 
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+
+  String email = "";
+  String password = "";
 
   @override
   Widget build(BuildContext context) {
 
     final emailField = TextField(
-      controller: emailController,
+      onChanged: (value) {
+        setState(() {
+          email = value;
+        });
+      },
       obscureText: false,
       style: style,
       decoration: InputDecoration(
@@ -31,7 +39,11 @@ class _SignInState extends State<SignIn> {
     );
 
     final passwordField = TextField(
-      controller: passwordController,
+      onChanged: (value) {
+        setState(() {
+          password = value;
+        });
+      },
       obscureText: true,
       style: style,
       decoration: InputDecoration(
@@ -50,24 +62,31 @@ class _SignInState extends State<SignIn> {
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () async {
 
-          dynamic result = await _auth.signEmailPassword(emailController.text, passwordController.text);
+            print("email: " + email);
+            print("password: " + password);
 
-          if (result == null) {
-            return showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  content: Text("login failed"),
-                );
-              },
-            );
-          } else {
-            print("signed in");
-            print(result);
-            return MaterialApp(
-              home: Home(),
-            );
-          }
+            AuthResult result = await _auth.signEmailPassword(email, password);
+
+            FirebaseUser user = result.user;
+
+            print(user);
+//
+//          if (user == null) {
+//            return showDialog(
+//              context: context,
+//              builder: (context) {
+//                return AlertDialog(
+//                  content: Text("login failed"),
+//                );
+//              },
+//            );
+//          } else {
+//            print("signed in");
+//            print(user);
+//            return MaterialApp(
+//              home: Home(),
+//            );
+//          }
         },
         child: Text("Login",
             textAlign: TextAlign.center,
@@ -134,11 +153,11 @@ class _SignInState extends State<SignIn> {
                     ),
                     SizedBox(height: 5.0),
                     emailField,
-                    SizedBox(height: 15.0),
+                    SizedBox(height: 10.0),
                     passwordField,
-                    SizedBox(height: 15.0),
+                    SizedBox(height: 10.0),
                     loginButon,
-                    SizedBox(height: 15.0),
+                    SizedBox(height: 10.0),
                     loginAnonButon,
                   ]
         ),
