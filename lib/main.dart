@@ -30,41 +30,66 @@ class _MyHomePageState extends State<MyHomePage> {
 
   TextStyle style = TextStyle(fontSize: 20.0);
 
+  final loginEmailController = TextEditingController();
+  final loginPasswordController = TextEditingController();
+  final signupEmailController = TextEditingController();
+  final signupPasswordController = TextEditingController();
+  final signupREPController = TextEditingController();
+  
   @override
   Widget build(BuildContext context) {
 
-   final header =  AppBar(
-      title: Text("Dane County Humane Society"),
-      centerTitle: true,
-      backgroundColor: Colors.purple[800],
-    );
-
-    final emailField = TextField(
+    final loginEmailField = TextField(
+      controller: loginEmailController,
       obscureText: false,
       style: style,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Email",
+          hintText: "login Email",
           border:
           OutlineInputBorder(borderRadius: BorderRadius.circular(0))),
     );
 
-    final passwordField = TextField(
+    final loginPasswordField = TextField(
+      controller: loginPasswordController,
       obscureText: true,
       style: style,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Password",
+          hintText: "login Password",
           border:
           OutlineInputBorder(borderRadius: BorderRadius.circular(0))),
     );
 
-   final confirmPasswordField = TextField(
+    final signupEmailField = TextField(
+      controller: signupEmailController,
+      obscureText: false,
+      style: style,
+      decoration: InputDecoration(
+          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          hintText: "signup Email",
+          border:
+          OutlineInputBorder(borderRadius: BorderRadius.circular(0))),
+    );
+
+    final signupPasswordField = TextField(
+      controller: signupPasswordController,
+      obscureText: true,
+      style: style,
+      decoration: InputDecoration(
+          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          hintText: "signup Password",
+          border:
+          OutlineInputBorder(borderRadius: BorderRadius.circular(0))),
+    );
+
+   final signupConfirmPasswordField = TextField(
+     controller: signupREPController,
      obscureText: true,
      style: style,
      decoration: InputDecoration(
          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-         hintText: "Re-Enter Password",
+         hintText: "signup Re-Enter Password",
          border:
          OutlineInputBorder(borderRadius: BorderRadius.circular(0))),
    );
@@ -76,7 +101,21 @@ class _MyHomePageState extends State<MyHomePage> {
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
+        onPressed: () {
+
+          String message = 'username: ' + loginEmailController.text + '\n'
+              + 'password: ' + loginPasswordController.text;
+
+          return showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                content: Text(message),
+              );
+            },
+          );
+        },
+
         child: Text("Login",
             textAlign: TextAlign.center,
             style: style.copyWith(
@@ -91,7 +130,22 @@ class _MyHomePageState extends State<MyHomePage> {
      child: MaterialButton(
        minWidth: MediaQuery.of(context).size.width,
        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-       onPressed: () {},
+       onPressed: () {
+
+         String message = 'username: ' + signupEmailController.text + '\n'
+          + 'password: ' + signupPasswordController.text + '\n'
+          + 'RE pass: ' + signupREPController.text;
+
+         return showDialog(
+           context: context,
+           builder: (context) {
+             return AlertDialog(
+               content: Text(message),
+             );
+           },
+         );
+       },
+
        child: Text("Sign Up",
            textAlign: TextAlign.center,
            style: style.copyWith(
@@ -117,25 +171,31 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: <Widget>[
                     Text(
                         "Log In",
-                      style: style,
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                        ),
                     ),
                     SizedBox(height: 5.0),
-                    emailField,
+                    loginEmailField,
                     SizedBox(height: 15.0),
-                    passwordField,
+                    loginPasswordField,
                     SizedBox(height: 15.0),
                     loginButon,
-                    SizedBox(height: 45.0),
+                    SizedBox(height: 35.0),
                     Text(
                       "Sign Up",
-                      style: style,
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     SizedBox(height: 5.0),
-                    emailField,
+                    signupEmailField,
                     SizedBox(height: 15.0),
-                    passwordField,
+                    signupPasswordField,
                     SizedBox(height: 15.0),
-                    confirmPasswordField,
+                    signupConfirmPasswordField,
                     SizedBox(height: 15.0),
                     signupButon,
                   ],
