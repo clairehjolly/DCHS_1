@@ -27,19 +27,26 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   TextStyle style = TextStyle(fontSize: 20.0);
 
   @override
   Widget build(BuildContext context) {
 
+   final header =  AppBar(
+      title: Text("Dane County Humane Society"),
+      centerTitle: true,
+      backgroundColor: Colors.purple[800],
+    );
+
     final emailField = TextField(
-      obscureText: true,
+      obscureText: false,
       style: style,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           hintText: "Email",
           border:
-          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+          OutlineInputBorder(borderRadius: BorderRadius.circular(0))),
     );
 
     final passwordField = TextField(
@@ -49,13 +56,23 @@ class _MyHomePageState extends State<MyHomePage> {
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           hintText: "Password",
           border:
-          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+          OutlineInputBorder(borderRadius: BorderRadius.circular(0))),
     );
+
+   final confirmPasswordField = TextField(
+     obscureText: true,
+     style: style,
+     decoration: InputDecoration(
+         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+         hintText: "Re-Enter Password",
+         border:
+         OutlineInputBorder(borderRadius: BorderRadius.circular(0))),
+   );
 
     final loginButon = Material(
       elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
+      borderRadius: BorderRadius.circular(0),
+      color: Color(0xff6b2978),
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -67,7 +84,27 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
 
+   final signupButon = Material(
+     elevation: 5.0,
+     borderRadius: BorderRadius.circular(0),
+     color: Color(0xff6b2978),
+     child: MaterialButton(
+       minWidth: MediaQuery.of(context).size.width,
+       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+       onPressed: () {},
+       child: Text("Sign Up",
+           textAlign: TextAlign.center,
+           style: style.copyWith(
+               color: Colors.white, fontWeight: FontWeight.bold)),
+     ),
+   );
+
     return Scaffold(
+       appBar: AppBar(
+         title: Text("Dane County Humane Society"),
+         centerTitle: true,
+         backgroundColor: Color(0xff6b2978),
+        ),
         body: SingleChildScrollView(
           child: Center(
             child: Container(
@@ -78,20 +115,29 @@ class _MyHomePageState extends State<MyHomePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
-                      height: 155.0,
+                    Text(
+                        "Log In",
+                      style: style,
                     ),
-                    SizedBox(height: 45.0),
+                    SizedBox(height: 5.0),
                     emailField,
-                    SizedBox(height: 25.0),
+                    SizedBox(height: 15.0),
                     passwordField,
-                    SizedBox(
-                      height: 35.0,
-                    ),
+                    SizedBox(height: 15.0),
                     loginButon,
-                    SizedBox(
-                      height: 15.0,
+                    SizedBox(height: 45.0),
+                    Text(
+                      "Sign Up",
+                      style: style,
                     ),
+                    SizedBox(height: 5.0),
+                    emailField,
+                    SizedBox(height: 15.0),
+                    passwordField,
+                    SizedBox(height: 15.0),
+                    confirmPasswordField,
+                    SizedBox(height: 15.0),
+                    signupButon,
                   ],
                 ),
               ),
@@ -101,36 +147,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-//void main() => runApp(MaterialApp(
-//  home: Scaffold(
-//    appBar: AppBar(
-//      title: Text("Dane County Humane Society"),
-//      centerTitle: true,
-//      backgroundColor: Colors.purple[800],
-//    ),
-//    body: Column(
-//        children: [
-//          TextFormField(
-//            decoration: InputDecoration(
-//              labelText: 'Enter your email'
-//            ),
-//          ),
-//          TextFormField(
-//            decoration: InputDecoration(
-//                labelText: 'Enter your password'
-//            ),
-//          ),
-//        ],
-//    ),
-//
-//
-//
-//    floatingActionButton: FloatingActionButton(
-//      onPressed: () {},
-//      child: Text("Button"),
-//      backgroundColor: Colors.purple[800],
-//    ),
-//  ),
-//));
 
