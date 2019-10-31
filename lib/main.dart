@@ -209,29 +209,63 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.deepPurpleAccent,
       ),
         body: new ListView(
+          shrinkWrap: true,
+          padding: const EdgeInsets.all(5.0),
           children: <Widget>[
+            new Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                new Container(
+                  child: new Image.asset(
+                    'img/1.jpg',
+                  height: 160,
+                  width:160, // fit: BoxFit.cover,
+                  ),
+                ),
+                new Container(
+                  child:new Image.asset(
+                    'img/2.jpg', //scale: 0.5,
+                    height: 160,
+                    width:160,              //idth: 130,
+                   //eight: 130,
+                  //alignment: Alignment.centerRight,
 
+                  ),
+                ),
+              ],
+            ),
+            new Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                new Container(
+                  child: new Image.asset(
+                    'img/3.jpg',
+                    height: 160,
+                    width:160, // fit: BoxFit.cover,
+                  ),
+                ),
+                new Container(
+                  child:new Image.asset(
+                    'img/4.jpeg', //scale: 0.5,
+                    height: 160,
+                    width:160,              //idth: 130,
+                    //eight: 130,
+                    //alignment: Alignment.centerRight,
+
+                  ),
+                ),
+              ],
+
+
+
+
+
+
+            ),
             //You can add more widget bellow
 
-            new Image.asset(
-                'img/1.jpg',
-                scale: 0.5,
-              width: 150,
-              height: 150,
-              alignment: Alignment.centerLeft,
 
-
-              //  fit: BoxFit.cover
-            ),
-            new Image.asset(
-               'img/2.jpg',
-              scale: 0.5,
-              width: 130,
-              height: 130,
-              alignment: Alignment.centerRight,
-
-            ),
-            SizedBox(height: 10),
+            SizedBox(height: 5),
             fourButtonsSection,
             titleSection,
 
