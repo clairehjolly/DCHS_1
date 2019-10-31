@@ -37,7 +37,6 @@ class Settings extends StatelessWidget {
 
             ),
 
-
             FlatButton.icon(
               onPressed: () {}, //turn grey if on
               color: Color(0xffaa295d),
@@ -64,10 +63,7 @@ class Settings extends StatelessWidget {
                 ),
               ),
             ),
-
-
           ],
-
         ),
       ),
     );

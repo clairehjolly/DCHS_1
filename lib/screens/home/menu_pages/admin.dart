@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/home/menu_pages/animals.dart';
+import 'package:project/screens/home/menu_pages/serviceEditable.dart';
+import 'package:project/screens/home/menu_pages/schedules.dart';
+
 
 class Admin extends StatelessWidget {
   @override
@@ -24,7 +28,12 @@ class Admin extends StatelessWidget {
 
           children: <Widget>[
             FlatButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                debugPrint("Animal Button Clicked");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Animals();
+                }));
+              },
               color: Color(0xffffc50d),
               icon: Icon(Icons.pets),
               label: Text(
@@ -38,7 +47,12 @@ class Admin extends StatelessWidget {
 
 
             FlatButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                debugPrint("Services Button Clicked");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return ServiceEditable();
+                }));
+              },
               color: Color(0xffaa295d),
               icon: Icon(Icons.menu),
               label: Text(
@@ -51,7 +65,12 @@ class Admin extends StatelessWidget {
             ),
 
             FlatButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                debugPrint("Schedules Button Clicked");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Schedules();
+                }));
+              },
               color: Color(0xff96be04),
               icon: Icon(Icons.calendar_today),
               label: Text(
@@ -62,12 +81,10 @@ class Admin extends StatelessWidget {
                 ),
               ),
             ),
-
-
           ],
-
         ),
       ),
     );
   }
 }
+
