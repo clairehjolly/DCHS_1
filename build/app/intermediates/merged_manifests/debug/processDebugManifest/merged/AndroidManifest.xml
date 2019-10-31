@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.project"
+    package="com.example.flutter_app"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
@@ -23,9 +23,9 @@
         android:name="io.flutter.app.FlutterApplication"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="project" >
+        android:label="flutter_app" >
         <activity
-            android:name="com.example.project.MainActivity"
+            android:name="com.example.flutter_app.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
