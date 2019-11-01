@@ -138,6 +138,8 @@ class outreach extends StatelessWidget {
     );
 
     Widget threeButtonsSection1 = new Container(
+    padding: EdgeInsets.only(left:6.0),
+      alignment: Alignment.topLeft,
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
@@ -204,18 +206,21 @@ class outreach extends StatelessWidget {
                   titleSection,
                   threeButtonsSection,
                   threeButtonsSection1,
-                  new Text('About',
-                  style:new TextStyle(
+                  new Container(
+                    padding: const EdgeInsets.all(10.0),
+                    child:new Text('About',
+                    style:new TextStyle(
                     color:Colors.deepPurpleAccent,
                     fontSize: 30.0,
-                    fontFamily: 'Bitter'
+                    fontFamily: 'Bitter',
 
                   ),
                   ),
-                  SizedBox(height: 10.0),
+                  ),
+                  SizedBox(height: 8.0),
                   new Container(
-
-                  child: new Text("DCHS offers a variety of educational programs for all ages. These programs provide one-of-a-kind experiences that teach not only about DCHS services but how to help make our community a better place for both people and animals.",
+                    padding: const EdgeInsets.all(12.0),
+                    child: new Text("DCHS offers a variety of educational programs for all ages. These programs provide one-of-a-kind experiences that teach not only about DCHS services but how to help make our community a better place for both people and animals.",
                     style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 16.0,
