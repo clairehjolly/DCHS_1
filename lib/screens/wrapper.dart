@@ -10,5 +10,6 @@ class Wrapper extends StatelessWidget {
     //if auth return home or auth widget
     // changing to settings for dev work
     return Authenticate();
+    //return Settings();
   }
 }

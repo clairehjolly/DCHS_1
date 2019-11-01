@@ -44,7 +44,8 @@ class Settings extends StatelessWidget {
             ),
 
             FlatButton.icon(
-              onPressed: () {}, //turn grey if on
+              onPressed: () {
+              }, //turn grey if on
               color: Color(0xffaa295d),
               icon: Icon(Icons.notifications_active),
               label: Text(
