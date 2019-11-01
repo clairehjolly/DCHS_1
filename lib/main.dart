@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/home/menu_pages/animals.dart';
+import 'package:project/screens/home/menu_pages/settings.dart';
+import 'package:project/screens/home/menu_pages/admin.dart';
+
 import 'package:project/screens/wrapper.dart';
 
 void main() => runApp(MyApp());
@@ -8,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Wrapper(),
+      home: Admin(),
     );
   }
 }

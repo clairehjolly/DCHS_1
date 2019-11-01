@@ -23,7 +23,6 @@ class ServiceEditable extends StatelessWidget {
         child: Column(
             children: <Widget>[
               Container(
-                color: Color(0xffffc50d),
                 child: Text(
                   'This is the Services: not sure what this screen should look like yet for Iteration 1',
                   style: TextStyle(

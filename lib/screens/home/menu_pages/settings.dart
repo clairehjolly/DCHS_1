@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/home/menu_pages/about.dart';
+
 
 class Settings extends StatelessWidget {
   @override
@@ -38,7 +40,12 @@ class Settings extends StatelessWidget {
             ),
 
             FlatButton.icon(
-              onPressed: () {}, //turn grey if on
+              onPressed: () {
+                debugPrint("Notifications Button Clicked");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return About();
+                }));
+              }, //turn grey if on
               color: Color(0xffaa295d),
               icon: Icon(Icons.notifications_active),
               label: Text(
@@ -52,7 +59,12 @@ class Settings extends StatelessWidget {
 
 
             FlatButton.icon(
-              onPressed: () {}, //Direct user to About This APP View
+              onPressed: () {
+                debugPrint("Version Button Clicked");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return About();
+                }));
+              }, //Direct user to About This APP View
               color: Color(0xff96be04),
               icon: Icon(Icons.assistant),
               label: Text(
