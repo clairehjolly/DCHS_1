@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/home/menu_pages/userProfile.dart';
 
 class Settings extends StatelessWidget {
   @override
@@ -24,7 +25,12 @@ class Settings extends StatelessWidget {
           children: <Widget>[
 
             FlatButton.icon(
-              onPressed: () {}, //go to user profile
+              onPressed: () {
+                debugPrint("Edit profile button clicked");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return UserProfile();
+                }));
+              }, //go to user profile
               color: Color(0xffffc50d),
               icon: Icon(Icons.people),
               label: Text(
