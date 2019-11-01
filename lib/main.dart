@@ -26,7 +26,8 @@ class Home extends StatelessWidget {
                       style: new TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
-                          color:Colors.deepPurpleAccent
+                          color:Colors.deepPurpleAccent,
+                          fontFamily: 'Bitter'
                       )),
                 ),
                 //Need to add space below this Text ?
@@ -34,7 +35,7 @@ class Home extends StatelessWidget {
                   style: new TextStyle(
                       color: Colors.grey[850],
                       fontSize: 16.0,
-                     fontFamily: 'indieFlower'
+                     fontFamily: 'Bitter'
                   ),
                 ),
               ],
@@ -71,7 +72,7 @@ class Home extends StatelessWidget {
               FlatButton(
                 child: new Text(
                   buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor),),
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -98,7 +99,7 @@ class Home extends StatelessWidget {
               FlatButton(
                 child: new Text(
                   buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor),),
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -125,7 +126,7 @@ class Home extends StatelessWidget {
               FlatButton(
                 child: new Text(
                   buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor),),
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -152,7 +153,7 @@ class Home extends StatelessWidget {
               FlatButton(
                 child: new Text(
                   buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor),),
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -183,10 +184,10 @@ class Home extends StatelessWidget {
 
         children: <Widget>[
           //build in a separated function
-          buildButton(Icons.home, "Home",1),
-          buildButton(Icons.supervised_user_circle, "Admin",2),
-          buildButton(Icons.search, "Outreach",3),
-          buildButton(Icons.calendar_today, "Calendar",4),
+            buildButton(Icons.home, "Home",1),
+            buildButton(Icons.supervised_user_circle, "Admin",2),
+            buildButton(Icons.search, "Outreach",3),
+            buildButton(Icons.calendar_today, "Calendar",4),
           //buildButton(Icons.settings, "Setting",5),
         ],
       ),
@@ -196,12 +197,12 @@ class Home extends StatelessWidget {
     return new MaterialApp(
     home: new Scaffold(
       appBar: AppBar(
-        title: Text('Dane County Human Society',
+        title: Text('Dane County Humane Society',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             letterSpacing: 2.0,
             color: Colors.lightGreen,
-            fontFamily: 'IndieFlower',
+            fontFamily: 'Bitter',
           ),
         ),
         centerTitle: true,
