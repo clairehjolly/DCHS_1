@@ -64,7 +64,7 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
     });
   }
 
-  String id = Firestore.instance.collection('Animal').document().getId();
+ //String id = Firestore.instance.collection('Animal').document().getId();
 
 
   @override
