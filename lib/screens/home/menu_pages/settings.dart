@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/home/menu_pages/about.dart';
+import 'package:project/screens/home/menu_pages/notifications.dart';
+import 'package:project/screens/home/menu_pages/userProfile.dart';
+
 
 
 class Settings extends StatelessWidget {
@@ -26,7 +29,12 @@ class Settings extends StatelessWidget {
           children: <Widget>[
 
             FlatButton.icon(
-              onPressed: () {}, //go to user profile
+              onPressed: () {
+                debugPrint("Edit Profile Button Clicked");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return UserProfile();
+                }));
+              }, //go to user profile
               color: Color(0xffffc50d),
               icon: Icon(Icons.people),
               label: Text(
@@ -43,7 +51,7 @@ class Settings extends StatelessWidget {
               onPressed: () {
                 debugPrint("Notifications Button Clicked");
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return About();
+                  return Notifications();
                 }));
               }, //turn grey if on
               color: Color(0xffaa295d),
