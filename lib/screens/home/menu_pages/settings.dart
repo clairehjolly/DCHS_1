@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project/screens/home/menu_pages/about.dart';
-import 'package:project/screens/home/menu_pages/notifications.dart';
 import 'package:project/screens/home/menu_pages/userProfile.dart';
-
-
 
 class Settings extends StatelessWidget {
   @override
@@ -30,7 +26,7 @@ class Settings extends StatelessWidget {
 
             FlatButton.icon(
               onPressed: () {
-                debugPrint("Edit Profile Button Clicked");
+                debugPrint("Edit profile button clicked");
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return UserProfile();
                 }));
@@ -49,10 +45,6 @@ class Settings extends StatelessWidget {
 
             FlatButton.icon(
               onPressed: () {
-                debugPrint("Notifications Button Clicked");
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Notifications();
-                }));
               }, //turn grey if on
               color: Color(0xffaa295d),
               icon: Icon(Icons.notifications_active),
@@ -67,12 +59,7 @@ class Settings extends StatelessWidget {
 
 
             FlatButton.icon(
-              onPressed: () {
-                debugPrint("Version Button Clicked");
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return About();
-                }));
-              }, //Direct user to About This APP View
+              onPressed: () {}, //Direct user to About This APP View
               color: Color(0xff96be04),
               icon: Icon(Icons.assistant),
               label: Text(

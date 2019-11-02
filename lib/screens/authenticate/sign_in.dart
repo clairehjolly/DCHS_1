@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:project/services/auth.dart';
 import 'package:project/screens/home/home.dart';
+import 'package:project/screens/authenticate/sign_up.dart';
 
-//TODO: needs sign up button & redirect. Should be implemented as refactopred login Anynymnous button.
 
 class SignIn extends StatefulWidget {
   @override
@@ -19,6 +19,8 @@ class _SignInState extends State<SignIn> {
 
   String email = "";
   String password = "";
+  bool signUpPressed = true;
+  bool logInPressed = true;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class _SignInState extends State<SignIn> {
       style: style,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "login Email",
+          hintText: "Email",
           border:
           OutlineInputBorder(borderRadius: BorderRadius.circular(0))),
     );
@@ -48,7 +50,7 @@ class _SignInState extends State<SignIn> {
       style: style,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "login Password",
+          hintText: "Password",
           border:
           OutlineInputBorder(borderRadius: BorderRadius.circular(0))),
     );
@@ -56,37 +58,46 @@ class _SignInState extends State<SignIn> {
     final loginButon = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(0),
-      color: Color(0xff6b2978),
+      color: logInPressed ? Color(0xff6b2978) : Color(0xff3a2662),
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () async {
 
-            print("email: " + email);
-            print("password: " + password);
+          setState(() => logInPressed = !logInPressed);
 
-            AuthResult result = await _auth.signEmailPassword(email, password);
+          dynamic user = await _auth.signEmailPassword(email, password);
 
-            FirebaseUser user = result.user;
+          //input validation
+          if (email == "" || password == "") {
+            setState(() => logInPressed = true);
+            return showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
 
-            print(user);
-//
-//          if (user == null) {
-//            return showDialog(
-//              context: context,
-//              builder: (context) {
-//                return AlertDialog(
-//                  content: Text("login failed"),
-//                );
-//              },
-//            );
-//          } else {
-//            print("signed in");
-//            print(user);
-//            return MaterialApp(
-//              home: Home(),
-//            );
-//          }
+                  content: Text("Fields Can Not Be Blank"),
+                );
+              },
+            );
+          } else if (user == null) {
+            setState(() => logInPressed = true);
+            //unsuccessful login
+            return showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+
+                  content: Text("Username or Password Incorrect"),
+                );
+              },
+            );
+          }
+          else {
+            //successful login
+            print("signed in");
+            print(user.uid);
+          }
         },
         child: Text("Login",
             textAlign: TextAlign.center,
@@ -96,70 +107,60 @@ class _SignInState extends State<SignIn> {
     );
 
 
-    final loginAnonButon = Material(
+    final signUpButton = Material(
+
       elevation: 5.0,
       borderRadius: BorderRadius.circular(0),
-      color: Color(0xff6b2978),
+      color: signUpPressed ? Color(0xff6b2978) : Color(0xff3a2662),
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () async {
-
-          dynamic result = await _auth.signInAnon();
-
-          if (result == null) {
-            return showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  content: Text("login failed"),
-                );
-              },
-            );
-          } else {
-            print("signed in");
-            print(result);
-            Navigator.push(
+          setState(() => signUpPressed = !signUpPressed);
+          //Navigator.pushReplacement(
+          Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Home()),
-            );
-          }
+              MaterialPageRoute(builder: (context) => SignUp()),
+          );
+          setState(() => signUpPressed = !signUpPressed);
         },
-        child: Text("Login Anonymous",
+        child: Text(
+            "Sign Up",
             textAlign: TextAlign.center,
             style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
+                color: Colors.white, fontWeight: FontWeight.bold),
+        ),
       ),
     );
 
     return Scaffold(
-        appBar: AppBar(
-         title: Text("Dane County Humane Society"),
-         centerTitle: true,
-         backgroundColor: Color(0xff6b2978),
-        ),
+      appBar: AppBar(
+        title: Text("Dane County Humane Society: Log In"),
+        centerTitle: true,
+        backgroundColor: Color(0xff6b2978),
+      ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                        "Log In",
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                    ),
-                    SizedBox(height: 5.0),
-                    emailField,
-                    SizedBox(height: 10.0),
-                    passwordField,
-                    SizedBox(height: 10.0),
-                    loginButon,
-                    SizedBox(height: 10.0),
-                    loginAnonButon,
-                  ]
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+//              Text(
+//                "Log In",
+//                style: TextStyle(
+//                  fontSize: 20.0,
+//                  fontWeight: FontWeight.bold,
+//                ),
+//              ),
+              SizedBox(height: 5.0),
+              emailField,
+              SizedBox(height: 10.0),
+              passwordField,
+              SizedBox(height: 10.0),
+              loginButon,
+              SizedBox(height: 10.0),
+              signUpButton,
+            ]
         ),
       ),
     );

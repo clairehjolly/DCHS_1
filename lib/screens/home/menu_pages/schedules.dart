@@ -10,7 +10,7 @@ class Schedules extends StatelessWidget {
       appBar: AppBar(
         title: Center(
           child: Text(
-            'Schedule',
+            'Schedules',
             style: TextStyle(
               fontFamily: 'Bitter',
               fontSize: 25.0,
@@ -23,8 +23,9 @@ class Schedules extends StatelessWidget {
         child: Column(
             children: <Widget>[
               Container(
+                color: Color(0xffffc50d),
                 child: Text(
-                  'Get schedule from backend, currently not working yet',
+                  'This is the Schedules: should show a list of schedules, have edit,delete button for each schedule',
                   style: TextStyle(
                     fontFamily: 'Bitter',
                     fontSize: 20.0,

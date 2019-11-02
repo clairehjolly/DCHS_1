@@ -10,8 +10,6 @@ class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
 
-    //needs to check auth state, return home if auth else return signin
-
     return Container(
       child: SignIn(),
     );

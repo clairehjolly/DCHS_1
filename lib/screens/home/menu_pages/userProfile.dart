@@ -31,7 +31,7 @@ class UserProfile extends StatelessWidget {
     body: StreamBuilder(
       stream:  Firestore.instance.collection("User").snapshots(),
       builder: (context, snapshot){
-        if(!snapshot.hasData) return Text('Loading data... please wait');
+        if(!snapshot.hasData) return Text('Loading data... please ait');
         return Column(
         children: <Widget>[
           Container(
