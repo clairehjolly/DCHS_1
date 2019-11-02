@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/home/menu_pages/calendar.dart';
+import 'package:project/screens/home/menu_pages/outreach.dart';
+import 'package:project/screens/home/menu_pages/admin.dart';
+
 import 'package:project/services/auth.dart';
 
 
@@ -140,10 +143,10 @@ import 'package:project/services/auth.dart';
                   buttonTitle, style: new TextStyle(fontSize: 16.0,
                     fontWeight: FontWeight.w600, color: tintColor),),
                 onPressed: () {
-//    Navigator.push(
-//    context,
-//    MaterialPageRoute(builder: (context) => admin()),
-//    );
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Admin()),
+                    );
                 },
                 // padding: EdgeInsets.all(0),
                 color: Colors.white,
@@ -161,10 +164,10 @@ import 'package:project/services/auth.dart';
                   buttonTitle, style: new TextStyle(fontSize: 16.0,
                     fontWeight: FontWeight.w600, color: tintColor),),
                 onPressed: () {
-//    Navigator.push(
-//    context,
-//    MaterialPageRoute(builder: (context) => outreach()),
-//    );
+//                      Navigator.push(
+//                      context,
+//                      MaterialPageRoute(builder: (context) => Outreach()),
+//                      );
                 },
                 // padding: EdgeInsets.all(0),
                 color: Colors.white,
@@ -219,7 +222,7 @@ import 'package:project/services/auth.dart';
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2.0,
                   color: Colors.lightGreen,
-                  fontFamily: 'IndieFlower',
+                  fontFamily: 'Bitter',
                 ),
               ),
               centerTitle: true,
