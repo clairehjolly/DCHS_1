@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:project/screens/home/menu_pages/animals.dart';
 
@@ -21,14 +22,7 @@ class AnimalProfile extends StatelessWidget {
         backgroundColor: Color(0xff6b2978),
       ),
 
-      body: new Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Container(
-              child: Text('COMING SOON:Animal Info Here'),
-            ),
-          ],
-      ),
+      body: Text('Animal Info Here'),
     );
   }
 }

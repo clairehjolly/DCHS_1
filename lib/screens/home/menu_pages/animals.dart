@@ -1,46 +1,13 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:project/screens/home/menu_pages/firestoreService.dart';
+import 'newAnimal.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:project/screens/home/menu_pages/animalProfile.dart';
+import 'addAnimal.dart';
 
 
-//HAVE ANIMAL LISTED HERE LATER
-
-//class Animals extends StatelessWidget {
-//  @override
-//  Widget build(BuildContext context) {
-//    return Scaffold(
-//
-//      appBar: AppBar(
-//        title: Center(
-//          child: Text(
-//            'Animals',
-//            style: TextStyle(
-//              fontFamily: 'Bitter',
-//              fontSize: 25.0,
-//            ), //TextStyle
-//          ),
-//        ),
-//        backgroundColor: Color(0xff6b2978),
-//      ),
-//      body: new Center(
-//        child: Column(
-//            children: <Widget>[
-//              Container(
-//                color: Color(0xffffc50d),
-//                child: Text(
-//                  'This is the Animal Class: show animal list',
-//                  style: TextStyle(
-//                    fontFamily: 'Bitter',
-//                    fontSize: 20.0,
-//                  ),
-//                ),
-//              ),
-//            ]
-//        ),
-//      ),
-//    );
-//  }
-//}
+//HAVE ANIMAL LISTED HERE
 
 class Animals extends StatefulWidget {
   @override
@@ -65,24 +32,6 @@ class _AnimalsState extends State<Animals> {
         backgroundColor: Color(0xff6b2978),
       ),
       body:  AnimalsListPage(),
-      bottomNavigationBar: BottomAppBar(
-        child: FlatButton(
-          onPressed: () {
-            debugPrint("Add Animal Button Clicked");
-//                     Navigator.push(context, MaterialPageRoute(builder: (context) {
-//                        return Animals();
-//                      }));
-          },
-          color: Color(0xffaa295d),
-          child: Text(
-            'Add Animal',
-            style: TextStyle(
-              fontSize: 18.0,
-              fontFamily: 'Bitter',
-            ),
-          ),
-        ),
-      ),
 
     );  }
 }
@@ -95,98 +44,154 @@ class AnimalsListPage extends StatefulWidget {
 
 class _AnimalsListPageState extends State<AnimalsListPage> {
 
-  Future getAnimals() async{
-    var firestore = Firestore.instance;
-    QuerySnapshot qn = await firestore.collection("Animal").getDocuments();
-    return qn.documents;
+  List<NewAnimal> animal;
+  FirestoreService fs = new FirestoreService();
+  StreamSubscription<QuerySnapshot> animalView;
+
+  void initState(){
+    super.initState();
+
+    animal = new List();
+
+    animalView?.cancel();
+    animalView = fs.getAnimalList().listen((QuerySnapshot snapshot){
+      final List<NewAnimal> animals = snapshot.documents
+          .map((documentSnapshot) => NewAnimal. fromMap(documentSnapshot.data)).toList();
+
+      setState(() {
+        this.animal = animals;
+      });
+    });
   }
+
+  String id = Firestore.instance.collection('Animal').document().getId();
+
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: FutureBuilder(
-          future: getAnimals(),
-          builder: (_, snapshot){
-        if(snapshot.connectionState == ConnectionState.waiting){
-          return Center(
-            child: Text("Loading..."),
+
+    return Scaffold(
+        resizeToAvoidBottomPadding: false,
+        body: Column(
+         children: <Widget>[
+            Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height-100,
+                child: ListView.builder(
+                    itemCount: animal.length,
+                    itemBuilder: (context, index) {
+                    return Stack(children: <Widget>[
+                      Column(children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.only(left:8.0, right: 8.0),
+                            child: Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 120.0,
+                                child: Padding(
+                                    padding: EdgeInsets.only(top: 4.0, bottom: 4.0),
+                                    child: Material(
+                                    color: Colors.white,
+                                    elevation: 14.0,
+                                    shadowColor: Color(0xffaa295d),
+                                    child: Container(
+                                        child: Padding(
+                                          padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+                                          child: Row(
+                                                mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                                            children: <Widget>[
+                                                Icon(Icons.pets), //WILL REPLACE WITH ANIMAL PICTURE LATER ON
+                                              Column(
+                                                mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: <Widget>[
+                                                  Text(
+                                                '${animal[index].name}',
+                                                style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 24.0),
+                                                ),
+
+                                                  Text(
+                                                '${animal[index].animalID}',
+                                                style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 18.0),
+                                                ),
+                                                ],
+                                          ),
+                                              Container(
+                                                padding: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                                                child: Column(
+                                                  children: <Widget>[
+
+                                                    FlatButton(
+                                                      onPressed: () {
+                                                        debugPrint("Edit Button Clicked");
+                                                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                                          return AnimalProfile();
+                                                        }));
+                                                      },
+                                                      color: Color(0xffffc50d),
+                                                      child: Text(
+                                                        'Edit',
+                                                        style: TextStyle(
+                                                          fontSize: 16.0,
+                                                          fontFamily: 'Bitter',
+                                                        ),
+                                                      ),
+                                                    ),
+
+                                                    FlatButton(
+                                                      onPressed: () async {
+                                                        debugPrint("Delete Button Clicked");
+                                                        await Firestore.instance.collection('Animal')
+                                                            .document().delete(); //
+                                                      },
+                                                      color: Color(0xffffc50d),
+                                                      child: Text(
+                                                        'Delete',
+                                                        style: TextStyle(
+                                                          fontSize: 16.0,
+                                                          fontFamily: 'Bitter',
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                  //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                  //crossAxisAlignment: CrossAxisAlignment.center,
+
+                                              ),
+                                          ],
+
+                                        ),
+                                    ),
+                                    ),
+                                ),
+                            ),
+                          ),
+                          )]),
+                    ]);
+                }),
+            ),
+        ],
+    ),
+
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xff6b2978),
+        child: Icon(Icons.add),
+        onPressed: () {
+          //Navigator.push(context,MaterialPageRoute(builder: (context) => TaskScreen()),
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => AddAnimal(NewAnimal('', '', '', '', '','', '', '', '', '','','')),
+                fullscreenDialog: true),
           );
-        }
-        else {
-          return ListView.builder(
-              itemCount: snapshot.data.length,
-              itemBuilder: (_, index) {
-                return ListTile(
-                  leading: Icon(Icons.pets),
-                  title: Text(snapshot.data[index].data['name']),
-                  subtitle: Text(snapshot.data[index].data['animalID']),
-
-                  trailing: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      new Container(
-                        width: 70.0,
-                        height: 17.0,
-
-                        child: FlatButton(
-                        onPressed: () {
-                          debugPrint("Edit Animal Button Clicked");
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return AnimalProfile();
-                      }));
-                        },
-                        color: Color(0xffffc50d),
-                        child: Text(
-                          'Edit',
-                          style: TextStyle(
-                            fontSize: 10.0,
-                            fontFamily: 'Bitter',
-                          ),
-                        ),
-                      ),
-                      ),
-                      new Container(
-                      width: 70.0,
-                      height: 17.0,
-
-                      child: FlatButton(
-                        onPressed: () {
-                          debugPrint("Delete Animal Button Clicked");
-//                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-//                        return Animals();
-//                      }));
-                        },
-                        color: Color(0xff96be04),
-                        child: Text(
-                          'Delete',
-                          style: TextStyle(
-                            fontSize: 10.0,
-                            fontFamily: 'Bitter',
-                          ),
-                        ),
-                      ),
-                      ),
-                    ],
-                  ),
-
-                );
-
-          });
-        }
-    }),
+        },
+      ),
     );
-  }
-}
 
-//To display animal details when the animal is tapped
-class AnimalsDetailPage extends StatefulWidget {
-  @override
-  _AnimalsDetailPageState createState() => _AnimalsDetailPageState();
-}
-
-class _AnimalsDetailPageState extends State<AnimalsDetailPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
 
