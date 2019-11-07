@@ -210,22 +210,32 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.deepPurpleAccent,
       ),
         body: new ListView(
+
           shrinkWrap: true,
           padding: const EdgeInsets.all(5.0),
+
           children: <Widget>[
             new Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                new Container(
-                  child: new Image.asset(
-                    'img/1.jpg',
+                new ConstrainedBox(
+                  constraints: new BoxConstraints(
+                    minHeight: 35.0,
+                    maxHeight: 130.0,
+                  ),
+                  child: new Image.network(
+                    'https://imgix.bustle.com/uploads/image/2018/10/26/c50ef3cd-c402-4543-a320-945b5535325e-fotolia_191159298_subscription_monthly_m.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70',
                   height: 160,
                   width:160, // fit: BoxFit.cover,
                   ),
                 ),
-                new Container(
-                  child:new Image.asset(
-                    'img/2.jpg', //scale: 0.5,
+                new ConstrainedBox(
+                  constraints: new BoxConstraints(
+                    minHeight: 35.0,
+                    maxHeight: 130.0,
+                  ),
+                  child:new Image.network(
+                    'https://www.vetwest.com.au/sites/default/files/styles/large/public/images/article/pug-nose.jpg', //scale: 0.5,
                     height: 160,
                     width:160,              //idth: 130,
                    //eight: 130,
@@ -235,19 +245,28 @@ class Home extends StatelessWidget {
                 ),
               ],
             ),
+
             new Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                new Container(
-                  child: new Image.asset(
-                    'img/3.jpg',
+                new ConstrainedBox(
+                  constraints: new BoxConstraints(
+                  minHeight: 35.0,
+                  maxHeight: 130.0,
+                  ),
+                  child: new Image.network(
+                    'https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/pearl_16x9.jpg?itok=Tq-dVV3X',
                     height: 160,
                     width:160, // fit: BoxFit.cover,
                   ),
                 ),
-                new Container(
-                  child:new Image.asset(
-                    'img/4.jpeg', //scale: 0.5,
+                new ConstrainedBox(
+                  constraints: new BoxConstraints(
+                    minHeight: 35.0,
+                    maxHeight: 130.0,
+                  ),
+                  child:new Image.network(
+                    'https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497&w=678&h=381', //scale: 0.5,
                     height: 160,
                     width:160,              //idth: 130,
                     //eight: 130,
@@ -266,7 +285,7 @@ class Home extends StatelessWidget {
             //You can add more widget bellow
 
 
-            SizedBox(height: 5),
+            //SizedBox(height: 5),
             fourButtonsSection,
             titleSection,
 

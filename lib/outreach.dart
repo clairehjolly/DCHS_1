@@ -169,8 +169,8 @@ class outreach extends StatelessWidget {
                           fontFamily: 'Bitter'
                       )),
 
-                new Image.asset(
-                  'img/outreach.png',
+                new Image.network(
+                  'https://www.neighbourhoodalert.co.uk/design/Home/CommunityMessagingBlock.jpg',
                   width: 200,
                   height: 200,
                 ),
