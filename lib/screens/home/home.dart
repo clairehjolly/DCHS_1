@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:project/screens/home/menu_pages/admin.dart';
-import 'package:project/screens/home/menu_pages/calendar.dart';
-import 'package:project/screens/home/menu_pages/outreach.dart';
-import 'package:project/screens/home/menu_pages/settings.dart';
-import 'package:project/screens/home/menu_pages/serviceMenu.dart';
+import 'package:project/screens/home/admin.dart';
+import 'package:project/screens/home/calendar.dart';
+import 'package:project/screens/home/outreach.dart';
+import 'package:project/screens/home/settings.dart';
+import 'package:project/screens/home/serviceMenu.dart';
 
 void main() => runApp(MaterialApp(
   home:Home(),
