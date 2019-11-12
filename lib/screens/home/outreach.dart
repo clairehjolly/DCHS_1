@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/home/home.dart';
 import 'package:project/screens/home/settings.dart';
+import 'package:project/screens/outreach/foster.dart';
+
 
 
 class Outreach extends StatelessWidget {
@@ -22,7 +24,7 @@ class Outreach extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),
+                    MaterialPageRoute(builder: (context) => Foster()),
                   );
                 },
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/settings/userProfile.dart';
+import 'package:project/screens/settings/Notifications.dart';
 
 class Settings extends StatelessWidget {
 
@@ -46,6 +47,10 @@ class Settings extends StatelessWidget {
 
             FlatButton.icon(
               onPressed: () {
+                debugPrint("Edit profile button clicked");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Notifications();
+                }));
               }, //turn grey if on
               color: Color(0xffaa295d),
               icon: Icon(Icons.notifications_active),

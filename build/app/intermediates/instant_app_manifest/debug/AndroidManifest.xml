@@ -28,7 +28,6 @@
     -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="project" >
@@ -153,6 +152,9 @@
         <meta-data
             android:name="android.support.VERSION"
             android:value="26.1.0" />
+        <meta-data
+            android:name="android.arch.lifecycle.VERSION"
+            android:value="27.0.0-SNAPSHOT" />
     </application>
 
 </manifest>
