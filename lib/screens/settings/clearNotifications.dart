@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Notifications extends StatelessWidget {
+class clearNotifications extends StatelessWidget {
 
   String clear = ' Where is this? Its in the home folder, with no apparent  path to this page?';
 
@@ -12,7 +12,7 @@ class Notifications extends StatelessWidget {
       appBar: AppBar(
         title: Center(
           child: Text(
-            'Notifications',
+            'Notifications Cleared ',
             style: TextStyle(
               fontFamily: 'Bitter',
               fontSize: 25.0,

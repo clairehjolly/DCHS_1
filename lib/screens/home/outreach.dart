@@ -131,8 +131,8 @@ class Outreach extends StatelessWidget {
 
         children: <Widget>[
           //build in a separated function
-          buildButton(Icons.home, "Home",1),
-          buildButton(Icons.people_outline, "Volunteer",1),
+          buildButton(Icons.home, "Home",2),
+          buildButton(Icons.people_outline, "Volunteer",2),
           buildButton(Icons.favorite, "Foster",1),
 
         ],
