@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:project/screens/settings/editUserProfile.dart';
 
 class UserProfile extends StatelessWidget {
   @override
@@ -12,6 +13,18 @@ class UserProfile extends StatelessWidget {
       'DOB': '9/11/2001',
       'firstName': 'George'
     });
+  }
+
+  // Update Data
+  void updateData() {
+    try {
+      databaseReference
+          .collection('User')
+          .document('1')
+          .updateData({'description': 'Head First Flutter'});
+    } catch (e) {
+      print(e.toString());
+    }
   }
 
   Widget build(BuildContext context) {
@@ -82,7 +95,7 @@ class UserProfile extends StatelessWidget {
             onPressed: () {
               debugPrint("Edit profile button clicked");
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return UserProfile();
+                return EditUserProfile();
               }));
             }, //go to user profile
             color: Color(0xff6b2978),
