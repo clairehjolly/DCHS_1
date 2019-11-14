@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:project/screens/settings/userProfile.dart';
+//import 'package:firebase_auth/firebase_auth.dart'
 
 
 class EditUserProfile extends StatelessWidget {
@@ -12,25 +14,38 @@ class EditUserProfile extends StatelessWidget {
   TextEditingController profilePicController = new TextEditingController();
   TextEditingController volunteerController = new TextEditingController();
 
+ // final FirebaseUser user = auth.currentUser().then((FirebaseUser user) {
+ //   final userid = user.uid;
+ //   // rest of the code|  do stuff
+ // });
+
+
   void updateData(TextEditingController firstName, TextEditingController lastName, TextEditingController DOB, TextEditingController profile) {
     try {
-      databaseReference
-          .collection('User')
-          .document('1')
-          .updateData({'firstName':firstName.text});
-
-      databaseReference
-          .collection('User')
-          .document('1')
-          .updateData({'LastName':lastName.text});
-      databaseReference
-          .collection('User')
-          .document('1')
-          .updateData({'DOB':DOB.text});
-      databaseReference
-          .collection('User')
-          .document('1')
-          .updateData({'profilePic':profile.text});
+      if(firstName.text != '') { // if the field is blank, do not update the database
+        databaseReference
+            .collection('User')
+            .document('1')
+            .updateData({'firstName': firstName.text});
+      }
+      if(lastName.text != ''){
+        databaseReference
+            .collection('User')
+            .document('1')
+            .updateData({'lastName': lastName.text});
+      }
+      if(DOB.text != '') {
+        databaseReference
+            .collection('User')
+            .document('1')
+            .updateData({'DOB': DOB.text});
+      }
+      if(profile.text != '') {
+        databaseReference
+            .collection('User')
+            .document('1')
+            .updateData({'profilePic': profile.text});
+      }
     } catch (e) {
       print(e.toString());
     }
@@ -65,7 +80,7 @@ class EditUserProfile extends StatelessWidget {
                       padding: EdgeInsets.only(left:15.0, right: 15.0),
                       child: TextField(
                         controller: firstNameController,
-                        decoration: InputDecoration(labelText: "First Name:: "),
+                        decoration: InputDecoration(labelText: "First Name: "),
                       ),
                     ),
                     Padding(
@@ -95,8 +110,11 @@ class EditUserProfile extends StatelessWidget {
                     FlatButton(
                       color: Color(0xffaa295d),
                       onPressed: () {
-                        debugPrint(" save pressed");
+                        debugPrint("save pressed");
                         updateData(firstNameController, lastNameController,DOBController, profilePicController);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return UserProfile();
+                        }));
                       },
                       child: Text(
                         'Save',

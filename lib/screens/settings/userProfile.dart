@@ -30,12 +30,14 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
   return new Scaffold(
     appBar: new AppBar(
+      centerTitle: true,
       title: Center(
       child:Text(
       'User Profile',
       style: TextStyle(
         fontFamily: 'Bitter',
         fontSize: 25.0,
+
       ),
     ),
   ),
@@ -44,7 +46,7 @@ class UserProfile extends StatelessWidget {
     body: StreamBuilder(
       stream:  Firestore.instance.collection("User").snapshots(),
       builder: (context, snapshot){
-        if(!snapshot.hasData) return Text('Loading data... please ait');
+        if(!snapshot.hasData) return Text('Loading data... please wait');
         return Column(
         children: <Widget>[
           Container(
