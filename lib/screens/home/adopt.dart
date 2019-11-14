@@ -379,7 +379,18 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
 
                });
 
-               
+                 // filterAnimal=checkfilter(filterAnimal,temp_species,4);
+                 //  }
+
+//                setState(() {
+//                //  if(_selectedAge.isNotEmpty){
+//               filterAnimal = animal
+//                    .where((u) => (u.species.toLowerCase()
+//                    .contains(value.toLowerCase())))
+//                    .toList();
+//                 // filterAnimal=checkfilter(filterAnimal,temp_species,4);
+//                //  }
+//              });
             },
             hint: Text('Select Species',style: TextStyle( fontFamily: 'Bitter',fontWeight: FontWeight.bold,),),
           ),
@@ -458,11 +469,6 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
     ),
     ),
     ),
-new ButtonTheme(
-
-)
-
-)
 //          new FlatButton(
 //            child: new Text(
 //              "rrrrr", style: new TextStyle(fontSize: 16.0,
