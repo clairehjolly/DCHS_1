@@ -46,6 +46,8 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
   List<NewAnimal>temp_age;
   List<NewAnimal>temp_species;
   List<NewAnimal>temp_gender;
+  List<Set<NewAnimal>> s=new List<Set<NewAnimal>>();
+  //List<List<NewAnimal>>filter=new List<List<NewAnimal>>(4);
 
   FirestoreService fs = new FirestoreService();
   StreamSubscription<QuerySnapshot> animalView;
@@ -77,58 +79,65 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
       });
     });
   }
-  List<NewAnimal> checkfilter(List <NewAnimal>filter,List<NewAnimal> temp,int flag){
+  List<NewAnimal> checkfilter(List<List<NewAnimal>>filter){
     List<NewAnimal>res=new List<NewAnimal>();
-    if(temp.isEmpty &&flag!=1) {
-      if(filter.isEmpty) return res;
-      else {
-        return filter;
-      }
-    }
-      if(filter.isEmpty) return res;
-
-      switch(flag) {
-        case 1:
-          if(_selectedName==null) return filter;
-          for (int i = 0; i < filter.length; i++) {
-            var item = filter.elementAt(i);
-            if (item.name.toLowerCase().compareTo(_selectedName)==0) {
-              res.add(item);
-            }
-          }
-          break;
-        case 2:
-          if(_selectedAge==null)return filter;
-          for (int i = 0; i < filter.length; i++) {
-            var item = filter.elementAt(i);
-            if (item.age.compareTo(_selectedAge)==0) {
-              res.add(item);
-            }
-          }
-          break;
-        case 3:
-          if(_selectedGender==null)return filter;
-          for (int i = 0; i < filter.length; i++) {
-            var item = filter.elementAt(i);
-            if (item.sex.compareTo(_selectedGender)==0) {
-              res.add(item);
-            }
-          }
-          break;
-        case 4:
-          if(_selectedSpecies==null)return filter;
-          for (int i = 0; i < filter.length; i++) {
-            var item = filter.elementAt(i);
-            if ((item.species.compareTo(_selectedSpecies)==0)) {
-              res.add(item);
-            }
-          }
-          break;
+//    if(temp.isEmpty &&flag!=1) {
+//      if(filter.isEmpty) return res;
+//      else {
+//        return filter;
+//      }
+//    }
+      if(_selectedName!=null) List<NewAnimal>temp=filter.elementAt(0);
+      if(_selectedAge!=null)   List<NewAnimal>temp1=filter.elementAt(1);
+      if(_selectedSpecies!=null) List<NewAnimal>temp2=filter.elementAt(2);
+      if(_selectedGender!=null)  List<NewAnimal>temp3=filter.elementAt(3);
 
 
-      //List<NewAnimal>temp=animal;
+     
 
-      }
+
+//      switch(flag) {
+//        case 1:
+//          if(_selectedName==null) return filter;
+//          for (int i = 0; i < filter.length; i++) {
+//            var item = filter.elementAt(i);
+//            if (item.name.toLowerCase().compareTo(_selectedName)==0) {
+//              res.add(item);
+//            }
+//          }
+//          break;
+//        case 2:
+//          if(_selectedAge==null)return filter;
+//          for (int i = 0; i < filter.length; i++) {
+//            var item = filter.elementAt(i);
+//            if (item.age.compareTo(_selectedAge)==0) {
+//              res.add(item);
+//            }
+//          }
+//          break;
+//        case 3:
+//          if(_selectedGender==null)return filter;
+//          for (int i = 0; i < filter.length; i++) {
+//            var item = filter.elementAt(i);
+//            if (item.sex.compareTo(_selectedGender)==0) {
+//              res.add(item);
+//            }
+//          }
+//          break;
+//        case 4:
+//          if(_selectedSpecies==null)return filter;
+//          for (int i = 0; i < filter.length; i++) {
+//            var item = filter.elementAt(i);
+//            if ((item.species.compareTo(_selectedSpecies)==0)) {
+//              res.add(item);
+//            }
+//          }
+//          break;
+//
+//
+//      //List<NewAnimal>temp=animal;
+//
+//      }
 
       return res;
     }
@@ -152,7 +161,7 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
     ).toList();
   }
   List<DropdownMenuItem<String>> _dropDownItem2(){
-    var _Species=['Dog','Cat'];
+    var _Species=['Dog','Cat','Rabbit','Bird'];
     return _Species.map(
             (value)=>DropdownMenuItem(
           value: value,
@@ -183,15 +192,50 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
 
               setState(() {
               //  temp_name=animal;
-                  filterAnimal = animal
+                  temp_name = filterAnimal
                       .where((u) => (u.name
                       .toLowerCase()
                       .contains(string.toLowerCase())))
                       .toList();
-//
-               filterAnimal=checkfilter(filterAnimal,temp_name,1);
+              //  s.add
+                if(_selectedGender!=null){
+                  for(int i=0;i<temp_gender.length;i++){
+                    var item=temp_gender.elementAt(i);
+                    if(temp_name.contains(item)){
+                      continue;
+                    }else{
+                      temp_name.remove(item);
+                    }
+                  }
+
+                }
+                if(_selectedSpecies!=null){
+                  for(int i=0;i<temp_species.length;i++){
+                    var item=temp_species.elementAt(i);
+                    if(temp_name.contains(item)){
+                      continue;
+                    }else{
+                      temp_name.remove(item);
+                    }
+                  }
+                }
+                if(_selectedAge!=null){
+                  for(int i=0;i<temp_age.length;i++){
+                    var item=temp_age.elementAt(i);
+                    if(temp_name.contains(item)){
+                      continue;
+                    }else{
+                      temp_name.remove(item);
+                    }
+                  }
+
+                }
+                filterAnimal=temp_name;
+              //  filterAnimal=checkfilter(filter);
+
 //             //   }
     });
+
              // filterAnimal=checkfilter(filterAnimal,temp_name,1);
 
             },
@@ -209,14 +253,54 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
             _selectedAge = value;
             setState(() {
 
+              temp_age = animal
+                  .where((u) =>
+              (u.age.toLowerCase()
+                  .contains(value.toLowerCase())))
+                  .toList();
 
-            temp_age = animal
-                .where((u) =>
-            (u.age.toLowerCase()
-                .contains(value.toLowerCase())))
-                .toList();
-            filterAnimal = checkfilter(filterAnimal, temp_age, 2);
+
+              if(_selectedGender!=null){
+                for(int i=0;i<temp_gender.length;i++){
+                  var item=temp_gender.elementAt(i);
+                  if(temp_age.contains(item)){
+                    continue;
+                  }else{
+                    temp_age.remove(item);
+                  }
+                }
+
+              }
+              if(_selectedSpecies!=null){
+                for(int i=0;i<temp_species.length;i++){
+                  var item=temp_species.elementAt(i);
+                  if(temp_age.contains(item)){
+                    continue;
+                  }else{
+                    temp_age.remove(item);
+                  }
+                }
+
+              }
+              if(_selectedName!=null){
+                for(int i=0;i<temp_name.length;i++){
+                  var item=temp_name.elementAt(i);
+                  if(temp_age.contains(item)){
+                    continue;
+                  }else{
+                    temp_age.remove(item);
+                  }
+                }
+
+              }
+              filterAnimal=temp_age;
+
+          //  if(i==3) filterAnimal=temp_age;
+           // filter.add(temp_age);
+          //  filterAnimal = checkfilter(filter);
+
             });
+
            //filterAnimal = checkfilter(filterAnimal, temp_age, 2);
 //              setState(() {
 //                temp_age = filterAnimal;
@@ -249,26 +333,53 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
                _selectedSpecies=value;
                  //  if(_selectedAge.isNotEmpty){
                setState(() {
+              //  temp_species=filterAnimal;
+                temp_species = filterAnimal
+                    .where((u) => (u.species.toLowerCase()
+                    .contains(value.toLowerCase())))
+                    .toList();
 
 
-                 temp_species = animal
-                     .where((u) => (u.species.toLowerCase()
-                     .contains(value.toLowerCase())))
-                     .toList();
-                 filterAnimal=checkfilter(filterAnimal,temp_species,4);
+                 if(_selectedGender!=null){
+                   for(int i=0;i<temp_gender.length;i++){
+                     var item=temp_gender.elementAt(i);
+                     if(temp_species.contains(item)){
+                       continue;
+                     }else{
+                       temp_species.remove(item);
+                     }
+                   }
+
+                 }
+                 if(_selectedName!=null){
+                   for(int i=0;i<temp_species.length;i++){
+                     var item=temp_species.elementAt(i);
+                     if(temp_gender.contains(item)){
+                       continue;
+                     }else{
+                       temp_gender.remove(item);
+                     }
+                   }
+
+                 }
+                 if(_selectedAge!=null){
+                   for(int i=0;i<temp_species.length;i++){
+                     var item=temp_species.elementAt(i);
+                     if(temp_gender.contains(item)){
+                       continue;
+                     }else{
+                       temp_gender.remove(item);
+                     }
+                   }
+
+                 }
+                filterAnimal=temp_species;
+
+              //   filterAnimal=checkfilter(filterAnimal,temp_species,4);
+
                });
-                 // filterAnimal=checkfilter(filterAnimal,temp_species,4);
-                 //  }
 
-//                setState(() {
-//                //  if(_selectedAge.isNotEmpty){
-//               filterAnimal = animal
-//                    .where((u) => (u.species.toLowerCase()
-//                    .contains(value.toLowerCase())))
-//                    .toList();
-//                 // filterAnimal=checkfilter(filterAnimal,temp_species,4);
-//                //  }
-//              });
+               
             },
             hint: Text('Select Species',style: TextStyle( fontFamily: 'Bitter',fontWeight: FontWeight.bold,),),
           ),
@@ -286,12 +397,54 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
                 onChanged: (value){
                  _selectedGender=value;
                  setState(() {
-                 temp_gender = animal
-                     .where((u) => (u.sex.toLowerCase()
-                     .contains(value.toLowerCase())))
-                     .toList();
+                  // temp_gender=filterAnimal;
+
+                   temp_gender = filterAnimal
+                       .where((u) => (u.sex.toLowerCase()
+                       .contains(value.toLowerCase())))
+                       .toList();
+
+                 if(_selectedSpecies!=null){
+                   for(int i=0;i<temp_species.length;i++){
+                     var item=temp_species.elementAt(i);
+                     if(temp_gender.contains(item)){
+                       continue;
+                     }else{
+                       temp_gender.remove(item);
+                     }
+                   }
+
+                 }
+                 if(_selectedName!=null){
+                   for(int i=0;i<temp_name.length;i++){
+                     var item=temp_name.elementAt(i);
+                     if(temp_gender.contains(item)){
+                       continue;
+                     }else{
+                       temp_gender.remove(item);
+                     }
+                   }
+                 }
+                 if(_selectedAge!=null){
+
+                   for(int i=0;i<temp_age.length;i++){
+                     var item=temp_age.elementAt(i);
+                     if(temp_gender.contains(item)){
+                       continue;
+                     }else{
+                       temp_gender.remove(item);
+                     }
+                   }
+
+                 }
+                 filterAnimal=temp_gender;
+
+
+               //  filterAnimal=checkfilter(filterAnimal,temp_gender,3);
+
                  });
-                filterAnimal=checkfilter(filterAnimal,temp_gender,3);
+
+
 //                 setState(() {
 //                 filterAnimal = animal
 //                    .where((u) => (u.sex.toLowerCase()
@@ -305,6 +458,11 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
     ),
     ),
     ),
+new ButtonTheme(
+
+)
+
+)
 //          new FlatButton(
 //            child: new Text(
 //              "rrrrr", style: new TextStyle(fontSize: 16.0,
