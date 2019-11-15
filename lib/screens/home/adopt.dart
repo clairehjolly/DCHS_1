@@ -79,68 +79,68 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
       });
     });
   }
-  List<NewAnimal> checkfilter(List<List<NewAnimal>>filter){
-    List<NewAnimal>res=new List<NewAnimal>();
-//    if(temp.isEmpty &&flag!=1) {
-//      if(filter.isEmpty) return res;
-//      else {
-//        return filter;
-//      }
+//  List<NewAnimal> checkfilter(List<List<NewAnimal>>filter){
+//    List<NewAnimal>res=new List<NewAnimal>();
+////    if(temp.isEmpty &&flag!=1) {
+////      if(filter.isEmpty) return res;
+////      else {
+////        return filter;
+////      }
+////    }
+//      if(_selectedName!=null) List<NewAnimal>temp=filter.elementAt(0);
+//      if(_selectedAge!=null)   List<NewAnimal>temp1=filter.elementAt(1);
+//      if(_selectedSpecies!=null) List<NewAnimal>temp2=filter.elementAt(2);
+//      if(_selectedGender!=null)  List<NewAnimal>temp3=filter.elementAt(3);
+//
+//
+//
+//
+//
+////      switch(flag) {
+////        case 1:
+////          if(_selectedName==null) return filter;
+////          for (int i = 0; i < filter.length; i++) {
+////            var item = filter.elementAt(i);
+////            if (item.name.toLowerCase().compareTo(_selectedName)==0) {
+////              res.add(item);
+////            }
+////          }
+////          break;
+////        case 2:
+////          if(_selectedAge==null)return filter;
+////          for (int i = 0; i < filter.length; i++) {
+////            var item = filter.elementAt(i);
+////            if (item.age.compareTo(_selectedAge)==0) {
+////              res.add(item);
+////            }
+////          }
+////          break;
+////        case 3:
+////          if(_selectedGender==null)return filter;
+////          for (int i = 0; i < filter.length; i++) {
+////            var item = filter.elementAt(i);
+////            if (item.sex.compareTo(_selectedGender)==0) {
+////              res.add(item);
+////            }
+////          }
+////          break;
+////        case 4:
+////          if(_selectedSpecies==null)return filter;
+////          for (int i = 0; i < filter.length; i++) {
+////            var item = filter.elementAt(i);
+////            if ((item.species.compareTo(_selectedSpecies)==0)) {
+////              res.add(item);
+////            }
+////          }
+////          break;
+////
+////
+////      //List<NewAnimal>temp=animal;
+////
+////      }
+//
+//      return res;
 //    }
-      if(_selectedName!=null) List<NewAnimal>temp=filter.elementAt(0);
-      if(_selectedAge!=null)   List<NewAnimal>temp1=filter.elementAt(1);
-      if(_selectedSpecies!=null) List<NewAnimal>temp2=filter.elementAt(2);
-      if(_selectedGender!=null)  List<NewAnimal>temp3=filter.elementAt(3);
-
-
-     
-
-
-//      switch(flag) {
-//        case 1:
-//          if(_selectedName==null) return filter;
-//          for (int i = 0; i < filter.length; i++) {
-//            var item = filter.elementAt(i);
-//            if (item.name.toLowerCase().compareTo(_selectedName)==0) {
-//              res.add(item);
-//            }
-//          }
-//          break;
-//        case 2:
-//          if(_selectedAge==null)return filter;
-//          for (int i = 0; i < filter.length; i++) {
-//            var item = filter.elementAt(i);
-//            if (item.age.compareTo(_selectedAge)==0) {
-//              res.add(item);
-//            }
-//          }
-//          break;
-//        case 3:
-//          if(_selectedGender==null)return filter;
-//          for (int i = 0; i < filter.length; i++) {
-//            var item = filter.elementAt(i);
-//            if (item.sex.compareTo(_selectedGender)==0) {
-//              res.add(item);
-//            }
-//          }
-//          break;
-//        case 4:
-//          if(_selectedSpecies==null)return filter;
-//          for (int i = 0; i < filter.length; i++) {
-//            var item = filter.elementAt(i);
-//            if ((item.species.compareTo(_selectedSpecies)==0)) {
-//              res.add(item);
-//            }
-//          }
-//          break;
-//
-//
-//      //List<NewAnimal>temp=animal;
-//
-//      }
-
-      return res;
-    }
 
   List<DropdownMenuItem<String>> _dropDownItem(){
     var _age=['1','2','3','4','5','6','7','8','9','10','11','12'];
@@ -189,7 +189,7 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
               hintText: 'Enter Name',hintStyle:  TextStyle( fontFamily: 'Bitter',fontWeight: FontWeight.bold),
             ),
             onChanged: (string) {
-
+              _selectedName=string;
               setState(() {
               //  temp_name=animal;
                   temp_name = filterAnimal
@@ -494,10 +494,23 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
 //
 //
 //          ),
+        FloatingActionButton(
+            child:new Text("Reset"),
+            onPressed:(){
+              setState(() {
+
+              _selectedSpecies=null;
+              _selectedName=null;
+              _selectedAge=null;
+              _selectedGender=null;
+              filterAnimal=animal;
+              });
+        }
+        ),
           Expanded(
             child: ListView.builder(
               padding: EdgeInsets.all(10.0),
-              itemCount: filterAnimal.length>0?filterAnimal.length:0,
+              itemCount: filterAnimal.length,
               itemBuilder: (BuildContext context, int index) {
                 return Card(
                   child: Padding(

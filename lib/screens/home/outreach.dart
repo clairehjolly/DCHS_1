@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/home/home.dart';
 import 'package:project/screens/home/settings.dart';
+import 'package:project/screens/home/volunteer.dart';
 
 
 class Outreach extends StatelessWidget {
@@ -8,7 +9,7 @@ class Outreach extends StatelessWidget {
   Widget build(BuildContext context) {
 
     Widget buildButton(IconData icon, String buttonTitle,int i) {
-      final Color tintColor = Colors.deepPurple;
+      final Color tintColor = Color(0xff6b2978);
       switch (i) {
         case 1:
           return new Column(
@@ -49,7 +50,7 @@ class Outreach extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),
+                    MaterialPageRoute(builder: (context) => Volunteer()),
                   );
                 },
 
@@ -118,6 +119,34 @@ class Outreach extends StatelessWidget {
             ],
           );
           break;
+        case 5:
+          return new Column(
+            children: <Widget>[
+              new Icon(icon, color: tintColor),
+              FlatButton(
+                child: new Text(
+                  buttonTitle, style: new TextStyle(fontSize: 16.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Volunteer()),
+                  );
+                },
+
+                // padding: EdgeInsets.all(0),
+                color: Colors.white,
+                // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+
+
+              ),
+
+
+            ],
+          );
+          break;
+
         default:
           break;
       }
@@ -130,7 +159,7 @@ class Outreach extends StatelessWidget {
         children: <Widget>[
           //build in a separated function
           buildButton(Icons.home, "Home",1),
-          buildButton(Icons.people_outline, "Volunteer",1),
+          buildButton(Icons.people_outline, "Volunteer",2),
           buildButton(Icons.favorite, "Foster",1),
 
         ],
@@ -165,7 +194,7 @@ class Outreach extends StatelessWidget {
                       style: new TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 30.0,
-                          color:Colors.deepPurpleAccent,
+                          color:Color(0xff6b2978),
                           fontFamily: 'Bitter'
                       )),
 
@@ -197,7 +226,7 @@ class Outreach extends StatelessWidget {
               ),
               centerTitle: true,
 
-              backgroundColor: Colors.deepPurpleAccent,
+              backgroundColor: Color(0xff6b2978),
             ),
             body: new ListView(
 
@@ -210,7 +239,7 @@ class Outreach extends StatelessWidget {
                     padding: const EdgeInsets.all(10.0),
                     child:new Text('About',
                     style:new TextStyle(
-                    color:Colors.deepPurpleAccent,
+                    color:Color(0xff6b2978),
                     fontSize: 30.0,
                     fontFamily: 'Bitter',
 
@@ -238,7 +267,7 @@ class Outreach extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Settings()),
                 );
               },
-              backgroundColor: Colors.deepPurpleAccent,
+              backgroundColor: Color(0xff6b2978),
               child: Text('setting',style: new TextStyle(fontSize: 10),),
 
 
