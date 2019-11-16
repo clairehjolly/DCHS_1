@@ -10,9 +10,33 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:project/main.dart';
 import 'package:project/screens/settings/Notifications.dart';
+import 'package:project/screens/settings/clearNotifications.dart';
 
-void main() {
+void testClearNotifications(){
 
+  testWidgets('TestClearNotifications', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    Widget testWidget = new MediaQuery(
+        data: new MediaQueryData(),
+        child: new MaterialApp(home: new clearNotifications())
+    );
+    await tester.pumpWidget(testWidget);
+
+    // Verify that our counter starts at 0.
+    expect(find.text('Notifications Cleared'),findsOneWidget);
+
+    // Unsure how to test firebase functionality,  could not find clear documentation on how to do this
+    // Tap the '+' icon and trigger a frame.
+    //await tester.tap(find.byIcon(Icons.add));
+    //await tester.pump();
+
+    // Verify that our counter has incremented.
+    //expect(find.text('0'), findsNothing);
+    //expect(find.text('1'), findsOneWidget);
+  });
+}
+
+void testNotifications(){
 
   testWidgets('TestNotifications', (WidgetTester tester) async {
     // Build our app and trigger a frame.
@@ -25,7 +49,7 @@ void main() {
     // Verify that our counter starts at 0.
     expect(find.text('Notifications'),findsOneWidget);
 
-     // Unsure how to test firebase functionality,  could not find clear documentation on how to do this
+    // Unsure how to test firebase functionality,  could not find clear documentation on how to do this
     // Tap the '+' icon and trigger a frame.
     //await tester.tap(find.byIcon(Icons.add));
     //await tester.pump();
@@ -34,4 +58,10 @@ void main() {
     //expect(find.text('0'), findsNothing);
     //expect(find.text('1'), findsOneWidget);
   });
+}
+
+void main() {
+ testNotifications();
+ testClearNotifications();
+
 }

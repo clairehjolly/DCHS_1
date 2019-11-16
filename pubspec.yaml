@@ -29,6 +29,9 @@ dependencies:
   table_calendar: ^2.1.0
 
 dev_dependencies:
+   # Integration has not been tested yet due to problems with github repo
+  # to run Jonathans Code, uncomment the below line and comment out  Flutter test, sdk
+  #test: 1.9.4
   flutter_test:
     sdk: flutter
 

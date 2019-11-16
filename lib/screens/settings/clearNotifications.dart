@@ -12,7 +12,7 @@ class clearNotifications extends StatelessWidget {
       appBar: AppBar(
         title: Center(
           child: Text(
-            'Notifications Cleared ',
+            'Notifications Cleared',
             style: TextStyle(
               fontFamily: 'Bitter',
               fontSize: 25.0,
