@@ -9,22 +9,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:project/main.dart';
+import 'package:project/screens/settings/Notifications.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+
+
+  testWidgets('TestNotifications', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+    Widget testWidget = new MediaQuery(
+        data: new MediaQueryData(),
+        child: new MaterialApp(home: new Notifications())
+    );
+    await tester.pumpWidget(testWidget);
 
     // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.text('Notifications'),findsOneWidget);
 
+     // Unsure how to test firebase functionality,  could not find clear documentation on how to do this
     // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    //await tester.tap(find.byIcon(Icons.add));
+    //await tester.pump();
 
     // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    //expect(find.text('0'), findsNothing);
+    //expect(find.text('1'), findsOneWidget);
   });
 }

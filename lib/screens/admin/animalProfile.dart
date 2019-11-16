@@ -29,84 +29,84 @@ class AnimalProfile extends StatelessWidget {
     return Column(
       children: <Widget>[
         Container(
-          child: Text('Name: '+ snapshot.data.documents[0]['name'],
+          child: Text('Name: '+ snapshot.data.documents[2]['_name'],
               style: TextStyle(
                   fontFamily: 'Bitter',
                   fontSize: 20.0
               )),
         ),
         Container(
-          child: Text('Animal ID: '+ snapshot.data.documents[0]['animalID'],
+          child: Text('Animal ID: '+ snapshot.data.documents[2]['_animalID'],
               style: TextStyle(
                   fontFamily: 'Bitter',
                   fontSize: 20.0
               )),
         ),
         Container(
-          child: Text('Age: '+ snapshot.data.documents[0]['age'],
+          child: Text('Age: '+ snapshot.data.documents[2]['_age'],
               style: TextStyle(
                   fontFamily: 'Bitter',
                   fontSize: 20.0
               )),
         ),
         Container(
-          child: Text('Sex: '+ snapshot.data.documents[0]['sex'],
+          child: Text('Sex: '+ snapshot.data.documents[2]['_sex'],
               style: TextStyle(
                   fontFamily: 'Bitter',
                   fontSize: 20.0
               )),
         ),
         Container(
-          child: Text('Species: '+ snapshot.data.documents[0]['species'],
+          child: Text('Species: '+ snapshot.data.documents[2]['_species'],
               style: TextStyle(
                   fontFamily: 'Bitter',
                   fontSize: 20.0
               )),
         ),
         Container(
-          child: Text('Breed: '+ snapshot.data.documents[0]['breed'],
+          child: Text('Breed: '+ snapshot.data.documents[2]['_breed'],
               style: TextStyle(
                   fontFamily: 'Bitter',
                   fontSize: 20.0
               )),
         ),
         Container(
-          child: Text('Status: '+ snapshot.data.documents[0]['status'],
+          child: Text('Status: '+ snapshot.data.documents[2]['_status'],
               style: TextStyle(
                   fontFamily: 'Bitter',
                   fontSize: 20.0
               )),
         ),
         Container(
-          child: Text('Location: '+ snapshot.data.documents[0]['location'],
+          child: Text('Location: '+ snapshot.data.documents[2]['_location'],
               style: TextStyle(
                   fontFamily: 'Bitter',
                   fontSize: 20.0
               )),
         ),
         Container(
-          child: Text('Animal Picture: '+ snapshot.data.documents[0]['animalPic'],
+          child: Text('Animal Picture: '+ snapshot.data.documents[2]['_animalPic'],
               style: TextStyle(
                   fontFamily: 'Bitter',
                   fontSize: 20.0
               )),
         ),
         Container(
-          child: Text('Description: '+ snapshot.data.documents[0]['description'],
+          child: Text('Description: '+ snapshot.data.documents[2]['_description'],
               style: TextStyle(
                   fontFamily: 'Bitter',
                   fontSize: 20.0
               )),
         ),
         Container(
-          child: Text('Lonely Hearts: '+ snapshot.data.documents[0]['lonelyHearts'],
+          child: Text('Lonely Hearts: '+ snapshot.data.documents[2]['_lonelyHearts'],
               style: TextStyle(
                   fontFamily: 'Bitter',
                   fontSize: 20.0
               )),
         ),
         Container(
-          child: Text('Adoption Fee: '+ snapshot.data.documents[0]['adoptionFee'],
+          child: Text('Adoption Fee: '+ snapshot.data.documents[2]['_adoptionFee'],
               style: TextStyle(
                   fontFamily: 'Bitter',
                   fontSize: 20.0

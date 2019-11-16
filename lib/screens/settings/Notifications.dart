@@ -88,7 +88,7 @@ class _NotificationListPageState extends State<NotificationListPage> {
                         padding: EdgeInsets.only(left:8.0, right: 8.0),
                         child: Container(
                           width: MediaQuery.of(context).size.width,
-                          height: 200.0,
+                          height: 120.0,
                           child: Padding(
                             padding: EdgeInsets.only(top: 4.0, bottom: 4.0),
                             child: Material(
@@ -106,7 +106,7 @@ class _NotificationListPageState extends State<NotificationListPage> {
                                         //crossAxisAlignment: CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Text(
-                                            // Mess with alignment in here
+                                            // Mess with alignment in here.... Still does not wrap and attempted wrapping causes page to not load
                                             // title goes here
                                             '${note[index].title}',
                                             style: TextStyle(

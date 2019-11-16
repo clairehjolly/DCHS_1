@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class clearNotifications extends StatelessWidget {
 
-  String clear = ' Where is this? Its in the home folder, with no apparent  path to this page?';
+  String clear = 'Thanks for keeping up to date!';
 
 
   @override

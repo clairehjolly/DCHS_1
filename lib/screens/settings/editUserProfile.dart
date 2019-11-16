@@ -7,6 +7,7 @@ import 'package:project/screens/settings/userProfile.dart';
 class EditUserProfile extends StatelessWidget {
   final databaseReference = Firestore.instance;
 
+
   //String clear = ' Where is this? Its in the home folder, with no apparent  path to this page?';
   TextEditingController DOBController = new TextEditingController();
   TextEditingController firstNameController = new TextEditingController();
@@ -18,6 +19,9 @@ class EditUserProfile extends StatelessWidget {
  //   final userid = user.uid;
  //   // rest of the code|  do stuff
  // });
+
+  // Adding the UUID is the next step, however it still causes the application to crash and messes with dependencies.
+  // code has been commented out so that way this works for iteration 2
 
 
   void updateData(TextEditingController firstName, TextEditingController lastName, TextEditingController DOB, TextEditingController profile) {
@@ -125,11 +129,8 @@ class EditUserProfile extends StatelessWidget {
                       ),
                     ),
                   ],
-
                 ),
-
               ),
-
             ]
         ),
       ),
