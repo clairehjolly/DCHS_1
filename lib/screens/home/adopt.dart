@@ -545,19 +545,19 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
                                         ),
 
                                         Text(
-                                          '${filterAnimal[index].species}',
+                                          'Species: '+'${filterAnimal[index].species}',
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 18.0),
                                         ),
                                         Text(
-                                          '${filterAnimal[index].age}',
+                                          'Age: '+'${filterAnimal[index].age}',
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 18.0),
                                         ),
                                         Text(
-                                          '${filterAnimal[index].sex}',
+                                          'Gender: '+'${filterAnimal[index].sex}',
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 18.0),
