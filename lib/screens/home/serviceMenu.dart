@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/home/home.dart';
 import 'package:project/screens/servicemenu/about_dchs.dart';
-import 'package:project/screens/servicemenu/adopt.dart';
-import 'package:project/screens/servicemenu/dogtraining.dart';
 import 'package:project/screens/servicemenu/found_stray.dart';
 import 'package:project/screens/servicemenu/lost_pet.dart';
 import 'package:project/screens/servicemenu/microchip.dart';
-import 'package:project/screens/servicemenu/rehome.dart';
 import 'package:project/screens/servicemenu/wildlife.dart';
 
 
@@ -237,31 +234,31 @@ class ServiceMenu extends StatelessWidget {
     );
 
     //return new MaterialApp(
-        //home:
-        return new Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              title: Text(
-                    'Our Services',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 2.0,
-                      color: Colors.white,
-                      fontFamily: 'Bitter',
-                    ),
-                  ),
-              backgroundColor: Color(0xff6b2978),
-            ),
+    //home:
+    return new Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'Our Services',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2.0,
+            color: Colors.white,
+            fontFamily: 'Bitter',
+          ),
+        ),
+        backgroundColor: Color(0xff6b2978),
+      ),
 
 
-          body: new ListView(
+      body: new ListView(
 
-              children: <Widget>[
-                titleSection,
-                threeButtonsSection,
-                threeButtonsSection1,
-                threeButtonsSection2,
-                /*
+        children: <Widget>[
+          titleSection,
+          threeButtonsSection,
+          threeButtonsSection1,
+          threeButtonsSection2,
+          /*
                 new Container(
                   padding: const EdgeInsets.all(15.0),
                   child:new Text('\nAbout',
@@ -274,21 +271,21 @@ class ServiceMenu extends StatelessWidget {
                   ),
                 ),
                  */
-                new Container(
-                  padding: const EdgeInsets.fromLTRB(15.0, 30.0, 15.0, 15.0),
-                  child: new Text("For nearly 100 years, DCHS has provided services for our community, helping people help animals. Whether you are looking to bring a new pet into your family, searching for your lost pet, found a wild animal in need of assistance or have made the difficult decision to surrender your pet, DCHS is here to help.",
-                    style: new TextStyle(
-                        color: Colors.grey[850],
-                        fontSize: 20.0,
-                        fontFamily: 'Bitter',
-                        height: 1.5,
-                    ),
-                  ),
-                )
-              ],
+          new Container(
+            padding: const EdgeInsets.fromLTRB(15.0, 30.0, 15.0, 15.0),
+            child: new Text("For nearly 100 years, DCHS has provided services for our community, helping people help animals. Whether you are looking to bring a new pet into your family, searching for your lost pet, found a wild animal in need of assistance or have made the difficult decision to surrender your pet, DCHS is here to help.",
+              style: new TextStyle(
+                color: Colors.grey[850],
+                fontSize: 20.0,
+                fontFamily: 'Bitter',
+                height: 1.5,
+              ),
             ),
+          )
+        ],
+      ),
 
-    //    )
+      //    )
     );//Widget with "Material design"
 
   }
