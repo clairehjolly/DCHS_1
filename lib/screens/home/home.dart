@@ -4,6 +4,7 @@ import 'package:project/screens/home/calendar.dart';
 import 'package:project/screens/home/outreach.dart';
 import 'package:project/screens/home/settings.dart';
 import 'package:project/screens/home/serviceMenu.dart';
+import 'package:project/screens/outreach/volunteer/volunteerMainPage.dart';
 
 void main() => runApp(MaterialApp(
   home:Home(),
@@ -31,8 +32,8 @@ class Home extends StatelessWidget {
                   child: new Text("Helping People Helping Animals",
                       style: new TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                          color:Colors.deepPurpleAccent,
+                          fontSize: 20.0,
+                          color:Color(0xff6b2978),
                           fontFamily: 'Bitter'
                       )),
                 ),
@@ -41,14 +42,14 @@ class Home extends StatelessWidget {
                   style: new TextStyle(
                       color: Colors.grey[850],
                       fontSize: 16.0,
-                      fontFamily: 'Bitter'
+                      fontFamily: 'SourceSansPro'
                   ),
                 ),
               ],
             ),
           ),
-          new Icon(Icons.favorite, color: Colors.red),
-          new Text(" 100", style: new TextStyle(fontSize: 16.0),),
+         // new Icon(Icons.favorite, color: Colors.red),
+         // new Text(" 100", style: new TextStyle(fontSize: 16.0),),
         ],
       ),
     );
@@ -65,11 +66,10 @@ class Home extends StatelessWidget {
         ],
       );
     }
-
     */
 
     Widget buildButton(IconData icon, String buttonTitle,int i) {
-      final Color tintColor = Colors.deepPurple;
+      final Color tintColor = Color(0xff6b2978);
       switch (i) {
         case 1:
           return new Column(
@@ -205,95 +205,111 @@ class Home extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2.0,
-                  color: Colors.lightGreen,
+                  color: Colors.white,
                   fontFamily: 'Bitter',
                 ),
               ),
               centerTitle: true,
 
-              backgroundColor: Colors.deepPurpleAccent,
+              backgroundColor: Color(0xff6b2978),
             ),
-            body: new ListView(
+            body: new SingleChildScrollView(
 
-              shrinkWrap: true,
-              padding: const EdgeInsets.all(5.0),
-
-              children: <Widget>[
-                new Row(
+                child: new Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    new ConstrainedBox(
-                      constraints: new BoxConstraints(
-                        minHeight: 35.0,
-                        maxHeight: 130.0,
-                      ),
-                      child: new Image.network(
-                        'https://imgix.bustle.com/uploads/image/2018/10/26/c50ef3cd-c402-4543-a320-945b5535325e-fotolia_191159298_subscription_monthly_m.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70',
-                        height: 160,
-                        width:160, // fit: BoxFit.cover,
-                      ),
-                    ),
-                    new ConstrainedBox(
-                      constraints: new BoxConstraints(
-                        minHeight: 35.0,
-                        maxHeight: 130.0,
-                      ),
-                      child:new Image.network(
-                        'https://www.vetwest.com.au/sites/default/files/styles/large/public/images/article/pug-nose.jpg', //scale: 0.5,
-                        height: 160,
-                        width:160,              //idth: 130,
-                        //eight: 130,
-                        //alignment: Alignment.centerRight,
+                 // crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Image.asset('img/dchslogo3.png'),
+                  Image.asset('img/homePage.png', height: 300.0,),
 
-                      ),
-                    ),
-                  ],
-                ),
+                  fourButtonsSection,
+                  titleSection,
+                ],
 
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    new ConstrainedBox(
-                      constraints: new BoxConstraints(
-                        minHeight: 35.0,
-                        maxHeight: 130.0,
-                      ),
-                      child: new Image.network(
-                        'https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/pearl_16x9.jpg?itok=Tq-dVV3X',
-                        height: 160,
-                        width:160, // fit: BoxFit.cover,
-                      ),
-                    ),
-                    new ConstrainedBox(
-                      constraints: new BoxConstraints(
-                        minHeight: 35.0,
-                        maxHeight: 130.0,
-                      ),
-                      child:new Image.network(
-                        'https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497&w=678&h=381', //scale: 0.5,
-                        height: 160,
-                        width:160,              //idth: 130,
-                        //eight: 130,
-                        //alignment: Alignment.centerRight,
+                
+              ),
 
-                      ),
-                    ),
-                  ],
+//              shrinkWrap: true,
+//              padding: const EdgeInsets.all(5.0),
+//
+//              children: <Widget>[
+//                new Row(
+//                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                  children: <Widget>[
+//                    new ConstrainedBox(
+//                      constraints: new BoxConstraints(
+//                        minHeight: 35.0,
+//                        maxHeight: 130.0,
+//                      ),
+//                      child: new Image.network(
+//                        'https://imgix.bustle.com/uploads/image/2018/10/26/c50ef3cd-c402-4543-a320-945b5535325e-fotolia_191159298_subscription_monthly_m.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70',
+//                        height: 160,
+//                        width:160, // fit: BoxFit.cover,
+//                      ),
+//                    ),
+//                    new ConstrainedBox(
+//                      constraints: new BoxConstraints(
+//                        minHeight: 35.0,
+//                        maxHeight: 130.0,
+//                      ),
+//                      child:new Image.network(
+//                        'https://www.vetwest.com.au/sites/default/files/styles/large/public/images/article/pug-nose.jpg', //scale: 0.5,
+//                        height: 160,
+//                        width:160,              //idth: 130,
+//                        //eight: 130,
+//                        //alignment: Alignment.centerRight,
+//
+//                      ),
+//                    ),
+//                  ],
+//                ),
+//
+//                new Row(
+//                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                  children: <Widget>[
+//                    new ConstrainedBox(
+//                      constraints: new BoxConstraints(
+//                        minHeight: 35.0,
+//                        maxHeight: 130.0,
+//                      ),
+//                      child: new Image.network(
+//                        'https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/pearl_16x9.jpg?itok=Tq-dVV3X',
+//                        height: 160,
+//                        width:160, // fit: BoxFit.cover,
+//                      ),
+//                    ),
+//                    new ConstrainedBox(
+//                      constraints: new BoxConstraints(
+//                        minHeight: 35.0,
+//                        maxHeight: 130.0,
+//                      ),
+//                      child:new Image.network(
+//                        'https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497&w=678&h=381', //scale: 0.5,
+//                        height: 160,
+//                        width:160,              //idth: 130,
+//                        //eight: 130,
+//                        //alignment: Alignment.centerRight,
+//
+//                      ),
+//                    ),
+//                  ],
+//
+//
+//
+//
+//
+//
+//                ),
+//                //You can add more widget bellow
+//
+//
+//                //SizedBox(height: 5),
+//                fourButtonsSection,
+//                titleSection,
+//
+//              ],
 
 
-
-
-
-
-                ),
-                //You can add more widget bellow
-
-
-                //SizedBox(height: 5),
-                fourButtonsSection,
-                titleSection,
-
-              ],
             ),
             floatingActionButton: FloatingActionButton(
               onPressed: () {
@@ -302,7 +318,7 @@ class Home extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Settings()),
                 );
               },
-              backgroundColor: Colors.deepPurpleAccent,
+              backgroundColor: Color(0xff6b2978),
               child: Text('setting',style: new TextStyle(fontSize: 10),),
 
 
@@ -312,4 +328,6 @@ class Home extends StatelessWidget {
 
   }
 }
+
+
 
