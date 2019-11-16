@@ -7,7 +7,8 @@ class Settings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        centerTitle: true,
+        title: Container(
           child:Text(
             'Settings',
             style: TextStyle(
@@ -22,8 +23,11 @@ class Settings extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+
+            Image.asset('img/dchslogo2.jpg'),
+
 
             FlatButton.icon(
               onPressed: () {
@@ -38,7 +42,7 @@ class Settings extends StatelessWidget {
                 'Edit Profile',
                 style: TextStyle(
                   fontSize: 24.0,
-                  fontFamily: 'Bitter',
+                  fontFamily: 'SourceSansPro',
                 ),
               ),
 
@@ -53,7 +57,7 @@ class Settings extends StatelessWidget {
                 'Notifications',
                 style: TextStyle(
                   fontSize: 24.0,
-                  fontFamily: 'Bitter',
+                  fontFamily: 'SourceSansPro',
                 ),
               ),
             ),
@@ -67,10 +71,12 @@ class Settings extends StatelessWidget {
                 'Version, Support & Privacy',
                 style: TextStyle(
                   fontSize: 24.0,
-                  fontFamily: 'Bitter',
+                  fontFamily: 'SourceSansPro',
                 ),
               ),
             ),
+
+
           ],
         ),
       ),
