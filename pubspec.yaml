@@ -27,6 +27,8 @@ dependencies:
   cloud_firestore: ^0.12.9+4
   provider: ^3.1.0
   table_calendar: ^2.1.0
+  # Added by LX for about_dchs.dart
+  url_launcher: ^5.2.5
 
 dev_dependencies:
   flutter_test:
