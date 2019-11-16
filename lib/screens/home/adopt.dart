@@ -7,6 +7,7 @@ import 'package:project/screens/admin/newAnimal.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:project/screens/admin/animalProfile.dart';
 import 'package:project/screens/admin/addAnimal.dart';
+import 'package:project/screens/home/home.dart';
 
 
 
@@ -512,58 +513,115 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
               padding: EdgeInsets.all(10.0),
               itemCount: filterAnimal.length,
               itemBuilder: (BuildContext context, int index) {
-                return Card(
-                  child: Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: new Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
+                return Stack(children: <Widget>[
+                  Column(children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(left:8.0, right: 8.0),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 120.0,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 4.0, bottom: 4.0),
+                          child: Material(
+                            color: Colors.white,
+                            elevation: 14.0,
+                            shadowColor: Color(0xffaa295d),
+                            child: Container(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+                                child: Row(
+                                  mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Icon(Icons.pets), //WILL REPLACE WITH ANIMAL PICTURE LATER ON
+                                    Column(
+                                      mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                          '${filterAnimal[index].name}',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 24.0),
+                                        ),
 
+                                        Text(
+                                          '${filterAnimal[index].species}',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 18.0),
+                                        ),
+                                        Text(
+                                          '${filterAnimal[index].age}',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 18.0),
+                                        ),
+                                        Text(
+                                          '${filterAnimal[index].sex}',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 18.0),
+                                        ),
+                                      ],
+                                    ),
+                                    Container(
+                                      padding: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                                      child: Column(
+                                        children: <Widget>[
 
-                        Text(
-                          filterAnimal[index].name,
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            color: Color(0xff6b2978),
-                            fontFamily: 'Bitter',
+                                          FlatButton(
+                                            onPressed: () {
+                                              debugPrint("donate Button Clicked");
+//                                              Navigator.push(context, MaterialPageRoute(builder: (context) {
+//                                                return AnimalProfile();
+//                                              }));
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(builder: (context) => Home()),
+                                              );
+                                            },
+                                            color: Color(0xffffc50d),
+                                            child: Text(
+                                              'Donate',
+                                              style: TextStyle(
+                                                fontSize: 16.0,
+                                                fontFamily: 'Bitter',
+                                              ),
+                                            ),
+                                          ),
+
+                                          FlatButton(
+                                            onPressed: (){
+                                            Navigator.push(
+                                              context,
+                                            MaterialPageRoute(builder: (context) => Home()),
+                                             );//
+                                            },
+                                            color: Color(0xffffc50d),
+                                            child: Text(
+                                              'Adopt',
+                                              style: TextStyle(
+                                                fontSize: 16.0,
+                                                fontFamily: 'Bitter',
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      //crossAxisAlignment: CrossAxisAlignment.center,
+
+                                    ),
+                                  ],
+
+                                ),
+                              ),
+                            ),
                           ),
                         ),
-                        Text(
-                          "Age: "+ filterAnimal[index].age,
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            color: Color(0xff6b2978),
-                            fontFamily: 'Bitter',
-                          ),
-                        ),
-                        Text(
-                          "Species: "+filterAnimal[index].species,
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            color: Color(0xff6b2978),
-                            fontFamily: 'Bitter',
-
-                          ),
-                        ),
-                        Text(
-                          "Gender: "+filterAnimal[index].sex,
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            color: Color(0xff6b2978),
-                            fontFamily: 'Bitter',
-                          ),
-                        ),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-
-                      ],
-                    ),
-
-
-                  ),
-                );
+                      ),
+                    )]),
+                ]);
               },
             ),
           ),
