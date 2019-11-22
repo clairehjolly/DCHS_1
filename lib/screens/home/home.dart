@@ -198,9 +198,8 @@ class Home extends StatelessWidget {
     );
 
 
-   // return new MaterialApp(
-       // home:
-        return new Scaffold(
+   return new MaterialApp(
+       home: new Scaffold(
             appBar: AppBar(
               title: Text('Dane County Humane Society',
                 style: TextStyle(
@@ -308,7 +307,7 @@ class Home extends StatelessWidget {
 
 
             )
-       // )
+        )
     );//Widget with "Material design"
 
 
