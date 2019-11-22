@@ -5,6 +5,7 @@ import 'package:project/screens/servicemenu/found_stray.dart';
 import 'package:project/screens/servicemenu/lost_pet.dart';
 import 'package:project/screens/servicemenu/microchip.dart';
 import 'package:project/screens/servicemenu/wildlife.dart';
+import 'package:project/screens/servicemenu/adopt.dart';
 
 
 class ServiceMenu extends StatelessWidget {
@@ -186,6 +187,30 @@ class ServiceMenu extends StatelessWidget {
             ],
           );
           break;
+
+        case 7:
+          return new Column(
+            children: <Widget>[
+              new Icon(icon, color: tintColor),
+              FlatButton(
+                child: new Text(
+                  buttonTitle, style: new TextStyle(fontSize: 16.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Adopt()),
+                  );
+                },
+
+                // padding: EdgeInsets.all(0),
+                color: Colors.white,
+                // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+            ],
+          );
+          break;
       }
     }
 
@@ -210,7 +235,7 @@ class ServiceMenu extends StatelessWidget {
 
         children: <Widget>[
           //build in a separated function
-          buildButton(Icons.favorite, "Adopt",1),
+          buildButton(Icons.favorite, "Adopt",7),
           buildButton(Icons.navigation, "Rehome a pet",1),
           buildButton(Icons.local_hospital, "Wildlife Center",3),
         ],

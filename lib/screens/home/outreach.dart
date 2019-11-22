@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/home/home.dart';
 import 'package:project/screens/home/settings.dart';
-import 'package:project/screens/home/volunteer.dart';
+import 'package:project/screens/outreach/volunteer/VolunteerMainPage.dart';
+import 'package:project/screens/outreach/foster.dart';
 
 
 class Outreach extends StatelessWidget {
@@ -50,7 +51,7 @@ class Outreach extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Volunteer()),
+                    MaterialPageRoute(builder: (context) => VolunteerMainPage()),
                   );
                 },
 
@@ -77,7 +78,7 @@ class Outreach extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),
+                    MaterialPageRoute(builder: (context) => Foster()),
                   );
                 },
 
@@ -119,7 +120,8 @@ class Outreach extends StatelessWidget {
             ],
           );
           break;
-        case 5:
+        /*
+          case 5:
           return new Column(
             children: <Widget>[
               new Icon(icon, color: tintColor),
@@ -146,7 +148,7 @@ class Outreach extends StatelessWidget {
             ],
           );
           break;
-
+*/
         default:
           break;
       }
@@ -160,7 +162,7 @@ class Outreach extends StatelessWidget {
           //build in a separated function
           buildButton(Icons.home, "Home",1),
           buildButton(Icons.people_outline, "Volunteer",2),
-          buildButton(Icons.favorite, "Foster",1),
+          buildButton(Icons.favorite, "Foster",3),
 
         ],
       ),
@@ -213,14 +215,15 @@ class Outreach extends StatelessWidget {
 //          new Text(" 100", style: new TextStyle(fontSize: 16.0),),
 
 
-    return new MaterialApp(
-        home: new Scaffold(
+    //return new MaterialApp(
+     //   home:
+        return new Scaffold(
             appBar: AppBar(
               title: Text('Outreach',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2.0,
-                  color: Colors.lightGreen,
+                  color: Colors.white,
                   fontFamily: 'Bitter',
                 ),
               ),
@@ -259,7 +262,7 @@ class Outreach extends StatelessWidget {
                   )
               ],
             ),
-
+/*
             floatingActionButton: FloatingActionButton(
               onPressed: () {
                 Navigator.push(
@@ -269,10 +272,10 @@ class Outreach extends StatelessWidget {
               },
               backgroundColor: Color(0xff6b2978),
               child: Text('setting',style: new TextStyle(fontSize: 10),),
-
-
             )
-        ));//Widget with "Material design"
+            */
+    //    )
+    );//Widget with "Material design"
 
   }
 }

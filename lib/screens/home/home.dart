@@ -32,7 +32,7 @@ class Home extends StatelessWidget {
                       style: new TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
-                          color:Colors.deepPurpleAccent,
+                          color: Color(0xff6b2978),
                           fontFamily: 'Bitter'
                       )),
                 ),
@@ -69,7 +69,7 @@ class Home extends StatelessWidget {
     */
 
     Widget buildButton(IconData icon, String buttonTitle,int i) {
-      final Color tintColor = Colors.deepPurple;
+      final Color tintColor = Color(0xff6b2978);
       switch (i) {
         case 1:
           return new Column(
@@ -198,20 +198,21 @@ class Home extends StatelessWidget {
     );
 
 
-    return new MaterialApp(
-        home: new Scaffold(
+   // return new MaterialApp(
+       // home:
+        return new Scaffold(
             appBar: AppBar(
               title: Text('Dane County Humane Society',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2.0,
-                  color: Colors.lightGreen,
+                  color: Colors.white,
                   fontFamily: 'Bitter',
                 ),
               ),
               centerTitle: true,
 
-              backgroundColor: Colors.deepPurpleAccent,
+              backgroundColor: Color(0xff6b2978),
             ),
             body: new ListView(
 
@@ -302,12 +303,13 @@ class Home extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Settings()),
                 );
               },
-              backgroundColor: Colors.deepPurpleAccent,
+              backgroundColor: Color(0xff6b2978),
               child: Text('setting',style: new TextStyle(fontSize: 10),),
 
 
             )
-        ));//Widget with "Material design"
+       // )
+    );//Widget with "Material design"
 
 
   }

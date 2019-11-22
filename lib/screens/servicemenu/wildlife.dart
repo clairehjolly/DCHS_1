@@ -16,7 +16,7 @@ class Wildlife extends StatelessWidget {
               style: new TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 30.0,
-                  color:Colors.deepPurpleAccent,
+                  color: Color(0xff6b2978),
                   fontFamily: 'Bitter'
               )),
 
@@ -31,7 +31,7 @@ class Wildlife extends StatelessWidget {
     );
 
     Widget buildButton(IconData icon, String buttonTitle,int i) {
-      final Color tintColor = Colors.deepPurple;
+      final Color tintColor = Color(0xff6b2978);
       switch (i) {
         case 1:
           return new Column(
@@ -60,8 +60,9 @@ class Wildlife extends StatelessWidget {
       }
     }
 
-    return new MaterialApp(
-        home: new Scaffold(
+    //return new MaterialApp(
+      //  home:
+        return new Scaffold(
           appBar: AppBar(
             title: Text('Wildlife Center',
               style: TextStyle(
@@ -73,7 +74,7 @@ class Wildlife extends StatelessWidget {
             ),
             centerTitle: true,
 
-            backgroundColor: Colors.deepPurpleAccent,
+            backgroundColor: Color(0xff6b2978),
           ),
           body: new ListView(
 
@@ -84,7 +85,7 @@ class Wildlife extends StatelessWidget {
                 padding: const EdgeInsets.all(15.0),
                 child:new Text('Dane County Humane Society\'s Wildlife Center provides comfort and care to over 3,800 injured or orphaned wild animals every year with the goal of releasing healthy animals back to their natural habitats.',
                   style:new TextStyle(
-                    color:Colors.deepPurpleAccent,
+                    color: Color(0xff6b2978),
                     fontSize: 20.0,
                     fontFamily: 'Bitter',
                     height: 1.5,
@@ -92,6 +93,7 @@ class Wildlife extends StatelessWidget {
                   ),
                 ),
               ),
+            /*
               new Container(
                 padding: const EdgeInsets.all(15.0),
                 child:new Text('Be cautious about approaching any stray animal. Lost pets are often scared and may react defensively when being approached by a stranger.\nIf you have found a domesticated animal, check for any license tag or other identification so that you can attempt to reunite the lost pet with its owner.\nCall DCHS at (608) 838-0413 ext. 100 to report the found animal and see if there are any lost reports matching the animal’s description.',
@@ -109,7 +111,7 @@ class Wildlife extends StatelessWidget {
                 padding: const EdgeInsets.all(15.0),
                 child:new Text('Care for a stray at your home',
                   style:new TextStyle(
-                    color:Colors.deepPurpleAccent,
+                    color: Color(0xff6b2978),
                     fontSize: 27.0,
                     fontFamily: 'Bitter',
                   ),
@@ -132,7 +134,7 @@ class Wildlife extends StatelessWidget {
                 padding: const EdgeInsets.all(15.0),
                 child:new Text('Bring a stray to DCHS',
                   style:new TextStyle(
-                    color:Colors.deepPurpleAccent,
+                    color: Color(0xff6b2978),
                     fontSize: 27.0,
                     fontFamily: 'Bitter',
                   ),
@@ -155,7 +157,7 @@ class Wildlife extends StatelessWidget {
                 padding: const EdgeInsets.all(15.0),
                 child:new Text('Found a wild animal in need of help?',
                   style:new TextStyle(
-                    color:Colors.deepPurpleAccent,
+                    color: Color(0xff6b2978),
                     fontSize: 27.0,
                     fontFamily: 'Bitter',
                   ),
@@ -200,7 +202,7 @@ class Wildlife extends StatelessWidget {
                 padding: new EdgeInsets.fromLTRB(15.0, 15.0, 1.0, 1.0),
                 child:new Text('Need help transporting the animal?',
                   style:new TextStyle(
-                    color:Colors.deepPurpleAccent,
+                    color: Color(0xff6b2978),
                     fontSize: 27.0,
                     fontFamily: 'Bitter',
                   ),
@@ -263,7 +265,9 @@ class Wildlife extends StatelessWidget {
                   ),
                 ),
               ),
+              */
             ],
+
           ),
 
 
@@ -275,9 +279,10 @@ class Wildlife extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => Home()),
               );
             },
-            backgroundColor: Colors.deepPurpleAccent,
+            backgroundColor: Color(0xff6b2978),
           ),
-        )); //Widget with "Material design"
+    //    )
+    ); //Widget with "Material design"
 
   }
 }

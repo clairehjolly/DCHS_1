@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/hesterx/Documents/DCHS-master1/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/hesterx/Documents/Android/DCHS_1/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
+                {
+                    "source": "/Users/hesterx/Documents/Android/DCHS_1/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "347"
+                    },
+                    "to": {
+                        "startLines": "80",
+                        "startColumns": "4",
+                        "startOffsets": "6712",
+                        "endLines": "84",
+                        "endColumns": "12",
+                        "endOffsets": "7004"
+                    }
+                },
                 {
                     "source": "/Users/hesterx/.gradle/caches/transforms-2/files-2.1/36bfcf8497f671d0d46411f6405faed7/play-services-base-16.0.1/res/values/values.xml",
                     "from": {
@@ -59,7 +78,7 @@
                     }
                 },
                 {
-                    "source": "/Users/hesterx/Documents/DCHS-master1/build/app/generated/res/google-services/debug/values/values.xml",
+                    "source": "/Users/hesterx/Documents/Android/DCHS_1/build/app/generated/res/google-services/debug/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -73,25 +92,6 @@
                         "startOffsets": "5821,5964,6067,6148,6252,6360,6480,6572",
                         "endColumns": "142,102,80,103,107,119,91,68",
                         "endOffsets": "5959,6062,6143,6247,6355,6475,6567,6636"
-                    }
-                },
-                {
-                    "source": "/Users/hesterx/Documents/DCHS-master1/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "347"
-                    },
-                    "to": {
-                        "startLines": "80",
-                        "startColumns": "4",
-                        "startOffsets": "6712",
-                        "endLines": "84",
-                        "endColumns": "12",
-                        "endOffsets": "7004"
                     }
                 },
                 {

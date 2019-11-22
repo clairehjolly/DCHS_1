@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:project/screens/settings/editUserProfile.dart';
 
 class UserProfile extends StatelessWidget {
   @override
@@ -14,15 +15,29 @@ class UserProfile extends StatelessWidget {
     });
   }
 
+  // Update Data
+  void updateData() {
+    try {
+      databaseReference
+          .collection('User')
+          .document('1')
+          .updateData({'description': 'Head First Flutter'});
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
   Widget build(BuildContext context) {
   return new Scaffold(
     appBar: new AppBar(
+      centerTitle: true,
       title: Center(
       child:Text(
       'User Profile',
       style: TextStyle(
         fontFamily: 'Bitter',
         fontSize: 25.0,
+
       ),
     ),
   ),
@@ -31,7 +46,7 @@ class UserProfile extends StatelessWidget {
     body: StreamBuilder(
       stream:  Firestore.instance.collection("User").snapshots(),
       builder: (context, snapshot){
-        if(!snapshot.hasData) return Text('Loading data... please ait');
+        if(!snapshot.hasData) return Text('Loading data... please wait');
         return Column(
         children: <Widget>[
           Container(
@@ -82,7 +97,7 @@ class UserProfile extends StatelessWidget {
             onPressed: () {
               debugPrint("Edit profile button clicked");
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return UserProfile();
+                return EditUserProfile();
               }));
             }, //go to user profile
             color: Color(0xff6b2978),

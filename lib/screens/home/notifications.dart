@@ -22,7 +22,7 @@ class Notifications extends StatelessWidget {
             children: <Widget>[
               new Container(
                 child: Text(
-                  'NOT READY: This page is part of ITERATION 2',
+                  clear,
                   style: TextStyle(
                     fontFamily: 'Bitter',
                     fontSize: 30.0,

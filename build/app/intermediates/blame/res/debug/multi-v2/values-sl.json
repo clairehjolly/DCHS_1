@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/hesterx/Documents/DCHS-master1/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sl/values-sl.xml",
+            "outputFile": "/Users/hesterx/Documents/Android/DCHS_1/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sl/values-sl.xml",
             "map": [
                 {
                     "source": "/Users/hesterx/.gradle/caches/transforms-2/files-2.1/b33188fcbaeb7c7bddfafb801562007d/play-services-basement-16.2.0/res/values-sl/values.xml",
