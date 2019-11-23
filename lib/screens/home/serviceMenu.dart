@@ -6,6 +6,7 @@ import 'package:project/screens/servicemenu/lost_pet.dart';
 import 'package:project/screens/servicemenu/microchip.dart';
 import 'package:project/screens/servicemenu/wildlife.dart';
 import 'package:project/screens/servicemenu/adopt.dart';
+import 'package:project/screens/servicemenu/dogTraining.dart';
 
 
 class ServiceMenu extends StatelessWidget {
@@ -211,6 +212,30 @@ class ServiceMenu extends StatelessWidget {
             ],
           );
           break;
+
+        case 8:
+          return new Column(
+            children: <Widget>[
+              new Icon(icon, color: tintColor),
+              FlatButton(
+                child: new Text(
+                  buttonTitle, style: new TextStyle(fontSize: 16.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DogTrainingClass()),
+                  );
+                },
+
+                // padding: EdgeInsets.all(0),
+                color: Colors.white,
+                // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+            ],
+          );
+          break;
       }
     }
 
@@ -253,7 +278,7 @@ class ServiceMenu extends StatelessWidget {
           //build in a separated function
           buildButton(Icons.sd_storage, "Microchip",6),
           buildButton(Icons.search, "Lost a pet",5),
-          buildButton(Icons.school, "Dog training class",1),
+          buildButton(Icons.school, "Dog training class",8),
         ],
       ),
     );
