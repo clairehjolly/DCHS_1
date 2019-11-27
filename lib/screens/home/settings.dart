@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/settings/userProfile.dart';
+import 'package:project/screens/settings/notifications.dart';
 
 class Settings extends StatelessWidget {
 
@@ -7,7 +8,8 @@ class Settings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        centerTitle: true,
+        title: Container(
           child:Text(
             'Settings',
             style: TextStyle(
@@ -22,8 +24,11 @@ class Settings extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+
+            Image.asset('img/dchslogo2.jpg'),
+
 
             FlatButton.icon(
               onPressed: () {
@@ -38,7 +43,7 @@ class Settings extends StatelessWidget {
                 'Edit Profile',
                 style: TextStyle(
                   fontSize: 24.0,
-                  fontFamily: 'Bitter',
+                  fontFamily: 'SourceSansPro',
                 ),
               ),
 
@@ -46,14 +51,18 @@ class Settings extends StatelessWidget {
 
             FlatButton.icon(
               onPressed: () {
-              }, //turn grey if on
+                debugPrint("Edit profile button clicked");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return notifications();
+                }));
+                }, //turn grey if on
               color: Color(0xffaa295d),
               icon: Icon(Icons.notifications_active),
               label: Text(
                 'Notifications',
                 style: TextStyle(
                   fontSize: 24.0,
-                  fontFamily: 'Bitter',
+                  fontFamily: 'SourceSansPro',
                 ),
               ),
             ),
@@ -67,10 +76,12 @@ class Settings extends StatelessWidget {
                 'Version, Support & Privacy',
                 style: TextStyle(
                   fontSize: 24.0,
-                  fontFamily: 'Bitter',
+                  fontFamily: 'SourceSansPro',
                 ),
               ),
             ),
+
+
           ],
         ),
       ),

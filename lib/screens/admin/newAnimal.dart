@@ -1,6 +1,5 @@
 class NewAnimal{
   String name;
-  String animalID;
   String age;
   String sex;
   String species;
@@ -12,12 +11,12 @@ class NewAnimal{
   String lonelyHearts;
   String adoptionFee;
 
-  NewAnimal(this.name, this.animalID, this.age, this.sex, this.species, this.breed, this.status, this.location,
+  NewAnimal(this.name, this.age, this.sex, this.species, this.breed, this.status, this.location,
       this.animalPic, this.description, this.lonelyHearts, this.adoptionFee);
 
   NewAnimal.map(dynamic obj){
     this.name = obj['name'];
-    this.animalID = obj['animalID'];
+    //this.animalID = obj['animalID'];
     this.age = obj['age'];
     this.sex = obj['sex'];
     this.species = obj['species'];
@@ -31,7 +30,7 @@ class NewAnimal{
   }
 
   String get _name => name;
-  String get _animalID => animalID;
+  //String get _animalID => animalID;
   String get _age => age;
   String get _sex => sex;
   String get _species => species;
@@ -48,7 +47,7 @@ class NewAnimal{
   Map<String,dynamic> toMap(){
     var map=new Map<String,dynamic>();
     map['_name']=name;
-    map['_animalID'] = animalID;
+    //map['_animalID'] = animalID;
     map['_age'] = age;
     map['_sex'] = sex;
     map['_species'] = species;
@@ -65,7 +64,7 @@ class NewAnimal{
 
   NewAnimal.fromMap(Map<String,dynamic> map){
     this.name= map['_name'];
-    this.animalID = map['_animalID'];
+    // this.animalID = map['_animalID'];
     this.age = map['_age'];
     this.sex = map['_sex'];
     this.species = map['_species'];

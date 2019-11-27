@@ -17,7 +17,7 @@ class _AddAnimalState extends State<AddAnimal> {
 
   FirestoreService fs = new FirestoreService();
   TextEditingController nameController;
-  TextEditingController animalIDController;
+  //TextEditingController animalIDController;
   TextEditingController ageController;
   TextEditingController sexController;
   TextEditingController speciesController;
@@ -32,7 +32,7 @@ class _AddAnimalState extends State<AddAnimal> {
 void initState(){
   super.initState();
   nameController = new TextEditingController(text:widget.newAnimal.name);
-  animalIDController = new TextEditingController(text:widget.newAnimal.animalID);
+  //animalIDController = new TextEditingController(text:widget.newAnimal.animalID);
   ageController = new TextEditingController(text:widget.newAnimal.age);
   sexController = new TextEditingController(text:widget.newAnimal.sex);
   speciesController = new TextEditingController(text:widget.newAnimal.species);
@@ -76,7 +76,7 @@ void initState(){
                     decoration: InputDecoration(labelText: "Name: "),
                   ),
                 ),
-
+/*
                 Padding(
                   padding: EdgeInsets.only(left:15.0, right: 15.0),
                   child: TextField(
@@ -84,7 +84,7 @@ void initState(){
                     decoration: InputDecoration(labelText: "Animal ID: "),
                   ),
                 ),
-
+*/
                 Padding(
                   padding: EdgeInsets.only(left:15.0, right: 15.0),
                   child: TextField(
@@ -163,7 +163,7 @@ void initState(){
                 color: Color(0xffaa295d),
                 onPressed: () {
                     debugPrint("Save new animal Button Clicked");
-                    fs.createAnimal(nameController.text, animalIDController.text, ageController.text, sexController.text,
+                    fs.createAnimal(nameController.text, ageController.text, sexController.text,
                         speciesController.text, breedController.text, statusController.text, locationController.text,
                         animalPicController.text, descriptionController.text,
                         lonelyHeartsController.text, adoptionFeeController.text).then((_){

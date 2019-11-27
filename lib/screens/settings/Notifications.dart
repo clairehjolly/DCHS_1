@@ -11,12 +11,12 @@ import 'package:project/screens/settings/clearNotifications.dart';
 
 //HAVE ANIMAL LISTED HERE
 
-class Notifications extends StatefulWidget {
+class notifications extends StatefulWidget {
   @override
-  _NotifyState createState() => _NotifyState();
+  _notifyState createState() => _notifyState();
 }
 
-class _NotifyState extends State<Notifications> {
+class _notifyState extends State<notifications> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,10 +148,10 @@ class _NotificationListPageState extends State<NotificationListPage> {
           }));
           //Navigator.push(context,MaterialPageRoute(builder: (context) => TaskScreen()),
           //Navigator.push(
-           // context,
-           // MaterialPageRoute(
-                //builder: (context) => AddAnimal(NewAnimal('', '', '', '', '','', '', '', '', '','','')),
-             //   fullscreenDialog: true),
+          // context,
+          // MaterialPageRoute(
+          //builder: (context) => AddAnimal(NewAnimal('', '', '', '', '','', '', '', '', '','','')),
+          //   fullscreenDialog: true),
           //);
         },
       ),
