@@ -8,10 +8,17 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:project/screens/admin/animalProfile.dart';
 import 'package:project/screens/admin/addAnimal.dart';
 import 'package:project/screens/home/home.dart';
+import 'package:project/screens/servicemenu/adopt_info.dart';
 
 
+//class adoptAnimal {
+//   NewAnimal a1;
+//
+//  adoptAnimal(this.a1);
+//}
 
 class Adopt extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +38,9 @@ class Adopt extends StatelessWidget {
       ),
       body:  AnimalsListPage(),
 
-    );  }
+
+    )
+    ;  }
 }
 
 
@@ -67,8 +76,16 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
 
     animalView?.cancel();
     animalView = fs.getAnimalList().listen((QuerySnapshot snapshot){
-      final List<NewAnimal> animals = snapshot.documents
+      List<NewAnimal> animals = snapshot.documents
           .map((documentSnapshot) => NewAnimal. fromMap(documentSnapshot.data)).toList();
+      List<NewAnimal>aa=new List<NewAnimal>();
+
+      for(NewAnimal a1 in animals){
+        if(a1.status!='Lost'){
+          aa.add(a1);
+        }
+      }
+      animals=aa;
 
       setState(() {
         this.animal = animals;
@@ -77,6 +94,7 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
         this.temp_age=animal;
         this.temp_species=animal;
         this.temp_gender=animal;
+
       });
     });
   }
@@ -253,12 +271,16 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
           onChanged: (value) {
             _selectedAge = value;
             setState(() {
+//                temp_age = animal
+//                    .where((u) =>
+//                (u.age.toString().compareTo(value.toString())==0))
+//                    .toList();
 
-              temp_age = animal
-                  .where((u) =>
-              (u.age.toLowerCase()
-                  .contains(value.toLowerCase())))
-                  .toList();
+                temp_age = animal
+                    .where((u) =>
+                (u.age.toLowerCase()
+                    .contains(value.toLowerCase())))
+                    .toList();
 
 
               if(_selectedGender!=null){
@@ -495,8 +517,12 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
 //
 //
 //          ),
-        FloatingActionButton(
-            child:new Text("Reset"),
+        FlatButton(
+            child:new Text("Reset",
+                style:
+                TextStyle(color: Colors.white),
+              ),
+
             onPressed:(){
               setState(() {
 
@@ -506,13 +532,18 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
               _selectedGender=null;
               filterAnimal=animal;
               });
-        }
+
+        },
+            color: Colors.pinkAccent
         ),
           Expanded(
             child: ListView.builder(
+
               padding: EdgeInsets.all(10.0),
               itemCount: filterAnimal.length,
               itemBuilder: (BuildContext context, int index) {
+                NewAnimal a1;
+               a1 =filterAnimal[index];
                 return Stack(children: <Widget>[
                   Column(children: <Widget>[
                     Padding(
@@ -591,10 +622,12 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
                                           ),
 
                                           FlatButton(
+
                                             onPressed: (){
                                             Navigator.push(
                                               context,
-                                            MaterialPageRoute(builder: (context) => Home()),
+                                            MaterialPageRoute(builder: (context) => new adopt_info(a1:new NewAnimal(a1.name, a1.age, a1.sex, a1.species, a1.breed, a1.status, a1.location,
+                                                a1.animalPic, a1.description, a1.lonelyHearts, a1.adoptionFee))),
                                              );//
                                             },
                                             color: Color(0xffffc50d),
