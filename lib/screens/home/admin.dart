@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/admin/animals.dart';
-import 'package:project/screens/admin/serviceEditable.dart';
-import 'package:project/screens/admin/schedules.dart';
-
-
 
 class Admin extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        centerTitle: true,
+        title: Container(
           child:Text(
             'Admin',
             style: TextStyle(
@@ -19,15 +16,30 @@ class Admin extends StatelessWidget {
             ),
           ),
         ),
-        backgroundColor: Color(0xff6b2978),
+        backgroundColor: Color(0xffaa295d),
 
       ),
-      body: new Center(
+      body: new Container(
+        alignment: Alignment(0.0, 0.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
 
+
           children: <Widget>[
+
+            Image.asset('img/dchslogo.jpeg'),
+
+            Text(
+              '    Click the button below to \n   add/edit/delete animal(s): ',
+                style: TextStyle(
+                  fontFamily: 'SourceSansPro',
+                  fontSize: 23.0,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff6b2978),
+        ),
+            ),
+
             FlatButton.icon(
               onPressed: () {
                 debugPrint("Animal Button Clicked");
@@ -38,50 +50,14 @@ class Admin extends StatelessWidget {
               color: Color(0xffffc50d),
               icon: Icon(Icons.pets),
               label: Text(
-                'Animals',
+                'Animal List',
                 style: TextStyle(
-                  fontSize: 30.0,
-                  fontFamily: 'Bitter',
+                  fontSize: 28.0,
+                  fontFamily: 'SourceSansPro',
                 ),
               ),
             ),
 
-
-            FlatButton.icon(
-              onPressed: () {
-                debugPrint("Services Button Clicked");
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return ServiceEditable();
-                }));
-              },
-              color: Color(0xffaa295d),
-              icon: Icon(Icons.menu),
-              label: Text(
-                'Services',
-                style: TextStyle(
-                  fontSize: 30.0,
-                  fontFamily: 'Bitter',
-                ),
-              ),
-            ),
-
-            FlatButton.icon(
-              onPressed: () {
-                debugPrint("Schedules Button Clicked");
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Schedules();
-                }));
-              },
-              color: Color(0xff96be04),
-              icon: Icon(Icons.calendar_today),
-              label: Text(
-                'Schedules',
-                style: TextStyle(
-                  fontSize: 30.0,
-                  fontFamily: 'Bitter',
-                ),
-              ),
-            ),
           ],
         ),
       ),
