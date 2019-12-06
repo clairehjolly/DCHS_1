@@ -55,7 +55,7 @@ class _FoundState extends State<Found_stray> {
               ),
             ),
             centerTitle: true,
-            backgroundColor: Color(0xff6b2978),
+            backgroundColor: Color(0xff96be04),
           ),
           body: new ListView(
 
@@ -98,8 +98,8 @@ class _FoundState extends State<Found_stray> {
                   }));
                 },
                 //padding: new EdgeInsets.fromLTRB(1.0, 1.0, 1.0, 1.0),
-                color: Color(0xff96be04),
-                icon: Icon(Icons.search, color: Colors.white),
+                color: Color(0xffaa295d),
+                icon: Icon(Icons.pets, color: Colors.white),
                 label: Text(
                   'Lost Pet Database',
                   style: TextStyle(
@@ -510,7 +510,7 @@ class _FoundState extends State<Found_stray> {
                 MaterialPageRoute(builder: (context) => Home()),
               );
             },
-            backgroundColor: Color(0xffaa295d),
+            backgroundColor: Color(0xff96be04),
           ),
         ); //Widget with "Material design"
 

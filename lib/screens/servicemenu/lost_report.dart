@@ -62,7 +62,7 @@ class _Lost_reportState extends State<Lost_report> {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Color(0xff6b2978),
+        backgroundColor: Color(0xffaa295d),
       ),
       resizeToAvoidBottomInset: false,
       body: Column(

@@ -7,6 +7,7 @@ import 'package:project/screens/servicemenu/microchip.dart';
 import 'package:project/screens/servicemenu/wildlife.dart';
 import 'package:project/screens/servicemenu/adopt.dart';
 import 'package:project/screens/servicemenu/dogTraining.dart';
+import 'package:project/screens/servicemenu/rehome_pet.dart';
 
 
 class ServiceMenu extends StatelessWidget {
@@ -236,13 +237,38 @@ class ServiceMenu extends StatelessWidget {
             ],
           );
           break;
+
+        case 9:
+          return new Column(
+            children: <Widget>[
+              new Icon(icon, color: tintColor),
+              FlatButton(
+                child: new Text(
+                  buttonTitle, style: new TextStyle(fontSize: 16.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Rehome_pet()),
+                  );
+                },
+
+                // padding: EdgeInsets.all(0),
+                color: Colors.white,
+                // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+            ],
+          );
+          break;
       }
     }
 
     Widget threeButtonsSection = new Container(
-
+      padding: const EdgeInsets.fromLTRB(10.0, 15.0, 0.0, 10.0),
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
         children: <Widget>[
           //build in a separated function
           buildButton(Icons.home, "Home",1),
@@ -254,14 +280,14 @@ class ServiceMenu extends StatelessWidget {
     );
 
     Widget threeButtonsSection1 = new Container(
-
+      padding: const EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
         children: <Widget>[
           //build in a separated function
           buildButton(Icons.favorite, "Adopt",7),
-          buildButton(Icons.navigation, "Rehome a pet",1),
+          buildButton(Icons.near_me, "Rehome a pet",9),
           buildButton(Icons.local_hospital, "Wildlife Center",3),
         ],
       ),
@@ -271,6 +297,7 @@ class ServiceMenu extends StatelessWidget {
     Widget threeButtonsSection2 = new Container(
       //padding: EdgeInsets.only(left:6.0),
       //alignment: Alignment.topLeft,
+      padding: const EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 15.0),
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
@@ -322,7 +349,7 @@ class ServiceMenu extends StatelessWidget {
                 ),
                  */
           new Container(
-            padding: const EdgeInsets.fromLTRB(15.0, 30.0, 15.0, 15.0),
+            padding: const EdgeInsets.fromLTRB(15.0, 30.0, 15.0, 30.0),
             child: new Text("For nearly 100 years, DCHS has provided services for our community, helping people help animals. Whether you are looking to bring a new pet into your family, searching for your lost pet, found a wild animal in need of assistance or have made the difficult decision to surrender your pet, DCHS is here to help.",
               style: new TextStyle(
                 color: Colors.grey[850],

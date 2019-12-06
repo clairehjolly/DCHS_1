@@ -4,6 +4,7 @@ import 'package:project/screens/admin/firestoreService.dart';
 import 'package:project/screens/servicemenu//lostAnimal.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:project/screens/home/home.dart';
+import 'package:project/screens/servicemenu//lost_pet_profile.dart';
 
 
 class Lost_pet_db extends StatefulWidget {
@@ -66,7 +67,7 @@ class _LostPetListState extends State<LostPetList> {
         List<LostAnimal> lostAnimals = new List();
         for (LostAnimal animal in animals){
           //print(animal.status);
-          print(animal.name + ': ' + animal.status);
+          //print(animal.name + ': ' + animal.status);
           //String lost = 'Lost';
           if(animal.status == 'Lost') {
             lostAnimals.add(animal);
@@ -130,37 +131,42 @@ class _LostPetListState extends State<LostPetList> {
                                           ),
 
                                           Text(
-                                            //'${animal[index].animalID}',
-                                            'Document ID', ////////////////////////
+                                            'Species: '+'${animal[index].species}',
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: 18.0,
-                                              fontFamily: 'Bitter',),
+                                                fontSize: 18.0),
+                                          ),
+
+                                          Text(
+                                            'Gender: '+'${animal[index].sex}',
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 18.0),
                                           ),
                                         ],
                                       ),
                                       Container(
-                                        padding: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                                        padding: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 23.0),
                                         child: Column(
                                           children: <Widget>[
-/*
+
                                             FlatButton(
                                               onPressed: () {
-                                                debugPrint("Edit Button Clicked");
+                                                debugPrint("Meet Button Clicked");
                                                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                                  return AnimalProfile();
+                                                  return Lost_pet_profile();
                                                 }));
                                               },
                                               color: Color(0xffffc50d),
                                               child: Text(
-                                                'Edit',
+                                                'Meet',
                                                 style: TextStyle(
                                                   fontSize: 16.0,
                                                   fontFamily: 'Bitter',
                                                 ),
                                               ),
                                             ),
-
+/*
                                             FlatButton(
                                               onPressed: () async {
                                                 debugPrint("Delete Button Clicked");
@@ -197,7 +203,7 @@ class _LostPetListState extends State<LostPetList> {
           ),
         ],
       ),
-
+/*
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.home),
         onPressed: () {
@@ -206,9 +212,9 @@ class _LostPetListState extends State<LostPetList> {
             MaterialPageRoute(builder: (context) => Home()),
           );
         },
-        backgroundColor: Color(0xffaa295d),
+        backgroundColor: Color(0xff96be04),
       ),
-/*
+
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xffaa295d),
         child: Icon(Icons.add),

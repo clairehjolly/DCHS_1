@@ -162,7 +162,7 @@ class _AboutState extends State<About_dchs> {
             ),
             centerTitle: true,
 
-            backgroundColor: Color(0xff6b2978),
+            backgroundColor: Color(0xff96be04),
           ),
           body: new ListView(
 
@@ -475,7 +475,7 @@ class _AboutState extends State<About_dchs> {
                 MaterialPageRoute(builder: (context) => Home()),
               );
             },
-            backgroundColor: Color(0xffaa295d),
+            backgroundColor: Color(0xff96be04),
           ),
         ); //Widget with "Material design"
 

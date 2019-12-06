@@ -67,7 +67,7 @@ class _LostState extends State<Lost_pet> {
               ),
             ),
             centerTitle: true,
-            backgroundColor: Color(0xff6b2978),
+            backgroundColor: Color(0xff96be04),
           ),
           body: new ListView(
 
@@ -122,7 +122,7 @@ class _LostState extends State<Lost_pet> {
                       }));
                     },
                     //padding: new EdgeInsets.fromLTRB(1.0, 1.0, 1.0, 1.0),
-                    color: Color(0xff96be04),
+                    color: Color(0xffaa295d),
                     icon: Icon(Icons.search, color: Colors.white),
                     label: Text(
                       'Lost Report',
@@ -221,8 +221,8 @@ class _LostState extends State<Lost_pet> {
                       }));
                     },
                     //padding: new EdgeInsets.fromLTRB(1.0, 1.0, 1.0, 1.0),
-                    color: Color(0xff96be04),
-                    icon: Icon(Icons.search, color: Colors.white),
+                    color: Color(0xffaa295d),
+                    icon: Icon(Icons.pets, color: Colors.white),
                     label: Text(
                       'Lost Pet Database',
                       style: TextStyle(
@@ -367,7 +367,7 @@ class _LostState extends State<Lost_pet> {
                   new Container(
                     padding: const EdgeInsets.fromLTRB(50.0, 0.0, 15.0, 0.0),
                     child: new Text(
-                      '• Madison Veterinary Specialists (608) 274-7772\n• Veterinary Emergency Service (608) 222-2455 East and (608) 831-1101 West\n• UW Veterinary Care (608) 263-7600',
+                      '- Madison Veterinary Specialists (608) 274-7772\n- Veterinary Emergency Service (608) 222-2455 East and (608) 831-1101 West\n- UW Veterinary Care (608) 263-7600',
                       style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 18.0,
@@ -377,9 +377,21 @@ class _LostState extends State<Lost_pet> {
                     ),
                   ),
                   new Container(
-                    padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 15.0),
+                    padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 0.0),
                     child: new Text(
-                      '• More tips and places to list our lost pet:\n      • Lost Pet USA\n      • Lost Dogs of Wisconsin\n      • Missing Pet Partnership\n      • Lost Dog Search\n      • Cats in the Bag',
+                      '• More tips and places to list our lost pet:',
+                      style: new TextStyle(
+                        color: Colors.grey[850],
+                        fontSize: 18.0,
+                        fontFamily: 'Bitter',
+                        height: 1.4,
+                      ),
+                    ),
+                  ),
+                  new Container(
+                    padding: const EdgeInsets.fromLTRB(50.0, 0.0, 15.0, 15.0),
+                    child: new Text(
+                      '- Lost Pet USA\n- Lost Dogs of Wisconsin\n- Missing Pet Partnership- Lost Dog Search\n- Cats in the Bag',
                       style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 18.0,
@@ -535,7 +547,7 @@ class _LostState extends State<Lost_pet> {
                 MaterialPageRoute(builder: (context) => Home()),
               );
             },
-            backgroundColor: Color(0xffaa295d),
+            backgroundColor: Color(0xff96be04),
           ),
         ); //Widget with "Material design"
 
