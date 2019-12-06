@@ -9,6 +9,7 @@ import 'package:project/screens/admin/animalProfile.dart';
 import 'package:project/screens/admin/addAnimal.dart';
 import 'package:project/screens/home/home.dart';
 import 'package:project/screens/servicemenu/adopt_info.dart';
+import 'package:project/screens/servicemenu/donate.dart';
 
 
 //class adoptAnimal {
@@ -81,7 +82,7 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
       List<NewAnimal>aa=new List<NewAnimal>();
 
       for(NewAnimal a1 in animals){
-        if(a1.status!='Lost'){
+        if(a1.status!='Lost'&&!a1.name.contains("rehome")){
           aa.add(a1);
         }
       }
@@ -563,7 +564,7 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
                                 child: Row(
                                   mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
-                                    Icon(Icons.pets), //WILL REPLACE WITH ANIMAL PICTURE LATER ON
+                                    Image.network('${animal[index].animalPic}', height: 80.0, width: 80.0),
                                     Column(
                                       mainAxisAlignment:MainAxisAlignment.spaceEvenly,
                                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -608,7 +609,7 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
 //                                              }));
                                               Navigator.push(
                                                 context,
-                                                MaterialPageRoute(builder: (context) => Home()),
+                                                MaterialPageRoute(builder: (context) => donate()),
                                               );
                                             },
                                             color: Color(0xffffc50d),

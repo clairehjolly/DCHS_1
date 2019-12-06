@@ -113,8 +113,7 @@ class adopt_info extends StatelessWidget {
     );
 
 
-    return new MaterialApp(
-        home: new Scaffold(
+    return  new Scaffold(
             appBar: AppBar(
               title: Text(a1.name,
                 style: TextStyle(
@@ -151,7 +150,7 @@ class adopt_info extends StatelessWidget {
             },
             backgroundColor: Color(0xffaa295d),
           ),
-        )
+
     );
   }
 }
