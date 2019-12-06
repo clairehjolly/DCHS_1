@@ -84,6 +84,7 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
       for(NewAnimal a1 in animals){
         if(a1.status!='Lost'&&!a1.name.contains("rehome")){
           aa.add(a1);
+        
         }
       }
       animals=aa;
