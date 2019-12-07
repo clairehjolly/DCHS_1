@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project/screens/home/home.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:project/screens/home/outreach.dart';
-import 'package:project/screens/servicemenu/expandable_text.dart';
+import 'package:project/screens/servicemenu/functions/expandable_text.dart';
 
 class About_dchs extends StatefulWidget {
 

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/home/home.dart';
-import 'package:project/screens/servicemenu/expandable_text.dart';
+import 'package:project/screens/servicemenu/functions/expandable_text.dart';
 import 'package:project/screens/servicemenu/microchip.dart';
-import 'package:project/screens/servicemenu/lost_report.dart';
-import 'package:project/screens/servicemenu//lostAnimal.dart';
-import 'package:project/screens/servicemenu/lost_pet_db.dart';
+import 'package:project/screens/servicemenu/lostpet/lost_report.dart';
+import 'package:project/screens/servicemenu/lostpet/lostAnimal.dart';
+import 'package:project/screens/servicemenu/lostpet/lost_pet_db.dart';
 import 'package:url_launcher/url_launcher.dart';
-//import 'package:flutter_markdown/flutter_markdown.dart';
-
 
 class Lost_pet extends StatefulWidget {
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/home/home.dart';
 import 'package:project/screens/servicemenu/wildlife.dart';
-import 'package:project/screens/servicemenu/expandable_text.dart';
-import 'package:project/screens/servicemenu/lost_pet_db.dart';
+import 'package:project/screens/servicemenu/functions/expandable_text.dart';
+import 'package:project/screens/servicemenu/lostpet/lost_pet_db.dart';
 
 
 class Found_stray extends StatefulWidget {

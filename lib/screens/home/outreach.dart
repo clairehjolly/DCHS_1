@@ -3,6 +3,8 @@ import 'package:project/screens/home/home.dart';
 import 'package:project/screens/home/settings.dart';
 import 'package:project/screens/outreach/volunteer/VolunteerMainPage.dart';
 import 'package:project/screens/outreach/foster.dart';
+import 'package:project/screens/outreach/education.dart';
+import 'package:project/screens/outreach/donate.dart';
 
 
 class Outreach extends StatelessWidget {
@@ -120,7 +122,7 @@ class Outreach extends StatelessWidget {
             ],
           );
           break;
-        /*
+
           case 5:
           return new Column(
             children: <Widget>[
@@ -133,22 +135,42 @@ class Outreach extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Volunteer()),
+                    MaterialPageRoute(builder: (context) => Education()),
                   );
                 },
 
                 // padding: EdgeInsets.all(0),
                 color: Colors.white,
                 // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-
-
               ),
-
-
             ],
           );
           break;
-*/
+
+        case 6:
+          return new Column(
+            children: <Widget>[
+              new Icon(icon, color: tintColor),
+              FlatButton(
+                child: new Text(
+                  buttonTitle, style: new TextStyle(fontSize: 16.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Donate()),
+                  );
+                },
+
+                // padding: EdgeInsets.all(0),
+                color: Colors.white,
+                // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+            ],
+          );
+          break;
+
         default:
           break;
       }
@@ -176,8 +198,8 @@ class Outreach extends StatelessWidget {
 
         children: <Widget>[
           //build in a separated function
-          buildButton(Icons.attach_money, "Donate",1),
-          buildButton(Icons.local_library, "Education",1),
+          buildButton(Icons.attach_money, "Donate",6),
+          buildButton(Icons.local_library, "Education",5),
           buildButton(Icons.help, "Resources",1),
           //buildButton(Icons.attach_money, "Donate",3),
           // buildButton(Icons.local_library, "Education",4),
@@ -211,12 +233,7 @@ class Outreach extends StatelessWidget {
             ),
           );
 
-//          new Icon(Icons.favorite, color: Colors.red),
-//          new Text(" 100", style: new TextStyle(fontSize: 16.0),),
 
-
-    //return new MaterialApp(
-     //   home:
         return new Scaffold(
             appBar: AppBar(
               title: Text('Outreach',
@@ -245,10 +262,7 @@ class Outreach extends StatelessWidget {
                     color:Color(0xff6b2978),
                     fontSize: 30.0,
                     fontFamily: 'Bitter',
-
-                  ),
-                  ),
-                  ),
+                  ),),),
                   SizedBox(height: 8.0),
                   new Container(
                     padding: const EdgeInsets.all(12.0),
@@ -262,20 +276,8 @@ class Outreach extends StatelessWidget {
                   )
               ],
             ),
-/*
-            floatingActionButton: FloatingActionButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Settings()),
-                );
-              },
-              backgroundColor: Color(0xff6b2978),
-              child: Text('setting',style: new TextStyle(fontSize: 10),),
-            )
-            */
-    //    )
-    );//Widget with "Material design"
+
+    );
 
   }
 }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/hesterx/Desktop/DCHS_1-master/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/Users/hesterx/Documents/Android/DCHS_1/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
                     "source": "/Users/hesterx/.gradle/caches/transforms-2/files-2.1/39748ff836e1651626680ef7d9384e13/support-media-compat-26.1.0/res/values-v24/values-v24.xml",

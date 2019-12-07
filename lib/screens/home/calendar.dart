@@ -59,11 +59,28 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         });
       }
     });
-    for (int i = 0; i < events.length; i++) {
-      print(events[i]['description']);
+    List filter_events=new List();
+    String a="";
+    String max="";
+    for(int i=0;i<events.length;i++) {
+
+      a = events[i]['date'];
+      if(i==0) {
+        filter_events.add(events[0]);
+      }
+      if(a.compareTo(max)>0){
+        filter_events.add(events[i]);
+        max=events[i]['date'];
+      }else{
+        filter_events.insert(i-1,events[i]);
+
+      }
+      if (i + 1 == events.length) break;
     }
+    filter_events.remove(events[0]);
+
     setState(() {
-      this.events = events;
+      this.events = filter_events;
     });
   }
 
@@ -194,22 +211,3 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
