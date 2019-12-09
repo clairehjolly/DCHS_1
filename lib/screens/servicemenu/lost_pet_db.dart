@@ -1,9 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:project/screens/admin/firestoreService.dart';
-import 'package:project/screens/servicemenu//lostAnimal.dart';
+import 'package:project/screens/servicemenu/firestore.dart';
+import 'package:project/screens/servicemenu/lostAnimal.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:project/screens/home/home.dart';
+import 'package:project/screens/servicemenu/lost_pet_profile.dart';
 
 
 class Lost_pet_db extends StatefulWidget {
@@ -66,7 +67,7 @@ class _LostPetListState extends State<LostPetList> {
         List<LostAnimal> lostAnimals = new List();
         for (LostAnimal animal in animals){
           //print(animal.status);
-          print(animal.name + ': ' + animal.status);
+          //print(animal.name + ': ' + animal.status);
           //String lost = 'Lost';
           if(animal.status == 'Lost') {
             lostAnimals.add(animal);
@@ -94,6 +95,9 @@ class _LostPetListState extends State<LostPetList> {
             child: ListView.builder(
                 itemCount: animal.length,
                 itemBuilder: (context, index) {
+
+                  LostAnimal a1 = animal[index];  ///////////
+
                   return Stack(children: <Widget>[
                     Column(children: <Widget>[
                       Padding(
@@ -115,7 +119,8 @@ class _LostPetListState extends State<LostPetList> {
                                     children: <Widget>[
                                       Container(
                                         padding: const EdgeInsets.fromLTRB(25.0, 15.0, 0.0, 15.0),
-                                          child: Icon(Icons.pets)
+                                        //child: Icon(Icons.pets)
+                                        child:Image.network('${animal[index].animalPic}', height: 60.0, width: 60.0),
                                       ),
                                       Column(
                                         mainAxisAlignment:MainAxisAlignment.spaceEvenly,
@@ -124,43 +129,50 @@ class _LostPetListState extends State<LostPetList> {
                                           Text(
                                             '${animal[index].name}',
                                             style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 24.0,
+                                              color: Colors.black,
+                                              fontSize: 24.0,
                                               fontFamily: 'Bitter',),
                                           ),
 
                                           Text(
-                                            //'${animal[index].animalID}',
-                                            'Document ID', ////////////////////////
+                                            'Species: '+'${animal[index].species}',
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: 18.0,
-                                              fontFamily: 'Bitter',),
+                                                fontSize: 18.0),
+                                          ),
+
+                                          Text(
+                                            'Gender: '+'${animal[index].sex}',
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 18.0),
                                           ),
                                         ],
                                       ),
                                       Container(
-                                        padding: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                                        padding: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 23.0),
                                         child: Column(
                                           children: <Widget>[
-/*
+
                                             FlatButton(
-                                              onPressed: () {
-                                                debugPrint("Edit Button Clicked");
-                                                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                                  return AnimalProfile();
-                                                }));
+                                              onPressed: (){
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) => new Lost_pet_profile(a1:new LostAnimal(a1.name, a1.age, a1.sex, a1.species, a1.breed, a1.status, a1.location, a1.animalPic, a1.description, a1.lonelyHearts, a1.adoptionFee))
+                                                  ),
+                                                );//
                                               },
                                               color: Color(0xffffc50d),
                                               child: Text(
-                                                'Edit',
+                                                'Meet',
                                                 style: TextStyle(
                                                   fontSize: 16.0,
                                                   fontFamily: 'Bitter',
                                                 ),
                                               ),
                                             ),
-
+/*
                                             FlatButton(
                                               onPressed: () async {
                                                 debugPrint("Delete Button Clicked");
@@ -197,7 +209,7 @@ class _LostPetListState extends State<LostPetList> {
           ),
         ],
       ),
-
+/*
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.home),
         onPressed: () {
@@ -206,9 +218,9 @@ class _LostPetListState extends State<LostPetList> {
             MaterialPageRoute(builder: (context) => Home()),
           );
         },
-        backgroundColor: Color(0xffaa295d),
+        backgroundColor: Color(0xff96be04),
       ),
-/*
+
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xffaa295d),
         child: Icon(Icons.add),
