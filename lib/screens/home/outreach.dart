@@ -3,6 +3,8 @@ import 'package:project/screens/home/home.dart';
 import 'package:project/screens/home/settings.dart';
 import 'package:project/screens/outreach/volunteer/VolunteerMainPage.dart';
 import 'package:project/screens/outreach/foster.dart';
+import 'package:project/screens/servicemenu/donate.dart';
+import 'package:project/screens/servicemenu/resource.dart';
 
 
 class Outreach extends StatelessWidget {
@@ -93,7 +95,7 @@ class Outreach extends StatelessWidget {
             ],
           );
           break;
-        case 4:
+        case 5:
           return new Column(
             children: <Widget>[
               new Icon(icon, color: tintColor),
@@ -105,7 +107,34 @@ class Outreach extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),
+                    MaterialPageRoute(builder: (context) => donate()),
+                  );
+                },
+
+                // padding: EdgeInsets.all(0),
+                color: Colors.white,
+                // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+
+
+              ),
+
+
+            ],
+          );
+          break;
+        case 6:
+          return new Column(
+            children: <Widget>[
+              new Icon(icon, color: tintColor),
+              FlatButton(
+                child: new Text(
+                  buttonTitle, style: new TextStyle(fontSize: 16.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => resource()),
                   );
                 },
 
@@ -176,9 +205,9 @@ class Outreach extends StatelessWidget {
 
         children: <Widget>[
           //build in a separated function
-          buildButton(Icons.attach_money, "Donate",1),
+          buildButton(Icons.attach_money, "Donate",5),
           buildButton(Icons.local_library, "Education",1),
-          buildButton(Icons.help, "Resources",1),
+          buildButton(Icons.help, "Resources",6),
           //buildButton(Icons.attach_money, "Donate",3),
           // buildButton(Icons.local_library, "Education",4),
           //buildButton(Icons.help, "Resources",3),
