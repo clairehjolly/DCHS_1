@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:project/screens/admin/newAnimal.dart';
+import 'package:project/screens/admin/updateAnimal.dart';
 
 
 
@@ -29,10 +30,7 @@ class AnimalProfile extends StatelessWidget {
 
       body: new SingleChildScrollView(
         child:
-//        child: new StreamBuilder(
-//            stream: Firestore.instance.collection('Animal').snapshots(),
-//            builder: (BuildContext context, snapshot){
-//              if(!snapshot.hasData) return Text('Loading...');
+
               new Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
@@ -226,104 +224,15 @@ class AnimalProfile extends StatelessWidget {
                     ),
                   ),
 
-//                  Padding(
-//                    padding: EdgeInsets.only(left:0.0, right: 15.0),
-//                    child:
-//
-//                    Text('Name: ' + snapshot.data.documents[0]['_name'],
-//                        style: TextStyle(
-//                            fontFamily: 'SourceSansPro',
-//                            fontSize: 20.0
-//                        )
-//                    ),
-//                  ),
-//
-//                  Padding(
-//                    padding: EdgeInsets.only(left:0.0, right: 15.0),
-//
-//                    child: Text('Age: '+ snapshot.data.documents[0]['_age'],
-//                        style: TextStyle(
-//                            fontFamily: 'SourceSansPro',
-//                            fontSize: 20.0
-//                        )),
-//                  ),
-//                  Padding(
-//                    padding: EdgeInsets.only(left:0.0, right: 15.0),
-//
-//                    child: Text('Sex: '+ snapshot.data.documents[0]['_sex'],
-//                        style: TextStyle(
-//                            fontFamily: 'SourceSansPro',
-//                            fontSize: 20.0
-//                        )),
-//                  ),
-//                  Padding(
-//                    padding: EdgeInsets.only(left:0.0, right: 15.0),
-//
-//                    child: Text('Species: '+ snapshot.data.documents[0]['_species'],
-//                        style: TextStyle(
-//                            fontFamily: 'SourceSansPro',
-//                            fontSize: 20.0
-//                        )),
-//                  ),
-//                  Padding(
-//                    padding: EdgeInsets.only(left:0.0, right: 15.0),
-//
-//                    child: Text('Breed: '+ snapshot.data.documents[0]['_breed'],
-//                        style: TextStyle(
-//                            fontFamily: 'SourceSansPro',
-//                            fontSize: 20.0
-//                        )),
-//                  ),
-//                  Padding(
-//                    padding: EdgeInsets.only(left:0.0, right: 15.0),
-//
-//                    child: Text('Status: '+ snapshot.data.documents[0]['_status'],
-//                        style: TextStyle(
-//                            fontFamily: 'SourceSansPro',
-//                            fontSize: 20.0
-//                        )),
-//                  ),
-//                  Padding(
-//                    padding: EdgeInsets.only(left:0.0, right: 15.0),
-//
-//                    child: Text('Location: '+ snapshot.data.documents[0]['_location'],
-//                        style: TextStyle(
-//                            fontFamily: 'SourceSansPro',
-//                            fontSize: 20.0
-//                        )),
-//                  ),
-//
-//                  Padding(
-//                    padding: EdgeInsets.only(left:0.0, right: 15.0),
-//
-//                    child: Text('Description: '+ snapshot.data.documents[0]['_description'],
-//                        style: TextStyle(
-//                            fontFamily: 'SourceSansPro',
-//                            fontSize: 20.0
-//                        )),
-//                  ),
-//                  Padding(
-//                    padding: EdgeInsets.only(left:0.0, right: 15.0),
-//
-//                    child: Text('Lonely Hearts: '+ snapshot.data.documents[0]['_lonelyHearts'],
-//                        style: TextStyle(
-//                            fontFamily: 'SourceSansPro',
-//                            fontSize: 20.0
-//                        )),
-//                  ),
-//                  Padding(
-//                    padding: EdgeInsets.only(left:0.0, right: 15.0),
-//
-//                    child: Text('Adoption Fee: '+ snapshot.data.documents[0]['_adoptionFee'],
-//                        style: TextStyle(
-//                            fontFamily: 'SourceSansPro',
-//                            fontSize: 20.0
-//                        )),
-//                  ),
 
                   FlatButton(
                     color: Color(0xff6b2978),
-                    onPressed: (){},
+                    onPressed: () {
+                      debugPrint("Edit Animal button clicked");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return UpDateAnimal();
+                      }));
+                    }, //go to us
                     child: Text(
                       'Edit Profile',
                       style: TextStyle(
