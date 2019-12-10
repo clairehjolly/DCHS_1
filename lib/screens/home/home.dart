@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/authenticate/sign_in.dart';
 import 'package:project/screens/home/admin.dart';
 import 'package:project/screens/home/calendar.dart';
 import 'package:project/screens/home/outreach.dart';
 import 'package:project/screens/home/settings.dart';
 import 'package:project/screens/home/serviceMenu.dart';
+import 'package:project/screens/outreach/donate.dart';
+import 'package:project/screens/servicemenu/resources.dart';
 
 void main() => runApp(MaterialApp(
   home:Home(),
 ));
 class Home extends StatelessWidget {
+
+//  final SignIn check;
+//  Home({Key key,@required this.check}):super(key:key);
+
   @override
   Widget build(BuildContext context) {
 
@@ -19,6 +26,7 @@ class Home extends StatelessWidget {
           new Container(      /// for yutai's outreach.dart
             child: Text("Home",
               style: TextStyle(
+                fontFamily: 'SourceSansPro',
                   color: Colors.white),
             ),/////
           ),
@@ -33,14 +41,14 @@ class Home extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 20.0,
                           color:Color(0xff6b2978),
-                          fontFamily: 'Bitter'
+                          fontFamily: 'SourceSansPro'
                       )),
                 ),
                 //Need to add space below this Text ?
                 new Text("For nearly 100 years, DCHS has provided services for our community, helping people help animals. Whether you are looking to bring a new pet into your family, searching for your lost pet, found a wild animal in need of assistance, have made the difficult decision to surrender your pet or are looking for educational opportunities, DCHS is here to help.",
                   style: new TextStyle(
-                      color: Colors.grey[850],
-                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0,
                       fontFamily: 'SourceSansPro'
                   ),
                 ),
@@ -52,7 +60,7 @@ class Home extends StatelessWidget {
     );
 
     Widget buildButton(IconData icon, String buttonTitle,int i) {
-      final Color tintColor = Color(0xff6b2978);
+      final Color tintColor = Color(0xffaa295d);
       switch (i) {
         case 1:
           return new Column(
@@ -60,8 +68,9 @@ class Home extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
+
 
                 onPressed: () {
                   Navigator.push(
@@ -87,8 +96,8 @@ class Home extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -107,8 +116,8 @@ class Home extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -127,8 +136,8 @@ class Home extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -152,10 +161,10 @@ class Home extends StatelessWidget {
 
         children: <Widget>[
           //build in a separated function
-          buildButton(Icons.supervised_user_circle, "Admin",1),
-          buildButton(Icons.scatter_plot, "Service",2),
-          buildButton(Icons.search, "Outreach",3),
-          buildButton(Icons.calendar_today, "Calendar",4),
+          buildButton(Icons.supervisor_account, "Admin",1),
+          buildButton(Icons.map, "Service",2),
+          buildButton(Icons.public, "Outreach",3),
+          buildButton(Icons.insert_invitation, "Calendar",4),
         ],
       ),
     );
@@ -169,7 +178,7 @@ class Home extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2.0,
                   color: Colors.white,
-                  fontFamily: 'Bitter',
+                  fontFamily: 'SourceSansPro',
                 ),
               ),
               centerTitle: true,
@@ -198,7 +207,7 @@ class Home extends StatelessWidget {
                 );
               },
               backgroundColor: Color(0xff6b2978),
-              child: Text('setting',style: new TextStyle(fontSize: 10),),
+              child: Text('setting',style: new TextStyle(fontSize: 10, fontFamily: 'SourceSansPro'),),
 
 
             )

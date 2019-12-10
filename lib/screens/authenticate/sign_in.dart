@@ -16,11 +16,12 @@ class _SignInState extends State<SignIn> {
 
   TextStyle style = TextStyle(fontSize: 20.0);
 
-
   String email = "";
   String password = "";
+//  bool adminStatus = false;
   bool signUpPressed = true;
   bool logInPressed = true;
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +30,12 @@ class _SignInState extends State<SignIn> {
       onChanged: (value) {
         setState(() {
           email = value;
+//          if(email == 'admin@dchs.org')
+//            adminStatus = true;
         });
       },
+
+
       obscureText: false,
       style: style,
       decoration: InputDecoration(
@@ -95,7 +100,7 @@ class _SignInState extends State<SignIn> {
           }
           else {
             //successful login
-            print("signed in");
+            print("Signed in");
             print(user.uid);
           }
         },
@@ -135,7 +140,7 @@ class _SignInState extends State<SignIn> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dane County Humane Society: Log In"),
+        title: Text("Dane County Humane Society"),
         centerTitle: true,
         backgroundColor: Color(0xff6b2978),
       ),
@@ -165,4 +170,9 @@ class _SignInState extends State<SignIn> {
       ),
     );
   }
+
+
+//  bool get adminStat{
+//    return adminStatus;
+//}
 }

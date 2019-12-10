@@ -9,11 +9,11 @@ class Calendar extends StatelessWidget {
         title: Text(
           "Calendar",
           style: new TextStyle(
-            fontFamily: 'Bitter',
+            fontFamily: 'SourceSansPro',
           ),
         ),
         centerTitle: true,
-        backgroundColor: Color((0xffaa295d)),
+        backgroundColor: Color(0xff6b2978),
       ),
       body: MyStatefulWidget(),
     );  }
@@ -78,7 +78,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       style: TextStyle(
         fontSize: 20.0,
         color: Color(0xff6b2978),
-        fontFamily: 'Bitter',
+        fontFamily: 'SourceSansPro',
       ),
 
       onChanged: (String newValue) {
@@ -109,6 +109,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     );
 
     return Scaffold(
+
       body: Column(
         children: <Widget>[
           Container(
@@ -116,8 +117,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             child: new Text("The Dane County Humane Society hosts a wide range of events of several types from classes to volunteer opportinities to fundraising events. Check them out below!",
               style: new TextStyle(
                   color: Colors.black,
-                  fontSize: 14.0,
-                  fontFamily: 'Bitter'
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'SourceSansPro'
               ),
             ),
           ),
@@ -128,7 +130,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     style: TextStyle(
                       fontSize: 20.0,
                       color: Color(0xff6b2978),
-                      fontFamily: 'Bitter',
+                      fontFamily: 'SourceSansPro',
                     )
                 ),
                 filterbutton,
@@ -152,7 +154,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               fontSize: 18.0,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
-                              fontFamily: 'Bitter',
+                              fontFamily: 'SourceSansPro',
                             ),
                           ),
                           Text(
@@ -160,7 +162,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             style: TextStyle(
                               fontSize: 16.0,
                               color: Colors.white,
-                              fontFamily: 'Bitter',
+                              fontFamily: 'SourceSansPro',
                             ),
                           ),
                           Text(
@@ -168,7 +170,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             style: TextStyle(
                               fontSize: 16.0,
                               color: Colors.white,
-                              fontFamily: 'Bitter',
+                              fontFamily: 'SourceSansPro',
                             ),
                           ),
                           Text(
@@ -176,7 +178,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             style: TextStyle(
                               fontSize: 16.0,
                               color: Colors.white,
-                              fontFamily: 'Bitter',
+                              fontFamily: 'SourceSansPro',
                             ),
                           ),
                           SizedBox(

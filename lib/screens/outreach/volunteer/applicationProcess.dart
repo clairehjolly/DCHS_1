@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/home/home.dart';
 
 class ApplicationProcess extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class ApplicationProcess extends StatelessWidget {
           child:Text(
             'Application Process',
             style: TextStyle(
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
               fontSize: 25.0,
             ),
           ),
@@ -24,28 +25,29 @@ class ApplicationProcess extends StatelessWidget {
           children: <Widget>[
 
 
-          Card(
-            child:
-              Text(
-              'APPLY\nNOW',
-              textAlign: TextAlign.center,
+//          Card(
+//            child:
+//              Text(
+//              'Apply Now',
+//              textAlign: TextAlign.center,
+//
+//              style: TextStyle(
+//                    fontSize: 40.0,
+//                    fontWeight: FontWeight.bold,
+//                    fontFamily: 'SourceSansPro',
+//                    color: Color(0xffaa295d),
+//                  ),
+//            ),
+//          ),
 
-              style: TextStyle(
-                    fontSize: 40.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'SourceSansPro',
-                    color: Color(0xffaa295d),
-                  ),
-            ),
-            color: Color(0xffffc50d) ,
-          ),
+           Image.asset('img/AP.jpg'),
             Card(
               child: ExpansionTile(
-                leading: Icon(Icons.filter_1, size: 35.0, color: Color(0xffaa295d)),
+                leading: Icon(Icons.looks_one, size: 35.0, color: Color(0xffaa295d)),
                 title: Text(
                   'Submit your Application',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 23.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -61,7 +63,6 @@ class ApplicationProcess extends StatelessWidget {
                     style:TextStyle(
                       fontFamily: 'SourceSansPro',
                       fontSize: 18.0,
-                      color: Color(0xff6b2978),
                     ),
                   ),
 
@@ -75,11 +76,11 @@ class ApplicationProcess extends StatelessWidget {
 
             Card(
               child: ExpansionTile(
-                leading: Icon(Icons.filter_2, size: 35.0, color: Color(0xffaa295d)),
+                leading: Icon(Icons.looks_two, size: 35.0, color: Color(0xffaa295d)),
                 title: Text(
                   'Submit an Essential Job Requirements Inventory',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 23.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -97,7 +98,6 @@ class ApplicationProcess extends StatelessWidget {
                     style:TextStyle(
                       fontFamily: 'SourceSansPro',
                       fontSize: 18.0,
-                      color: Color(0xff6b2978),
                     ),
                   ),
 
@@ -111,11 +111,11 @@ class ApplicationProcess extends StatelessWidget {
 
             Card(
               child: ExpansionTile(
-                leading: Icon(Icons.filter_3, size: 35.0, color: Color(0xffaa295d)),
+                leading: Icon(Icons.looks_3, size: 35.0, color: Color(0xffaa295d)),
                 title: Text(
                   'Check your Email',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 23.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -133,7 +133,6 @@ class ApplicationProcess extends StatelessWidget {
                     style:TextStyle(
                       fontFamily: 'SourceSansPro',
                       fontSize: 18.0,
-                      color: Color(0xff6b2978),
                     ),
                   ),
 
@@ -147,11 +146,11 @@ class ApplicationProcess extends StatelessWidget {
 
             Card(
               child: ExpansionTile(
-                leading: Icon(Icons.filter_4, size: 35.0, color: Color(0xffaa295d)),
+                leading: Icon(Icons.looks_4, size: 35.0, color: Color(0xffaa295d)),
                 title: Text(
                   'Attend a Volunteer Orientation for New Volunteers',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 23.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -171,7 +170,6 @@ class ApplicationProcess extends StatelessWidget {
                     style:TextStyle(
                       fontFamily: 'SourceSansPro',
                       fontSize: 18.0,
-                      color: Color(0xff6b2978),
                     ),
                   ),
 
@@ -185,11 +183,11 @@ class ApplicationProcess extends StatelessWidget {
 
             Card(
               child: ExpansionTile(
-                leading: Icon(Icons.filter_5, size: 35.0, color: Color(0xffaa295d)),
+                leading: Icon(Icons.looks_5, size: 35.0, color: Color(0xffaa295d)),
                 title: Text(
                   'Attend Training for your Volunteer Position',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 23.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -207,7 +205,6 @@ class ApplicationProcess extends StatelessWidget {
                     style:TextStyle(
                       fontFamily: 'SourceSansPro',
                       fontSize: 18.0,
-                      color: Color(0xff6b2978),
                     ),
                   ),
 
@@ -220,6 +217,16 @@ class ApplicationProcess extends StatelessWidget {
           ],
         ),
 
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.home),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Home()),
+          );
+        },
+        backgroundColor: Color(0xff96be04),
       ),
     );
   }

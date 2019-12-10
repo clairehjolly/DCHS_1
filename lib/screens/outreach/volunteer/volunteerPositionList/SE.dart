@@ -12,7 +12,7 @@ class SE extends StatelessWidget {
           child:Text(
             'Special Events',
             style: TextStyle(
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
               fontSize: 16.0,
             ),
           ),
@@ -31,25 +31,33 @@ class SE extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            Text(
-              'Special Events',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontWeight: FontWeight.bold,
-                fontSize: 40.0,
-                color: Color(0xff6b2978),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child:            Text(
+                'Special Events',
+                style: TextStyle(
+                  fontFamily: 'SourceSansPro',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40.0,
+                  color: Color(0xff6b2978),
+                ),
               ),
             ),
 
-            Text(
-              '\nVolunteer at fundraising events like Bark & Wine and Toto''s Gala or represent DCHS at a variety of independently held fundraisers that benefit the shelter.\n',
-              style: TextStyle(
-                fontFamily: 'Bitter',
-                fontSize: 18.0,
-                color: Color(0xff48148c),
-              ),
 
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child:            Text(
+                  '\nVolunteer at fundraising events like Bark & Wine and Toto''s Gala or represent DCHS at a variety of independently held fundraisers that benefit the shelter.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 18.0,
+                  ),
+
+                ),
             ),
+
 
             Image.asset('img/SEi.png'),
 

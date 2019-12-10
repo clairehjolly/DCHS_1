@@ -13,7 +13,7 @@ class BPAT extends StatelessWidget {
           child:Text(
             'Bringing People and Animals Together',
             style: TextStyle(
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
               fontSize: 16.0,
             ),
           ),
@@ -32,26 +32,33 @@ class BPAT extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            Text(
-              'Bringing People and Animals Together',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontWeight: FontWeight.bold,
-                fontSize: 40.0,
-                color: Color(0xff6b2978),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.0),
+              child:            Text(
+                'Bringing People and Animals Together',
+                style: TextStyle(
+                  fontFamily: 'SourceSansPro',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40.0,
+                  color: Color(0xff6b2978),
+                ),
               ),
             ),
 
-        Text(
-              '\nThere''s a certain magic when people connect with animals in need. '
-                  'If you like working with people but also want to get involved '
-                  'with the animals in a hands-on way, consider one of the following ways '
-                  'you can help people and animals come together.\n',
-              style: TextStyle(
-                fontFamily: 'Bitter',
-                fontSize: 18.0,
-                color: Color(0xff48148c),
-              ),
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child:        Text(
+                  '\nThere''s a certain magic when people connect with animals in need. '
+                      'If you like working with people but also want to get involved '
+                      'with the animals in a hands-on way, consider one of the following ways '
+                      'you can help people and animals come together.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 18.0,
+                  ),
+
+                ),
 
             ),
 
@@ -77,15 +84,19 @@ class BPAT extends StatelessWidget {
             ),
               ),
             ),
-          Text(
-                'Help create new families alongside our Adoptions Team at the Main Shelter. '
-                    'Shifts are 2-4 hours. Times of greatest need: 12-5pm Saturday or Sunday '
-                    'and 12-7pm Monday, Tuesday, Thursday, Friday.\n',
-                style: TextStyle(
-                  fontFamily: 'SourceSansPro',
-                  fontSize: 16.0,
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child:          Text(
+                  'Help create new families alongside our Adoptions Team at the Main Shelter. '
+                      'Shifts are 2-4 hours. Times of greatest need: 12-5pm Saturday or Sunday '
+                      'and 12-7pm Monday, Tuesday, Thursday, Friday.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
                 ),
-              ),
+            ),
+
 
             Card(
 
@@ -107,13 +118,17 @@ class BPAT extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Help reunite lost pets with their families. Available shifts: 10am-12pm Tuesday or Thursday, 12-2pm Friday, 3-5pm Wednesday, 5-7pm Monday or Friday.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child:            Text(
+                  'Help reunite lost pets with their families. Available shifts: 10am-12pm Tuesday or Thursday, 12-2pm Friday, 3-5pm Wednesday, 5-7pm Monday or Friday.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
 
             Card(
 
@@ -136,13 +151,17 @@ class BPAT extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Help the public fall in love with our animals by writing compelling and informative profiles for adoptable pets.n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child:            Text(
+                  'Help the public fall in love with our animals by writing compelling and informative profiles for adoptable pets.n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
 
             Card(
 
@@ -164,13 +183,17 @@ class BPAT extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Help people who are helping animals by providing friendly and efficient customer service to shelter patrons.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child:            Text(
+                  'Help people who are helping animals by providing friendly and efficient customer service to shelter patrons.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
 
 
 //

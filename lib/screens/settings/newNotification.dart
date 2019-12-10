@@ -13,8 +13,6 @@ class NewNotification{
   String get _message => message;
 
 
-
-
   Map<String,dynamic> toMap(){
     var map=new Map<String,dynamic>();
     map['_title']=title;

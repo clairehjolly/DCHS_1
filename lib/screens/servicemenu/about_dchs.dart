@@ -16,23 +16,26 @@ class _AboutState extends State<About_dchs> {
   @override
   Widget build(BuildContext context) {
     Widget titleSection = new Container(
-      padding: const EdgeInsets.all(10.0), //Top, Right, Bottom, Left
-      child: new Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+//      padding: const EdgeInsets.all(10.0), //Top, Right, Bottom, Left
+      child: new Column(
+//        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
 
-          new Text("About\nDCHS",
-              style: new TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30.0,
-                  color: Color(0xff6b2978),
-                  fontFamily: 'Bitter'
-              )),
+          Container(
+            padding: const EdgeInsets.all(10.0), //Top, Right, Bottom, Left
+            child:          new Text("About DCHS",
+                style: new TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 40.0,
+                    color: Color(0xff6b2978),
+                    fontFamily: 'SourceSansPro'
+                )),
+          ),
 
-          new Image.network(
-            'https://www.giveshelter.org/assets/images/_1200x630_crop_center-center_82_none/DCHS-Logo_Header_Purple_FB.jpg',
-            width: 200,
-            height: 200,
+          Container(
+              padding: const EdgeInsets.only(bottom:10.0), //Top, Right, Bottom, Left
+              child:          new Image.asset('img/dchsLocation.png'),
+
           ),
 
         ],
@@ -67,7 +70,7 @@ class _AboutState extends State<About_dchs> {
     }
 
     Widget buildButton(IconData icon, String buttonTitle, int i) {
-      final Color tintColor = Color(0xffffc50d);
+      final Color tintColor = Color(0xff96be04);
       switch (i) {
         case 1:
           return new Column(
@@ -75,10 +78,10 @@ class _AboutState extends State<About_dchs> {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
                     fontWeight: FontWeight.w600,
                     color: tintColor,
-                    fontFamily: 'Bitter'),),
+                    fontFamily: 'SourceSansPro'),),
 
                 onPressed: _launchURL1,
 
@@ -96,10 +99,10 @@ class _AboutState extends State<About_dchs> {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
                     fontWeight: FontWeight.w600,
                     color: tintColor,
-                    fontFamily: 'Bitter'),),
+                    fontFamily: 'SourceSansPro'),),
 
                 onPressed: _launchURL2,
 
@@ -117,10 +120,10 @@ class _AboutState extends State<About_dchs> {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
                     fontWeight: FontWeight.w600,
                     color: tintColor,
-                    fontFamily: 'Bitter'),),
+                    fontFamily: 'SourceSansPro'),),
 
                 onPressed: _launchURL3,
 
@@ -157,12 +160,12 @@ class _AboutState extends State<About_dchs> {
                 fontWeight: FontWeight.bold,
                 letterSpacing: 2.0,
                 color: Colors.white,
-                fontFamily: 'Bitter',
+                fontFamily: 'SourceSansPro',
               ),
             ),
             centerTitle: true,
 
-            backgroundColor: Color(0xff6b2978),
+            backgroundColor: Color(0xffaa295d),
           ),
           body: new ListView(
 
@@ -176,9 +179,9 @@ class _AboutState extends State<About_dchs> {
                 child: new Text(
                   'Dane County Humane Society provides refuge, healing and new beginnings to over 9,000 companion animals, exotic species, farm animals and injured or orphaned wild animals every year.',
                   style: new TextStyle(
-                    color: Color(0xff6b2978),
                     fontSize: 20.0,
-                    fontFamily: 'Bitter',
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'SourceSansPro',
                     height: 1.5,
                     // fontWeight: FontWeight.bold
                   ),
@@ -194,7 +197,7 @@ class _AboutState extends State<About_dchs> {
                   style: new TextStyle(
                     color: Colors.grey[850],
                     fontSize: 18.0,
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     height: 1.4,
                   ),
                 ),
@@ -205,7 +208,7 @@ class _AboutState extends State<About_dchs> {
                 title: Text(
                   'Our History',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -220,13 +223,13 @@ class _AboutState extends State<About_dchs> {
                       style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 18.0,
-                        fontFamily: 'Bitter',
+                        fontFamily: 'SourceSansPro',
                         height: 1.4,
                       ),
                     ),
                   ),
                 ],
-                trailing: Icon(Icons.arrow_downward, color: Color(0xff6b2978)),
+                trailing: Icon(Icons.keyboard_arrow_down, color: Color(0xff6b2978)),
               ),
 
 
@@ -262,7 +265,7 @@ class _AboutState extends State<About_dchs> {
                 title: Text(
                   'Adoption Guarantee',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -277,13 +280,13 @@ class _AboutState extends State<About_dchs> {
                       style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 18.0,
-                        fontFamily: 'Bitter',
+                        fontFamily: 'SourceSansPro',
                         height: 1.4,
                       ),
                     ),
                   ),
                 ],
-                trailing: Icon(Icons.arrow_downward, color: Color(0xff6b2978)),
+                trailing: Icon(Icons.keyboard_arrow_down, color: Color(0xff6b2978)),
               ),
 /*
               new Container(
@@ -317,7 +320,7 @@ class _AboutState extends State<About_dchs> {
                 title: Text(
                   'Stray Holding Facility',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -332,13 +335,13 @@ class _AboutState extends State<About_dchs> {
                       style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 18.0,
-                        fontFamily: 'Bitter',
+                        fontFamily: 'SourceSansPro',
                         height: 1.4,
                       ),
                     ),
                   ),
                 ],
-                trailing: Icon(Icons.arrow_downward, color: Color(0xff6b2978)),
+                trailing: Icon(Icons.keyboard_arrow_down, color: Color(0xff6b2978)),
               ),
 /*
               new Container(
@@ -372,7 +375,7 @@ class _AboutState extends State<About_dchs> {
                 title: Text(
                   'DCHS Funding',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -387,13 +390,13 @@ class _AboutState extends State<About_dchs> {
                       style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 18.0,
-                        fontFamily: 'Bitter',
+                        fontFamily: 'SourceSansPro',
                         height: 1.4,
                       ),
                     ),
                   ),
                 ],
-                trailing: Icon(Icons.arrow_downward, color: Color(0xff6b2978)),
+                trailing: Icon(Icons.keyboard_arrow_down, color: Color(0xff6b2978)),
               ),
 /*
               new Container(
@@ -429,7 +432,7 @@ class _AboutState extends State<About_dchs> {
                   style: new TextStyle(
                     color: Color(0xff6b2978),
                     fontSize: 27.0,
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontWeight: FontWeight.bold,
                     height: 1.4,
                   ),
@@ -445,12 +448,13 @@ class _AboutState extends State<About_dchs> {
                   child: new Container(
                     height: 45,
                     alignment: Alignment.center,
-                    padding: new EdgeInsets.fromLTRB(10.0, 00.0, 10.0, 10.0),
+                    padding: new EdgeInsets.fromLTRB(10.0, 00.0, 10.0, 0.0),
                     color: Colors.white,
                     child: new Text("Learn more about outreach opportunities",
                       style: new TextStyle(
                           fontSize: 19.0,
-                          fontFamily: 'Bitter',
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'SourceSansPro',
                           height: 1.4,
                           color: Color(0xff96be04),
                           decoration: TextDecoration.underline,

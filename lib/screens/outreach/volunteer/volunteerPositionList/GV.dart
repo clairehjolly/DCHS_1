@@ -11,12 +11,12 @@ class GV extends StatelessWidget {
           child:Text(
             'Group Volunteering',
             style: TextStyle(
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
               fontSize: 16.0,
             ),
           ),
         ),
-        backgroundColor: Color(0xff6b2978),
+        backgroundColor: Color(0xffffc50d),
 
       ),
 
@@ -29,46 +29,60 @@ class GV extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-            Text(
-              'Group Volunteering',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontWeight: FontWeight.bold,
-                fontSize: 40.0,
-                color: Color(0xffffc50d),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child:            Text(
+                'Group Volunteering',
+                style: TextStyle(
+                  fontFamily: 'SourceSansPro',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40.0,
+                  color: Color(0xff6b2978),
+                ),
               ),
             ),
 
-            Text(
-              '\nDoes your team want to make a difference? Learn how you can help save lives of animals in need below!\n',
-              style: TextStyle(
-                fontFamily: 'Bitter',
-                fontSize: 18.0,
-                color: Color(0xff48148c),
-              ),
 
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child:            Text(
+                  '\nDoes your team want to make a difference? Learn how you can help save lives of animals in need below!\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 18.0,
+                  ),
+
+                ),
             ),
+
+
 
             //Image.asset('img/i.png'),
-
-            Text(
-              'Corporate Volunteer Experience\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 25.0,
-                fontWeight: FontWeight.bold,
-                color: Color(0xff6b2978),
-              ),
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child:            Text(
+                  'Corporate Volunteer Experience\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xff6b2978),
+                  ),
+                ),
             ),
 
-            Text(
-              'As corporate volunteers, you and your colleagues will learn about our mission and help save lives through hands-on animal experiences! During your 1.5-2 hours at our main shelter, your team will socialize with our adoptable animals, meet our education animals, help with essential tasks like treat preparation, and learn how you can continue to make a difference in the lives of the pets and people that rely on DCHS.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child:            Text(
+                  'As corporate volunteers, you and your colleagues will learn about our mission and help save lives through hands-on animal experiences! During your 1.5-2 hours at our main shelter, your team will socialize with our adoptable animals, meet our education animals, help with essential tasks like treat preparation, and learn how you can continue to make a difference in the lives of the pets and people that rely on DCHS.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
           ],
         ),
       ),

@@ -13,7 +13,7 @@ class ACC extends StatelessWidget {
           child:Text(
             'Animal Care and Comfort',
             style: TextStyle(
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
               fontSize: 16.0,
             ),
           ),
@@ -31,27 +31,39 @@ class ACC extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            Text(
-              'Animal Care and Comfort',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontWeight: FontWeight.bold,
-                fontSize: 40.0,
-                color: Color(0xff6b2978),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.0,),
+              child:Text(
+                'Animal Care and Comfort',
+                style: TextStyle(
+                  fontFamily: 'SourceSansPro',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40.0,
+                  color: Color(0xff6b2978),
+                ),
               ),
             ),
 
-            Text(
-              '\nThousands of companion animals, exotic species and farm animals come through the DCHS doors every year seeking comfort and care. Volunteers play an essential role in helping care for the basic needs of animals as well as make them feel safe and loved.\n',
-              style: TextStyle(
-                fontFamily: 'Bitter',
-                fontSize: 18.0,
-                color: Color(0xff48148c),
-              ),
 
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.0,),
+              child:            Text(
+                '\nThousands of companion animals, exotic species and farm animals come through the DCHS doors every year seeking comfort and care. Volunteers play an essential role in helping care for the basic needs of animals as well as make them feel safe and loved.\n',
+                style: TextStyle(
+                  fontFamily: 'Bitter',
+                  fontSize: 18.0,
+                ),
+
+              ),
             ),
+
 
             Image.asset('img/ACCi.png'),
+
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.0,),
+
+            ),
 
             Card(
 
@@ -73,13 +85,18 @@ class ACC extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Assist the Admitting Team who provides wellness exams and initial treatment for all animals coming to DCHS. Shifts available: 2-4pm Sunday.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
+
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.0,),
+              child: Text(
+                'Assist the Admitting Team who provides wellness exams and initial treatment for all animals coming to DCHS. Shifts available: 2-4pm Sunday.\n',
+                style: TextStyle(
+                  fontFamily: 'SourceSansPro',
+                  fontSize: 16.0,
+                ),
               ),
             ),
+
 
             Card(
 
@@ -101,13 +118,19 @@ class ACC extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Help our Animal Medical Services Team by caring for animals recovering from injury, illness or surgery in addition to providing general clinic assistance.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.0,),
+
+              child:             Text(
+                'Help our Animal Medical Services Team by caring for animals recovering from injury, illness or surgery in addition to providing general clinic assistance.\n',
+                style: TextStyle(
+                  fontFamily: 'SourceSansPro',
+                  fontSize: 16.0,
+                ),
               ),
             ),
+
+
 
             Card(
 
@@ -129,13 +152,19 @@ class ACC extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Provide care for cats in Maddie''s Felines in Treatment Center which houses our nationally renowned ringworm treatment program. Shifts available: 3-6pm Wednesday.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0,),
+
+                child:            Text(
+                  'Provide care for cats in Maddie''s Felines in Treatment Center which houses our nationally renowned ringworm treatment program. Shifts available: 3-6pm Wednesday.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
 
             Card(
 
@@ -157,13 +186,19 @@ class ACC extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Help animals at DCHS feel happy, fresh and clean by providing baths and grooming services.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0,),
+
+                child:            Text(
+                  'Help animals at DCHS feel happy, fresh and clean by providing baths and grooming services.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
 
             Card(
 
@@ -185,13 +220,19 @@ class ACC extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Help care for dogs at DCHS by providing them with a clean, enriching environment as well as quality time.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0,),
+
+                child:            Text(
+                  'Help care for dogs at DCHS by providing them with a clean, enriching environment as well as quality time.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
 
             Card(
 
@@ -213,13 +254,19 @@ class ACC extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Interact with nearly every species at the shelter by assisting our Carestaff with daily tasks from preparing meals to keeping cages clean and safe.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0,),
+
+                child:            Text(
+                  'Interact with nearly every species at the shelter by assisting our Carestaff with daily tasks from preparing meals to keeping cages clean and safe.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
 
             Card(
 
@@ -241,13 +288,19 @@ class ACC extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Spend time with our classroom animals while preparing their meals and helping keep them clean and happy.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0,),
+
+                child:            Text(
+                  'Spend time with our classroom animals while preparing their meals and helping keep them clean and happy.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
 
             Card(
 
@@ -269,13 +322,19 @@ class ACC extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Help give our small critters some love and attention. Available shifts: 10am-noon Sun, 3-5pm Wed or Thur, 4-6pm Thur or Frid and 3-5pm Sat. Available adult shifts: 8-10am Tues or Wed.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0,),
+
+                child:            Text(
+                  'Help give our small critters some love and attention. Available shifts: 10am-noon Sun, 3-5pm Wed or Thur, 4-6pm Thur or Frid and 3-5pm Sat. Available adult shifts: 8-10am Tues or Wed.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
 
             Card(
 
@@ -297,13 +356,19 @@ class ACC extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Help give our small critters some love and attention while they stay at Mounds in Fitchburg.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0,),
+
+                child:            Text(
+                  'Help give our small critters some love and attention while they stay at Mounds in Fitchburg.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
 
             Card(
 
@@ -325,13 +390,19 @@ class ACC extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Provide comfort and care to our cats at the Main Shelter. Greatest need: weekday mornings and afternoons. Some shifts available on weekends between 8am - 5pm.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0,),
+
+                child:            Text(
+                  'Provide comfort and care to our cats at the Main Shelter. Greatest need: weekday mornings and afternoons. Some shifts available on weekends between 8am - 5pm.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
 
             Card(
 
@@ -353,13 +424,19 @@ class ACC extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Provide comfort and care to cats staying at Mounds Pet Food Warehouse in Sun Prairie. Available shifts: 11am-1pm Mon, Wed, Thur, Fri and 3-5pm Sun, Thur and Sat, and 1-3pm Fri.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0,),
+
+                child:            Text(
+                  'Provide comfort and care to cats staying at Mounds Pet Food Warehouse in Sun Prairie. Available shifts: 11am-1pm Mon, Wed, Thur, Fri and 3-5pm Sun, Thur and Sat, and 1-3pm Fri.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
 
           ],
         ),

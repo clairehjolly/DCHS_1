@@ -26,12 +26,12 @@ class _notifyState extends State<notifications> {
           child: Text(
             'Notifications',
             style: TextStyle(
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
               fontSize: 25.0,
             ), //TextStyle
           ),
         ),
-        backgroundColor: Color(0xff6b2978),
+        backgroundColor: Color(0xffaa295d),
       ),
       body:  NotificationListPage(),
 
@@ -73,6 +73,8 @@ class _NotificationListPageState extends State<NotificationListPage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      backgroundColor: Color(0xffffc50d),
+
       resizeToAvoidBottomPadding: false,// originally false
       body: Column(
         children: <Widget>[
@@ -90,40 +92,36 @@ class _NotificationListPageState extends State<NotificationListPage> {
                           width: MediaQuery.of(context).size.width,
                           height: 120.0,
                           child: Padding(
-                            padding: EdgeInsets.only(top: 4.0, bottom: 4.0),
+                            padding: EdgeInsets.only(top: 10.0, bottom: 4.0),
                             child: Material(
                               color: Colors.white,
                               elevation: 14.0,
                               shadowColor: Color(0xffaa295d),
                               child: Container(
                                 child: Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
-                                  child: Row(
-                                    mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                                  padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: <Widget>[
-                                      Column(
-                                        //mainAxisAlignment:MainAxisAlignment.spaceEvenly,
-                                        //crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            // Mess with alignment in here.... Still does not wrap and attempted wrapping causes page to not load
-                                            // title goes here
-                                            '${note[index].title}',
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 24.0),
-                                          ),
 
-                                          Text(
-                                            // mess with alignment in here
-                                            // message body goes here
-                                            '${note[index].message}',
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 18.0),
-                                          ),
-                                        ],
+                                      Text(
+                                        '${note[index].title}',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 24.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
+
+                                      Text(
+                                        '${note[index].message}',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 20.0
+                                        ),
+                                      ),
+
                                     ],
 
                                   ),
@@ -139,7 +137,7 @@ class _NotificationListPageState extends State<NotificationListPage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xff6b2978),
+        backgroundColor: Color(0xff96be04),
         child: Icon(Icons.check_box),
         onPressed: () {
           debugPrint("Clear notifications");

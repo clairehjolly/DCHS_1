@@ -28,8 +28,10 @@ class _AddAnimalState extends State<AddAnimal> {
   TextEditingController descriptionController;
   TextEditingController lonelyHeartsController;
   TextEditingController adoptionFeeController;
+  TextEditingController animalIDController;
 
-void initState(){
+
+  void initState(){
   super.initState();
   nameController = new TextEditingController(text:widget.newAnimal.name);
   //animalIDController = new TextEditingController(text:widget.newAnimal.animalID);
@@ -43,7 +45,9 @@ void initState(){
   descriptionController = new TextEditingController(text:widget.newAnimal.description);
   lonelyHeartsController = new TextEditingController(text:widget.newAnimal.lonelyHearts);
   adoptionFeeController = new TextEditingController(text:widget.newAnimal.adoptionFee);
-}
+  animalIDController = new TextEditingController(text:widget.newAnimal.animalID);
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -166,7 +170,7 @@ void initState(){
                     fs.createAnimal(nameController.text, ageController.text, sexController.text,
                         speciesController.text, breedController.text, statusController.text, locationController.text,
                         animalPicController.text, descriptionController.text,
-                        lonelyHeartsController.text, adoptionFeeController.text).then((_){
+                        lonelyHeartsController.text, adoptionFeeController.text,animalIDController.text).then((_){
                         Navigator.pop(context);
 
                     });
@@ -175,7 +179,8 @@ void initState(){
                     'Save',
                     style: TextStyle(
                       fontSize: 18.0,
-                      fontFamily: 'Bitter',
+                      color: Colors.white,
+                      fontFamily: 'SourceSansPro',
                     ),
                   ),
                 ),

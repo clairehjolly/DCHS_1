@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/home/home.dart';
-import 'package:project/screens/home/settings.dart';
+import 'package:project/screens/outreach/donate.dart';
+import 'package:project/screens/outreach/education.dart';
 import 'package:project/screens/outreach/volunteer/VolunteerMainPage.dart';
 import 'package:project/screens/outreach/foster.dart';
+import 'package:project/screens/servicemenu/resources.dart';
 
 
 class Outreach extends StatelessWidget {
@@ -18,8 +20,8 @@ class Outreach extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -45,8 +47,8 @@ class Outreach extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -54,15 +56,10 @@ class Outreach extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => VolunteerMainPage()),
                   );
                 },
-
                 // padding: EdgeInsets.all(0),
                 color: Colors.white,
                 // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-
-
               ),
-
-
             ],
           );
           break;
@@ -72,8 +69,8 @@ class Outreach extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -99,41 +96,38 @@ class Outreach extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),
+                    MaterialPageRoute(builder: (context) => Donate()),
                   );
                 },
-
                 // padding: EdgeInsets.all(0),
                 color: Colors.white,
                 // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
 
-
               ),
-
 
             ],
           );
           break;
-        /*
-          case 5:
+
+        case 5:
           return new Column(
             children: <Widget>[
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Volunteer()),
+                    MaterialPageRoute(builder: (context) => Education()),
                   );
                 },
 
@@ -148,7 +142,33 @@ class Outreach extends StatelessWidget {
             ],
           );
           break;
-*/
+        case 6:
+          return new Column(
+            children: <Widget>[
+              new Icon(icon, color: tintColor),
+              FlatButton(
+                child: new Text(
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
+
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Resources()),
+                  );
+                },
+
+                // padding: EdgeInsets.all(0),
+                color: Colors.white,
+                // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+
+
+              ),
+
+
+            ],
+          );
+          break;
         default:
           break;
       }
@@ -161,8 +181,8 @@ class Outreach extends StatelessWidget {
         children: <Widget>[
           //build in a separated function
           buildButton(Icons.home, "Home",1),
-          buildButton(Icons.people_outline, "Volunteer",2),
-          buildButton(Icons.favorite, "Foster",3),
+          buildButton(Icons.filter_vintage, "Volunteer",2),
+          buildButton(Icons.local_activity, "Foster",3),
 
         ],
       ),
@@ -176,9 +196,9 @@ class Outreach extends StatelessWidget {
 
         children: <Widget>[
           //build in a separated function
-          buildButton(Icons.attach_money, "Donate",1),
-          buildButton(Icons.local_library, "Education",1),
-          buildButton(Icons.help, "Resources",1),
+          buildButton(Icons.attach_money, "Donate",4),
+          buildButton(Icons.local_library, "Education",5),
+          buildButton(Icons.help, "Resources",6),
           //buildButton(Icons.attach_money, "Donate",3),
           // buildButton(Icons.local_library, "Education",4),
           //buildButton(Icons.help, "Resources",3),
@@ -187,24 +207,27 @@ class Outreach extends StatelessWidget {
     );
 
     Widget titleSection = new Container(
-      padding: const EdgeInsets.all(10.0),//Top, Right, Bottom, Left
-      child: new Row(
+//      padding: const EdgeInsets.all(10.0),//Top, Right, Bottom, Left
+      child: new Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
 
-               new Text("Community \nOutreach \n& Education",
-                      style: new TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30.0,
-                          color:Color(0xff6b2978),
-                          fontFamily: 'Bitter'
-                      )),
+          Container(
+            padding: const EdgeInsets.all(10.0),//Top, Right, Bottom, Left
+            child:                new Text("Community Outreach  & Education",
+                style: new TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 40.0,
+                    color:Color(0xff6b2978),
+                    fontFamily: 'SourceSansPro'
+                )),
+          ),
+        Container(
+        padding: const EdgeInsets.only(bottom: 10.0) ,//Top, Right, Bottom, Left
+          child:    new Image.asset('img/community.jpg',
+          ),
+        ),
 
-                new Image.network(
-                  'https://www.neighbourhoodalert.co.uk/design/Home/CommunityMessagingBlock.jpg',
-                  width: 200,
-                  height: 200,
-                ),
                 //Need to add spae below this Text ?
 
               ],
@@ -212,7 +235,7 @@ class Outreach extends StatelessWidget {
           );
 
 //          new Icon(Icons.favorite, color: Colors.red),
-//          new Text(" 100", style: new TextStyle(fontSize: 16.0),),
+//          new Text(" 100", style: new TextStyle(fontSize: 18.0),),
 
 
     //return new MaterialApp(
@@ -224,7 +247,7 @@ class Outreach extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2.0,
                   color: Colors.white,
-                  fontFamily: 'Bitter',
+                  fontFamily: 'SourceSansPro',
                 ),
               ),
               centerTitle: true,
@@ -232,8 +255,6 @@ class Outreach extends StatelessWidget {
               backgroundColor: Color(0xff6b2978),
             ),
             body: new ListView(
-
-
                 children: <Widget>[
                   titleSection,
                   threeButtonsSection,
@@ -244,19 +265,20 @@ class Outreach extends StatelessWidget {
                     style:new TextStyle(
                     color:Color(0xff6b2978),
                     fontSize: 30.0,
-                    fontFamily: 'Bitter',
+                    letterSpacing: 2.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'SourceSansPro',
 
                   ),
                   ),
                   ),
-                  SizedBox(height: 8.0),
                   new Container(
-                    padding: const EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.only(left:10.0, right:10.0, bottom: 10.0,),
                     child: new Text("DCHS offers a variety of educational programs for all ages. These programs provide one-of-a-kind experiences that teach not only about DCHS services but how to help make our community a better place for both people and animals.",
                     style: new TextStyle(
-                        color: Colors.grey[850],
-                        fontSize: 16.0,
-                        fontFamily: 'Bitter'
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'SourceSansPro'
                     ),
                   ),
                   )

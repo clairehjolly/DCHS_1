@@ -22,24 +22,25 @@ class _LostState extends State<Lost_pet> {
   Widget build(BuildContext context) {
 
     Widget titleSection = new Container(
-      padding: const EdgeInsets.all(10.0),//Top, Right, Bottom, Left
-      child: new Row(
+      child: new Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-
-          new Text("Lost a pet?",
-              style: new TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30.0,
-                  color:Color(0xff6b2978),
-                  fontFamily: 'Bitter'
-              )),
-
-          new Image.network(
-            'https://i.cbc.ca/1.5077459.1553886010!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/pets.jpg',
-            width: 200,
-            height: 200,
+          Container(
+            padding: const EdgeInsets.all(10.0),//Top, Right, Bottom, Left
+            child:           new Text("Lost a pet?",
+                style: new TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 40.0,
+                    color:Color(0xff6b2978),
+                    fontFamily: 'SourceSansPro'
+                )),
           ),
+
+          Container(
+              padding: const EdgeInsets.only(bottom:10.0),//Top, Right, Bottom, Left
+              child:new Image.asset('img/lostPet.jpg'),
+          ),
+
 
         ],
       ),
@@ -63,11 +64,11 @@ class _LostState extends State<Lost_pet> {
                 fontWeight: FontWeight.bold,
                 letterSpacing: 2.0,
                 color: Colors.white,
-                fontFamily: 'Bitter',
+                fontFamily: 'SourceSansPro',
               ),
             ),
             centerTitle: true,
-            backgroundColor: Color(0xff6b2978),
+            backgroundColor: Color(0xffaa295d),
           ),
           body: new ListView(
 
@@ -78,9 +79,9 @@ class _LostState extends State<Lost_pet> {
                 padding: const EdgeInsets.all(15.0),
                 child:new Text('We are sorry to hear that you have lost your pet. These steps can help you locate your lost pet as quickly as possible.',
                   style:new TextStyle(
-                    color:Color(0xff6b2978),
                     fontSize: 20.0,
-                    fontFamily: 'Bitter',
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'SourceSansPro',
                     height: 1.5,
                     // fontWeight: FontWeight.bold
                   ),
@@ -92,7 +93,7 @@ class _LostState extends State<Lost_pet> {
                 title: Text(
                   'File a lost report',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -110,35 +111,39 @@ class _LostState extends State<Lost_pet> {
                       style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 18.0,
-                        fontFamily: 'Bitter',
+                        fontFamily: 'SourceSansPro',
                         height: 1.4,
                       ),
                     ),
                   ),
-                  new FlatButton.icon(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return Lost_report(LostAnimal('', '', '', '','', 'Lost', '', '', '','N/A','N/A')); //////// Lost_report
-                      }));
-                    },
-                    //padding: new EdgeInsets.fromLTRB(1.0, 1.0, 1.0, 1.0),
-                    color: Color(0xff96be04),
-                    icon: Icon(Icons.search, color: Colors.white),
-                    label: Text(
-                      'Lost Report',
-                      style: TextStyle(
-                        fontSize: 25.0,
-                        fontFamily: 'Bitter',
-                        color: Colors.white,
-                        //fontWeight: FontWeight.bold,
+                  new Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      new FlatButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return Lost_report(LostAnimal('', '', '', '','', 'Lost', '', '', '','N/A','N/A')); //////// Lost_report
+                          }));
+                        },
+                        //padding: new EdgeInsets.fromLTRB(1.0, 1.0, 1.0, 1.0),
+                        color: Color(0xff96be04),
+                        child: Text(
+                          'Lost Report',
+                          style: TextStyle(
+                            fontSize: 25.0,
+                            fontFamily: 'SourceSansPro',
+                            color: Colors.white,
+                            //fontWeight: FontWeight.bold,
+                          ),
+                        ),
+
                       ),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
+                    ],
                   ),
+
+
                 ],
-                trailing: Icon(Icons.arrow_downward, color: Color(0xff6b2978)),
+                trailing: Icon(Icons.keyboard_arrow_down, color: Color(0xff6b2978)),
               ),
 
  /*             new Container(
@@ -192,7 +197,7 @@ class _LostState extends State<Lost_pet> {
                 title: Text(
                   'Check our lost pet database',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -209,35 +214,38 @@ class _LostState extends State<Lost_pet> {
                       style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 18.0,
-                        fontFamily: 'Bitter',
+                        fontFamily: 'SourceSansPro',
                         height: 1.4,
                       ),
                     ),
                   ),
-                  new FlatButton.icon(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return Lost_pet_db(); //////// Lost_pet_db
-                      }));
-                    },
-                    //padding: new EdgeInsets.fromLTRB(1.0, 1.0, 1.0, 1.0),
-                    color: Color(0xff96be04),
-                    icon: Icon(Icons.search, color: Colors.white),
-                    label: Text(
-                      'Lost Pet Database',
-                      style: TextStyle(
-                        fontSize: 25.0,
-                        fontFamily: 'Bitter',
-                        color: Colors.white,
-                        //fontWeight: FontWeight.bold,
+                  new Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      new FlatButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return Lost_pet_db(); //////// Lost_pet_db
+                          }));
+                        },
+                        //padding: new EdgeInsets.fromLTRB(1.0, 1.0, 1.0, 1.0),
+                        color: Color(0xff96be04),
+                        child: Text(
+                          'Lost Pet Database',
+                          style: TextStyle(
+                            fontSize: 25.0,
+                            fontFamily: 'SourceSansPro',
+                            color: Colors.white,
+                            //fontWeight: FontWeight.bold,
+                          ),
+                        ),
+
                       ),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
+                    ],
                   ),
+
                 ],
-                trailing: Icon(Icons.arrow_downward, color: Color(0xff6b2978)),
+                trailing: Icon(Icons.keyboard_arrow_down, color: Color(0xff6b2978)),
               ),
 /*
               new Container(
@@ -271,7 +279,7 @@ class _LostState extends State<Lost_pet> {
                 title: Text(
                   'Come to DCHS',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -286,13 +294,13 @@ class _LostState extends State<Lost_pet> {
                       style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 18.0,
-                        fontFamily: 'Bitter',
+                        fontFamily: 'SourceSansPro',
                         height: 1.4,
                       ),
                     ),
                   ),
                 ],
-                trailing: Icon(Icons.arrow_downward, color: Color(0xff6b2978)),
+                trailing: Icon(Icons.keyboard_arrow_down, color: Color(0xff6b2978)),
               ),
 /*
               new Container(
@@ -326,7 +334,7 @@ class _LostState extends State<Lost_pet> {
                 title: Text(
                   'Other helpful information',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -359,7 +367,7 @@ class _LostState extends State<Lost_pet> {
                       style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 18.0,
-                        fontFamily: 'Bitter',
+                        fontFamily: 'SourceSansPro',
                         height: 1.4,
                       ),
                     ),
@@ -371,7 +379,7 @@ class _LostState extends State<Lost_pet> {
                       style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 18.0,
-                        fontFamily: 'Bitter',
+                        fontFamily: 'SourceSansPro',
                         height: 1.4,
                       ),
                     ),
@@ -383,13 +391,13 @@ class _LostState extends State<Lost_pet> {
                       style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 18.0,
-                        fontFamily: 'Bitter',
+                        fontFamily: 'SourceSansPro',
                         height: 1.4,
                       ),
                     ),
                   ),
                 ],
-                trailing: Icon(Icons.arrow_downward, color: Color(0xff6b2978)),
+                trailing: Icon(Icons.keyboard_arrow_down, color: Color(0xff6b2978)),
               ),
 /*
               new Container(
@@ -423,7 +431,7 @@ class _LostState extends State<Lost_pet> {
                 title: Text(
                   'Protect your pet',
                   style: TextStyle(
-                    fontFamily: 'Bitter',
+                    fontFamily: 'SourceSansPro',
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xff6b2978),
@@ -438,7 +446,7 @@ class _LostState extends State<Lost_pet> {
                       style: new TextStyle(
                         color: Colors.grey[850],
                         fontSize: 18.0,
-                        fontFamily: 'Bitter',
+                        fontFamily: 'SourceSansPro',
                         height: 1.4,
                       ),
                     ),
@@ -458,7 +466,7 @@ class _LostState extends State<Lost_pet> {
                         child: new Text("Learn more about microchipping",
                           style: new TextStyle(
                             fontSize: 19.0,
-                            fontFamily: 'Bitter',
+                            fontFamily: 'SourceSansPro',
                             height: 1.4,
                             color: Color(0xff96be04),
                             decoration: TextDecoration.underline,
@@ -467,7 +475,7 @@ class _LostState extends State<Lost_pet> {
                       )
                   ),
                 ],
-                trailing: Icon(Icons.arrow_downward, color: Color(0xff6b2978)),
+                trailing: Icon(Icons.keyboard_arrow_down, color: Color(0xff6b2978)),
               ),
 /*
               new Container(

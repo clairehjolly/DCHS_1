@@ -4,6 +4,8 @@ import 'package:project/screens/servicemenu/about_dchs.dart';
 import 'package:project/screens/servicemenu/found_stray.dart';
 import 'package:project/screens/servicemenu/lost_pet.dart';
 import 'package:project/screens/servicemenu/microchip.dart';
+import 'package:project/screens/servicemenu/rehome_pet.dart';
+import 'package:project/screens/servicemenu/resources.dart';
 import 'package:project/screens/servicemenu/wildlife.dart';
 import 'package:project/screens/servicemenu/adopt.dart';
 import 'package:project/screens/servicemenu/dogTraining.dart';
@@ -15,27 +17,25 @@ class ServiceMenu extends StatelessWidget {
 
 
     Widget titleSection = new Container(
-      padding: const EdgeInsets.all(10.0),//Top, Right, Bottom, Left
-      child: new Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+      child: new Column(
         children: <Widget>[
+          new Container(
+            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0,),
+              child: new Text(" Our Services",
+                  style: new TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40.0,
+                      letterSpacing: 1.0,
+                      color: Color(0xff6b2978),
+                      fontFamily: 'SourceSansPro'
+                  )),
 
-          new Text("Our\nServices",
-              style: new TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30.0,
-                  color:Color(0xff6b2978),
-                  fontFamily: 'Bitter'
-              )),
-
-          //new Image.file(new File("/Users/gs/Downloads/1.jpeg")),
-          //new Image.asset('imgs/logo.jpeg'),
-          new Image.network(
-            'https://storage.googleapis.com/petbacker/images/blog/2017/dog-and-cat-cover.jpg',
-            width: 200,
-            height: 200,
           ),
-          //Need to add spae below this Text ?
+
+          Container(
+            padding: EdgeInsets.only(bottom: 15.0,),
+            child: new Image.asset('img/serviceMain.jpg'),
+          ),
 
         ],
       ),
@@ -51,8 +51,8 @@ class ServiceMenu extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -75,8 +75,8 @@ class ServiceMenu extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -99,8 +99,8 @@ class ServiceMenu extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -123,8 +123,8 @@ class ServiceMenu extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -147,8 +147,8 @@ class ServiceMenu extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -171,8 +171,8 @@ class ServiceMenu extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -195,8 +195,8 @@ class ServiceMenu extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
@@ -219,13 +219,37 @@ class ServiceMenu extends StatelessWidget {
               new Icon(icon, color: tintColor),
               FlatButton(
                 child: new Text(
-                  buttonTitle, style: new TextStyle(fontSize: 16.0,
-                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'Bitter'),),
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
 
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => DogTrainingClass()),
+                  );
+                },
+
+                // padding: EdgeInsets.all(0),
+                color: Colors.white,
+                // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+            ],
+          );
+          break;
+
+        case 9:
+          return new Column(
+            children: <Widget>[
+              new Icon(icon, color: tintColor),
+              FlatButton(
+                child: new Text(
+                  buttonTitle, style: new TextStyle(fontSize: 18.0,
+                    fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
+
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Rehome_pet()),
                   );
                 },
 
@@ -247,7 +271,7 @@ class ServiceMenu extends StatelessWidget {
           //build in a separated function
           buildButton(Icons.home, "Home",1),
           buildButton(Icons.pets, "Found a stray",2),
-          buildButton(Icons.info_outline, "About DCHS",4),
+          buildButton(Icons.info, "About DCHS",4),
 
         ],
       ),
@@ -261,7 +285,7 @@ class ServiceMenu extends StatelessWidget {
         children: <Widget>[
           //build in a separated function
           buildButton(Icons.favorite, "Adopt",7),
-          buildButton(Icons.navigation, "Rehome a pet",1),
+          buildButton(Icons.navigation, "Rehome a pet",9),
           buildButton(Icons.local_hospital, "Wildlife Center",3),
         ],
       ),
@@ -294,7 +318,7 @@ class ServiceMenu extends StatelessWidget {
             fontWeight: FontWeight.bold,
             letterSpacing: 2.0,
             color: Colors.white,
-            fontFamily: 'Bitter',
+            fontFamily: 'SourceSansPro',
           ),
         ),
         backgroundColor: Color(0xff6b2978),
@@ -315,23 +339,54 @@ class ServiceMenu extends StatelessWidget {
                     style:new TextStyle(
                       color:Colors.deepPurpleAccent,
                       fontSize: 27.0,
-                      fontFamily: 'Bitter',
+                      fontFamily: 'SourceSansPro',
 
                     ),
                   ),
                 ),
                  */
           new Container(
-            padding: const EdgeInsets.fromLTRB(15.0, 30.0, 15.0, 15.0),
-            child: new Text("For nearly 100 years, DCHS has provided services for our community, helping people help animals. Whether you are looking to bring a new pet into your family, searching for your lost pet, found a wild animal in need of assistance or have made the difficult decision to surrender your pet, DCHS is here to help.",
-              style: new TextStyle(
-                color: Colors.grey[850],
-                fontSize: 20.0,
-                fontFamily: 'Bitter',
-                height: 1.5,
-              ),
+            child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                new Container(
+                  padding: EdgeInsets.only(top: 10, left:10.0, right:10.0,),
+                  child: new Text(
+                    'Looking for other resources like spay/neuter assistance?\n',
+                    style: TextStyle(
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff6b2978),
+                      fontFamily: 'SourceSansPro',
+                    ),
+                  ),
+                ),
+
+                new FlatButton(
+                  onPressed: () {
+                    debugPrint("Resources Button Clicked");
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return Resources();
+                    }));
+                  },
+                  color: Color(0xffaa295d),
+
+                  child: Text(
+                    'Resources',
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      letterSpacing: 2.0,
+                      fontFamily: 'SourceSansPro',
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
             ),
           )
+
+
+
         ],
       ),
 

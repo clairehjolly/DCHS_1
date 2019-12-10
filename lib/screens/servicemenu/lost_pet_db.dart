@@ -1,9 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:project/screens/admin/firestoreService.dart';
-import 'package:project/screens/servicemenu//lostAnimal.dart';
+import 'package:project/screens/servicemenu/firestore.dart';
+import 'package:project/screens/servicemenu/lostAnimal.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:project/screens/home/home.dart';
+import 'package:project/screens/servicemenu/lost_pet_profile.dart';
 
 
 class Lost_pet_db extends StatefulWidget {
@@ -24,7 +25,7 @@ class _Lost_pet_dbState extends State<Lost_pet_db> {
               fontWeight: FontWeight.bold,
               letterSpacing: 2.0,
               color: Colors.white,
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
             ), //TextStyle
           ),
         ),
@@ -66,7 +67,7 @@ class _LostPetListState extends State<LostPetList> {
         List<LostAnimal> lostAnimals = new List();
         for (LostAnimal animal in animals){
           //print(animal.status);
-          print(animal.name + ': ' + animal.status);
+          //print(animal.name + ': ' + animal.status);
           //String lost = 'Lost';
           if(animal.status == 'Lost') {
             lostAnimals.add(animal);
@@ -85,6 +86,7 @@ class _LostPetListState extends State<LostPetList> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      backgroundColor: Color(0xffffc50d),
       resizeToAvoidBottomPadding: false,
       body: Column(
         children: <Widget>[
@@ -94,6 +96,9 @@ class _LostPetListState extends State<LostPetList> {
             child: ListView.builder(
                 itemCount: animal.length,
                 itemBuilder: (context, index) {
+
+                  LostAnimal a1 = animal[index];  ///////////
+
                   return Stack(children: <Widget>[
                     Column(children: <Widget>[
                       Padding(
@@ -114,8 +119,9 @@ class _LostPetListState extends State<LostPetList> {
                                     mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       Container(
-                                        padding: const EdgeInsets.fromLTRB(25.0, 15.0, 0.0, 15.0),
-                                          child: Icon(Icons.pets)
+                                       // padding: const EdgeInsets.fromLTRB(25.0, 15.0, 0.0, 15.0),
+                                        //child: Icon(Icons.pets)
+                                        child:Image.network('${animal[index].animalPic}', height: 80.0, width: 80.0),
                                       ),
                                       Column(
                                         mainAxisAlignment:MainAxisAlignment.spaceEvenly,
@@ -124,59 +130,54 @@ class _LostPetListState extends State<LostPetList> {
                                           Text(
                                             '${animal[index].name}',
                                             style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 24.0,
-                                              fontFamily: 'Bitter',),
+                                              color: Colors.black,
+                                              fontSize: 24.0,
+                                              fontWeight: FontWeight.bold,
+                                              fontFamily: 'SourceSansPro',),
                                           ),
 
                                           Text(
-                                            //'${animal[index].animalID}',
-                                            'Document ID', ////////////////////////
+                                            'Species: '+'${animal[index].species}',
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: 18.0,
-                                              fontFamily: 'Bitter',),
+                                                fontFamily: 'SourceSansPro',
+                                                fontSize: 18.0),
+
+                                          ),
+
+                                          Text(
+                                            'Gender: '+'${animal[index].sex}',
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontFamily: 'SourceSansPro',
+                                                fontSize: 18.0),
                                           ),
                                         ],
                                       ),
                                       Container(
-                                        padding: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                                        padding: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 23.0),
                                         child: Column(
                                           children: <Widget>[
-/*
+
                                             FlatButton(
-                                              onPressed: () {
-                                                debugPrint("Edit Button Clicked");
-                                                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                                  return AnimalProfile();
-                                                }));
+                                              onPressed: (){
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) => new Lost_pet_profile(a1:new LostAnimal(a1.name, a1.age, a1.sex, a1.species, a1.breed, a1.status, a1.location, a1.animalPic, a1.description, a1.lonelyHearts, a1.adoptionFee))
+                                                  ),
+                                                );//
                                               },
                                               color: Color(0xffffc50d),
                                               child: Text(
-                                                'Edit',
+                                                'Meet',
                                                 style: TextStyle(
                                                   fontSize: 16.0,
-                                                  fontFamily: 'Bitter',
+                                                  fontFamily: 'SourceSansPro',
                                                 ),
                                               ),
                                             ),
 
-                                            FlatButton(
-                                              onPressed: () async {
-                                                debugPrint("Delete Button Clicked");
-                                                await Firestore.instance.collection('Animal')
-                                                    .document().delete(); //
-                                              },
-                                              color: Color(0xffffc50d),
-                                              child: Text(
-                                                'Delete',
-                                                style: TextStyle(
-                                                  fontSize: 16.0,
-                                                  fontFamily: 'Bitter',
-                                                ),
-                                              ),
-                                            ),
-*/
                                           ],
                                         ),
                                         //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -198,33 +199,7 @@ class _LostPetListState extends State<LostPetList> {
         ],
       ),
 
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.home),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Home()),
-          );
-        },
-        backgroundColor: Color(0xffaa295d),
-      ),
-/*
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xffaa295d),
-        child: Icon(Icons.add),
-        onPressed: () {
-          //Navigator.push(context,MaterialPageRoute(builder: (context) => TaskScreen()),
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => Lost_report(LostAnimal('', '', '', '', '','', 'Lost', '', '', '','','')),
-                fullscreenDialog: true),
-          );
-        },
-      ),
-      */
     );
 
   }
 }
-

@@ -135,7 +135,7 @@ class _SignUpState extends State<SignUp> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("DCHS: Sign Up"),
+        title: Text("Dane County Humane Society"),
         centerTitle: true,
         backgroundColor: Color(0xff6b2978),
       ),

@@ -12,7 +12,7 @@ class SO extends StatelessWidget {
           child:Text(
             'Secondary Opportunities',
             style: TextStyle(
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
               fontSize: 16.0,
             ),
           ),
@@ -31,25 +31,31 @@ class SO extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            Text(
-              'Secondary Opportunities',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontWeight: FontWeight.bold,
-                fontSize: 40.0,
-                color: Color(0xff6b2978),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.0),
+              child:            Text(
+                'Secondary Opportunities',
+                style: TextStyle(
+                  fontFamily: 'SourceSansPro',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40.0,
+                  color: Color(0xff6b2978),
+                ),
               ),
             ),
 
-            Text(
-              '\nDCHS has a variety of infrequent opportunities for current volunteers who would like to broaden their participation.\n',
-              style: TextStyle(
-                fontFamily: 'Bitter',
-                fontSize: 18.0,
-                color: Color(0xff48148c),
-              ),
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child:            Text(
+                  '\nDCHS has a variety of infrequent opportunities for current volunteers who would like to broaden their participation.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 18.0,
+                  ),
 
+                ),
             ),
+
 
             Image.asset('img/SOi.png'),
 
@@ -73,13 +79,17 @@ class SO extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Help manage the inventory of pet food and litter that is distributed to local food pantries.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child:            Text(
+                  'Help manage the inventory of pet food and litter that is distributed to local food pantries.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
 
             Card(
 
@@ -101,13 +111,17 @@ class SO extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              'Assist our Animal Medical Services Team by transporting animals to offsite veterinarians for health care.\n',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontSize: 16.0,
-              ),
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child:            Text(
+                  'Assist our Animal Medical Services Team by transporting animals to offsite veterinarians for health care.\n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 16.0,
+                  ),
+                ),
             ),
+
           ],
         ),
       ),

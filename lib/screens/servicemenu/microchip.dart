@@ -16,24 +16,30 @@ class _MicrochipState extends State<Microchip> {
   @override
   Widget build(BuildContext context) {
     Widget titleSection = new Container(
-      padding: const EdgeInsets.all(10.0), //Top, Right, Bottom, Left
-      child: new Row(
+      child: new Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
 
-          new Text("Microchip\nYour Pet",
-              style: new TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30.0,
-                  color: Color(0xff6b2978),
-                  fontFamily: 'Bitter'
-              )),
 
-          new Image.network(
-            'https://www.environment.sa.gov.au/files/sharedassets/good_living/images/content/2018/03/microchipping-pets-large.jpg',
-            width: 200,
-            height: 200,
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child:          new Text("Microchip Your Pet",
+                style: new TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 40.0,
+                    color: Color(0xff6b2978),
+                    fontFamily: 'SourceSansPro'
+                )),
+
           ),
+
+          Container(
+              padding: EdgeInsets.only(bottom:10.0),
+              child:new Image.network(
+                'https://www.environment.sa.gov.au/files/sharedassets/good_living/images/content/2018/03/microchipping-pets-large.jpg',
+              ),
+          ),
+
 
         ],
       ),
@@ -48,12 +54,12 @@ class _MicrochipState extends State<Microchip> {
             fontWeight: FontWeight.bold,
             letterSpacing: 2.0,
             color: Colors.white,
-            fontFamily: 'Bitter',
+            fontFamily: 'SourceSansPro',
           ),
         ),
         centerTitle: true,
 
-        backgroundColor: Color(0xff6b2978),
+        backgroundColor: Color(0xffaa295d),
       ),
       body: new ListView(
 
@@ -62,13 +68,13 @@ class _MicrochipState extends State<Microchip> {
           titleSection,
 
           new Container(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(10.0),
             child: new Text(
               'Microchips are a great tool to help us reunite lost animals with their owners. They provide an extra level of protection in the event the animal is separated from its collar and ID tag. They can also help determine proof of ownership.',
               style: new TextStyle(
-                color: Color(0xff6b2978),
                 fontSize: 20.0,
-                fontFamily: 'Bitter',
+                fontWeight: FontWeight.bold,
+                fontFamily: 'SourceSansPro',
                 height: 1.5,
                 // fontWeight: FontWeight.bold
               ),
@@ -76,26 +82,26 @@ class _MicrochipState extends State<Microchip> {
           ),
 
           new Container(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(10.0),
             child: new Text(
               'Microchips are an implanted form of identification. This inexpensive chip — the size of a grain of rice — is implanted between your pet’s shoulder blades just under the skin and is equipped with an individual scanning number. A microchip is a passive (containing no internal power source) Radio Frequency Identification (RFID) and when a scanner passes over the microchip, the circuit is completed and the chip transmits a number to the scanner. That number is then listed with your contact information in a nation-wide database that can be accessed by veterinarians and animal shelters.',
               style: new TextStyle(
                 color: Colors.grey[850],
                 fontSize: 18.0,
-                fontFamily: 'Bitter',
+                fontFamily: 'SourceSansPro',
                 height: 1.4,
               ),
             ),
           ),
 
           new Container(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(10.0),
             child: new Text(
               'DCHS offers microchips to adopters, to people who are redeeming their lost pets and to the general public on a walk-in basis at the Main Shelter any time during the hours we are open. Walk-in microchip clients and owners who are redeeming their lost pet will be asked to fill out a \'Microchip Registration\' and \'Microchip Waiver and Release Statement\' form prior to microchip implant. The cost to insert and register the microchips is:',
               style: new TextStyle(
                 color: Colors.grey[850],
                 fontSize: 18.0,
-                fontFamily: 'Bitter',
+                fontFamily: 'SourceSansPro',
                 height: 1.4,
               ),
             ),
@@ -108,7 +114,7 @@ class _MicrochipState extends State<Microchip> {
               style: new TextStyle(
                 color: Colors.grey[850],
                 fontSize: 20.0,
-                fontFamily: 'Bitter',
+                fontFamily: 'SourceSansPro',
                 height: 1.8,
                 fontWeight: FontWeight.bold,
               ),
@@ -116,13 +122,13 @@ class _MicrochipState extends State<Microchip> {
           ),
 
           new Container(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(10.0),
             child: new Text(
               'We use 24PetWatch microchips and enter all information about the owner and the animal in our database, as well as registering the chip for you with the 24PetWatch national database. If you move, change phone numbers or change ownership (i.e. rehome the pet) you will need to contact the microchip company to update the information on the chip. It is very important to keep your information up-to-date so that you can be reached in the event your pet goes missing.',
               style: new TextStyle(
                 color: Colors.grey[850],
                 fontSize: 18.0,
-                fontFamily: 'Bitter',
+                fontFamily: 'SourceSansPro',
                 height: 1.4,
               ),
             ),
@@ -135,7 +141,7 @@ class _MicrochipState extends State<Microchip> {
           ),
 
           new Container(
-            padding: const EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(20.0),
           )
 
         ],

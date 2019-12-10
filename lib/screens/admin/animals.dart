@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:developer';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:project/screens/admin/firestoreService.dart';
 import 'package:project/screens/admin/newAnimal.dart';
@@ -26,7 +27,7 @@ class _AnimalsState extends State<Animals> {
           child: Text(
             'Animals',
             style: TextStyle(
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
               fontSize: 25.0,
             ), //TextStyle
           ),
@@ -57,8 +58,18 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
 
     animalView?.cancel();
     animalView = fs.getAnimalList().listen((QuerySnapshot snapshot){
-      final List<NewAnimal> animals = snapshot.documents
+       List<NewAnimal> animals = snapshot.documents
           .map((documentSnapshot) => NewAnimal. fromMap(documentSnapshot.data)).toList();
+       List<NewAnimal>a=new List<NewAnimal>();
+
+
+       for(NewAnimal anim in animals){
+         if(anim.status!='Lost'&&!anim.name.contains("rehome")){
+           a.add(anim);
+
+         }
+       }
+       animals=a;
 
       setState(() {
         this.animal = animals;
@@ -66,20 +77,12 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
     });
   }
 
-  //static int currIndex = 0;
-
-//  static final ref =  Firestore.instance.collection('Animal');
-//  DocumentReference docReference = ref.document();
-
-//  static Firestore db = Firestore.instance;
-//  CollectionReference collRef = db.collection('Animal');
-//  DocumentReference docRef = db.collection('Animal').document();
-
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
+      backgroundColor: Color(0xffffc50d),
 
       resizeToAvoidBottomInset: false,
       resizeToAvoidBottomPadding: false,
@@ -93,6 +96,8 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
               child: ListView.builder(
                   itemCount: animal.length,
                   itemBuilder: (context, index) {
+                    NewAnimal anim;
+                    anim = animal[index];
                     return Stack(children: <Widget>[
                       Column(children: <Widget>[
                         Padding(
@@ -113,10 +118,9 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
                                       mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                       children: <Widget>[
                                         Image.network('${animal[index].animalPic}', height: 80.0, width: 80.0),
-                                        //Icon(Icons.pets), //WILL REPLACE WITH ANIMAL PICTURE LATER ON
                                         Column(
-                                          mainAxisAlignment:MainAxisAlignment.spaceEvenly,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
                                           children: <Widget>[
 
                                             Text(
@@ -150,18 +154,25 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
                                             children: <Widget>[
 
                                               FlatButton(
-                                                onPressed: () {
-                                                  debugPrint("Edit Button Clicked" + index.toString());
-                                                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                                    return AnimalProfile();
-                                                  }));
+//                                                onPressed: () {
+//                                                  debugPrint("Edit Button Clicked" + index.toString());
+//                                                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+//                                                    return AnimalProfile();
+//                                                  }));
+//                                                },
+                                                onPressed: (){
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(builder: (context) => new AnimalProfile(anim:new NewAnimal(anim.name, anim.age, anim.sex, anim.species, anim.breed, anim.status, anim.location,
+                                                        anim.animalPic, anim.description, anim.lonelyHearts, anim.adoptionFee, anim.animalID))),
+                                                  );//
                                                 },
                                                 color: Color(0xffffc50d),
                                                 child: Text(
                                                   'Edit',
                                                   style: TextStyle(
                                                     fontSize: 16.0,
-                                                    fontFamily: 'Bitter',
+                                                    fontFamily: 'SourceSansPro',
                                                   ),
                                                 ),
                                               ),
@@ -170,6 +181,9 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
                                                 onPressed: () async {
                                                   debugPrint("Delete Button Clicked");
                                                   //debugPrint();
+                                                  debugPrint(anim.animalID);
+                                                  await Firestore.instance.collection('Animal').document(anim.animalID).delete(); //
+
 //                                                        await Firestore.instance.collection('Animal').snapshot.data
 //                                                            .document('Mkg48sSQ7O5KqyVfj9Mn').delete(); // get autogenerated document id
                                                 },
@@ -178,7 +192,7 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
                                                   'Delete',
                                                   style: TextStyle(
                                                     fontSize: 16.0,
-                                                    fontFamily: 'Bitter',
+                                                    fontFamily: 'SourceSansPro',
                                                   ),
                                                 ),
                                               ),
@@ -214,7 +228,7 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => AddAnimal(NewAnimal('','', '', '','', '', '', '', '','','')),
+                builder: (context) => AddAnimal(NewAnimal('','', '', '','', '', '', '', '','','','')),
                 fullscreenDialog: true),
           );
         },

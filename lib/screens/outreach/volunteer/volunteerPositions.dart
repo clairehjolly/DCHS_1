@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/home/home.dart';
 import 'package:project/screens/outreach/volunteer/volunteerPositionList/ACC.dart';
 import 'package:project/screens/outreach/volunteer/volunteerPositionList/BPAT.dart';
 import 'package:project/screens/outreach/volunteer/volunteerPositionList/BTS.dart';
 import 'package:project/screens/outreach/volunteer/volunteerPositionList/CV.dart';
 import 'package:project/screens/outreach/volunteer/volunteerPositionList/F.dart';
+import 'package:project/screens/outreach/volunteer/volunteerPositionList/GV.dart';
 import 'package:project/screens/outreach/volunteer/volunteerPositionList/OE.dart';
 import 'package:project/screens/outreach/volunteer/volunteerPositionList/SE.dart';
 import 'package:project/screens/outreach/volunteer/volunteerPositionList/SO.dart';
@@ -22,12 +24,12 @@ class VolunteerPositions extends StatelessWidget {
           child:Text(
             'Volunteer Positions',
             style: TextStyle(
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
               fontSize: 25.0,
             ),
           ),
         ),
-        backgroundColor: Color(0xff6b2978),
+        backgroundColor: Color(0xff96be04),
 
       ),
 
@@ -65,7 +67,7 @@ class VolunteerPositions extends StatelessWidget {
                       return BPAT();
                     }));
                   },
-                  icon: Icon(Icons.arrow_forward, color: Color(0xff96be04)),
+                  icon: Icon(Icons.keyboard_arrow_right, color: Color(0xff96be04)),
                 ),
 
               ),
@@ -97,7 +99,7 @@ class VolunteerPositions extends StatelessWidget {
                       return ACC();
                     }));
                   },
-                  icon: Icon(Icons.arrow_forward, color: Color(0xff96be04)),
+                  icon: Icon(Icons.keyboard_arrow_right, color: Color(0xff96be04)),
                 ),
               ),
 
@@ -128,7 +130,7 @@ class VolunteerPositions extends StatelessWidget {
                       return BTS();
                     }));
                   },
-                  icon: Icon(Icons.arrow_forward, color: Color(0xff96be04)),
+                  icon: Icon(Icons.keyboard_arrow_right, color: Color(0xff96be04)),
                 ),
               ),
 
@@ -158,7 +160,7 @@ class VolunteerPositions extends StatelessWidget {
                       return OE();
                     }));
                   },
-                  icon: Icon(Icons.arrow_forward, color: Color(0xff96be04)),
+                  icon: Icon(Icons.keyboard_arrow_right, color: Color(0xff96be04)),
                 ),
               ),
 
@@ -188,7 +190,7 @@ class VolunteerPositions extends StatelessWidget {
                       return WC();
                     }));
                   },
-                  icon: Icon(Icons.arrow_forward, color: Color(0xff96be04)),
+                  icon: Icon(Icons.keyboard_arrow_right, color: Color(0xff96be04)),
                 ),
               ),
 
@@ -218,7 +220,7 @@ class VolunteerPositions extends StatelessWidget {
                       return F();
                     }));
                   },
-                  icon: Icon(Icons.arrow_forward, color: Color(0xff96be04)),
+                  icon: Icon(Icons.keyboard_arrow_right, color: Color(0xff96be04)),
                 ),
               ),
 
@@ -249,7 +251,7 @@ class VolunteerPositions extends StatelessWidget {
                       return VV();
                     }));
                   },
-                  icon: Icon(Icons.arrow_forward, color: Color(0xff96be04)),
+                  icon: Icon(Icons.keyboard_arrow_right, color: Color(0xff96be04)),
                 ),
               ),
 
@@ -280,7 +282,7 @@ class VolunteerPositions extends StatelessWidget {
                       return SE();
                     }));
                   },
-                  icon: Icon(Icons.arrow_forward, color: Color(0xff96be04)),
+                  icon: Icon(Icons.keyboard_arrow_right, color: Color(0xff96be04)),
                 ),
               ),
 
@@ -310,7 +312,7 @@ class VolunteerPositions extends StatelessWidget {
                       return Y();
                     }));
                   },
-                  icon: Icon(Icons.arrow_forward, color: Color(0xff96be04)),
+                  icon: Icon(Icons.keyboard_arrow_right, color: Color(0xff96be04)),
                 ),
               ),
 
@@ -340,7 +342,7 @@ class VolunteerPositions extends StatelessWidget {
                       return SO();
                     }));
                   },
-                  icon: Icon(Icons.arrow_forward, color: Color(0xff96be04)),
+                  icon: Icon(Icons.keyboard_arrow_right, color: Color(0xff96be04)),
                 ),
               ),
 
@@ -356,7 +358,13 @@ class VolunteerPositions extends StatelessWidget {
                 ),
 
                 trailing: IconButton(
-                  icon: Icon(Icons.arrow_forward, color: Color(0xff96be04)),
+                  onPressed: () {
+                    debugPrint("GV Button Clicked");
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return GV();
+                    }));
+                  },
+                  icon: Icon(Icons.keyboard_arrow_right, color: Color(0xff96be04)),
                 ),
               ),
 
@@ -379,12 +387,22 @@ class VolunteerPositions extends StatelessWidget {
                       return CV();
                     }));
                   },
-                  icon: Icon(Icons.arrow_forward, color: Color(0xff96be04)),
+                  icon: Icon(Icons.keyboard_arrow_right, color: Color(0xff96be04)),
                 ),
               ),
             ],
           ),
         ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.home),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Home()),
+          );
+        },
+        backgroundColor: Color(0xff96be04),
+      ),
     );
   }
 

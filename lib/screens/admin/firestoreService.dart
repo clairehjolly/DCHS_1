@@ -9,12 +9,12 @@ class FirestoreService {
 
   Future<NewAnimal> createAnimal(String name,String age,String sex,String species,
       String breed, String status, String location, String animalPic, String description,
-      String lonelyHearts, String adoptionFee ) async {
+      String lonelyHearts, String adoptionFee , String animalID) async {
     final TransactionHandler createTransaction = (Transaction tx) async {
       final DocumentSnapshot ds = await tx.get(myCollection.document());
 
       final NewAnimal task = new NewAnimal(name, age,sex,species,breed, status, location, animalPic,
-          description, lonelyHearts, adoptionFee);
+          description, lonelyHearts, adoptionFee, animalID);
       final Map<String, dynamic> data = task.toMap();
       await tx.set(ds.reference, data);
       return data;

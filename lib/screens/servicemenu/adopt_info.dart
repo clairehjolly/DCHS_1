@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/admin/newAnimal.dart';
-import 'package:project/screens/home/admin.dart';
-import 'package:project/screens/home/calendar.dart';
+//import 'package:project/screens/home/admin.dart';
+//import 'package:project/screens/home/calendar.dart';
 import 'package:project/screens/home/home.dart';
-import 'package:project/screens/home/outreach.dart';
-import 'package:project/screens/home/settings.dart';
-import 'package:project/screens/home/serviceMenu.dart';
-import 'package:project/screens/servicemenu/adopt.dart';
+//import 'package:project/screens/home/outreach.dart';
+//import 'package:project/screens/home/settings.dart';
+//import 'package:project/screens/home/serviceMenu.dart';
+//import 'package:project/screens/servicemenu/adopt.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
@@ -21,93 +21,192 @@ class adopt_info extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),//Top, Right, Bottom, Left
       child: new Row(
         children: <Widget>[
-          new Container(      /// for yutai's outreach.dart
-            child: Text("adopt info",
-              style: TextStyle(
-                  color: Colors.white),
-            ),/////
-          ),
           new Expanded(
             child: new Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new Container(
-                  padding: const EdgeInsets.only(bottom: 10.0),
-                  child: new Text("adopt info",
+                  padding: const EdgeInsets.only(left: 70.0,bottom: 10.0),
+                  child: new Text("Animal Information",
                       style: new TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20.0,
+                          fontSize: 25.0,
+                          letterSpacing: 2.0,
                           color:Color(0xff6b2978),
-                          fontFamily: 'Bitter'
+                          fontFamily: 'SourceSansPro'
                       )),
                 ),
-                //Need to add space below this Text ?
-                new Text("age: "+a1.age,
-                  style: new TextStyle(
-                      color: Colors.grey[850],
-                      fontSize: 16.0,
-                      fontFamily: 'Bitter'
+               // Need to add space below this Text ?
+
+                Card(
+                  color: Color(0xffaa295d),
+                  elevation: 2.0,
+                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                  child: ListTile(
+                    title: Text('Age: ' + a1.age,
+                      style: TextStyle(
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 20.0,
+                        letterSpacing: 1.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
-                new Text("gender: "+a1.sex,
-                  style: new TextStyle(
-                      color: Colors.grey[850],
-                      fontSize: 16.0,
-                      fontFamily: 'Bitter'
+                Card(
+                  color: Color(0xffaa295d),
+                  elevation: 2.0,
+                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                  child: ListTile(
+                    title: Text('Gender: ' + a1.sex,
+                      style: TextStyle(
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 20.0,
+                        letterSpacing: 1.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
-                new Text("species: "+a1.species,
-                  style: new TextStyle(
-                      color: Colors.grey[850],
-                      fontSize: 16.0,
-                      fontFamily: 'Bitter'
-                  ),
-                ),new Text("status: "+a1.status,
-                  style: new TextStyle(
-                      color: Colors.grey[850],
-                      fontSize: 16.0,
-                      fontFamily: 'Bitter'
-                  ),
-                ),new Text("location: "+a1.location,
-                  style: new TextStyle(
-                      color: Colors.grey[850],
-                      fontSize: 16.0,
-                      fontFamily: 'Bitter'
-                  ),
-                ),new Text("adoption fee: "+a1.adoptionFee,
-                  style: new TextStyle(
-                      color: Colors.grey[850],
-                      fontSize: 16.0,
-                      fontFamily: 'Bitter'
+                Card(
+                  color: Color(0xffaa295d),
+                  elevation: 2.0,
+                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                  child: ListTile(
+                    title: Text('Species: ' + a1.species,
+                      style: TextStyle(
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 20.0,
+                        letterSpacing: 1.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
-                new Text("Description: "+a1.description,
-                  style: new TextStyle(
-                      color: Colors.grey[850],
-                      fontSize: 16.0,
-                      fontFamily: 'Bitter'
+                Card(
+                  color: Color(0xffaa295d),
+                  elevation: 2.0,
+                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                  child: ListTile(
+                    title: Text('Breed: ' + a1.breed,
+                      style: TextStyle(
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 20.0,
+                        letterSpacing: 1.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                Card(
+                  color: Color(0xffaa295d),
+                  elevation: 2.0,
+                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                  child: ListTile(
+                    title: Text('Status: ' + a1.status,
+                      style: TextStyle(
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 20.0,
+                        letterSpacing: 1.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                Card(
+                  color: Color(0xffaa295d),
+                  elevation: 2.0,
+                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                  child: ListTile(
+                    title: Text('Location: ' + a1.location,
+                      style: TextStyle(
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 20.0,
+                        letterSpacing: 1.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                Card(
+                  color: Color(0xffaa295d),
+                  elevation: 2.0,
+                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                  child: ListTile(
+                    title: Text('Adoption Fee: ' + a1.adoptionFee,
+                      style: TextStyle(
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 20.0,
+                        letterSpacing: 1.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                Card(
+                  color: Color(0xffaa295d),
+                  elevation: 2.0,
+                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                  child: ListTile(
+                    title: Text('Lonely Hearts: ' + a1.lonelyHearts,
+                      style: TextStyle(
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 20.0,
+                        letterSpacing: 1.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                Card(
+                  color: Color(0xffaa295d),
+                  elevation: 2.0,
+                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                  child: ListTile(
+                    title: Text('Description: ' + a1.description,
+                      style: TextStyle(
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 20.0,
+                        letterSpacing: 1.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
 
-                GestureDetector(child:new Text("\nFind out how to sponsor adoptable animals like "+a1.name,
-                  style: new TextStyle(
-                      color: Colors.lightGreen,
+
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 10.0),
+                  child:                GestureDetector(child:new Text("Find out how to sponsor adoptable\nanimals like "+a1.name,
+                    style: new TextStyle(
+                      color: Color(0xff96be04),
                       fontSize: 20.0,
-                      fontFamily: 'Bitter',
-                      decoration: TextDecoration.underline,
-
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'SourceSansPro',
+                    ),
 
                   ),
+                    onTap: (){
+                      launch("https://www.giveshelter.org/how-to-help/donate/animal-sponsorship");
+                    },
 
+                  ),
                 ),
-                  onTap: (){
-                  launch("https://www.giveshelter.org/how-to-help/donate/animal-sponsorship");
-                  },
 
-                ),
               ],
             ),
           ),
+
         ],
       ),
     );
@@ -121,12 +220,12 @@ class adopt_info extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2.0,
                   color: Colors.white,
-                  fontFamily: 'Bitter',
+                  fontFamily: 'SourceSansPro',
                 ),
               ),
               centerTitle: true,
 
-              backgroundColor: Color(0xff6b2978),
+              backgroundColor: Color(0xff96be04),
             ),
             body: new SingleChildScrollView(
 
@@ -134,7 +233,9 @@ class adopt_info extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 // crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Image.asset('img/dchslogo3.png'),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                  ),
                   Image.network(a1.animalPic, height: 300.0,),
                   titleSection,
 
@@ -149,7 +250,7 @@ class adopt_info extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => Home()),
               );
             },
-            backgroundColor: Color(0xffaa295d),
+            backgroundColor: Color(0xff6b2978),
           ),
         )
     );

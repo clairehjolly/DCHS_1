@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/home/home.dart';
 import 'package:project/screens/settings/userProfile.dart';
 import 'package:project/screens/settings/notifications.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 class Settings extends StatelessWidget {
 
@@ -13,7 +16,7 @@ class Settings extends StatelessWidget {
           child:Text(
             'Settings',
             style: TextStyle(
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
               fontSize: 25.0,
             ),
           ),
@@ -23,14 +26,17 @@ class Settings extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
 
-            Image.asset('img/dchslogo2.jpg'),
+            Image.asset('img/dchslogo3.png'),
 
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 10.0,),
+              child: Image.asset('img/settings.jpg'),
+            ),
 
-            FlatButton.icon(
+            FlatButton(
               onPressed: () {
                 debugPrint("Edit profile button clicked");
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -38,18 +44,19 @@ class Settings extends StatelessWidget {
                 }));
               }, //go to user profile
               color: Color(0xffffc50d),
-              icon: Icon(Icons.people),
-              label: Text(
+              child: Text(
                 'Edit Profile',
                 style: TextStyle(
                   fontSize: 24.0,
+                  letterSpacing: 2.0,
+                  color: Colors.white,
                   fontFamily: 'SourceSansPro',
                 ),
               ),
 
             ),
 
-            FlatButton.icon(
+            FlatButton(
               onPressed: () {
                 debugPrint("Edit profile button clicked");
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -57,33 +64,46 @@ class Settings extends StatelessWidget {
                 }));
                 }, //turn grey if on
               color: Color(0xffaa295d),
-              icon: Icon(Icons.notifications_active),
-              label: Text(
+              child: Text(
                 'Notifications',
                 style: TextStyle(
                   fontSize: 24.0,
+                  color: Colors.white,
+                  letterSpacing: 2.0,
                   fontFamily: 'SourceSansPro',
                 ),
               ),
             ),
 
 
-            FlatButton.icon(
-              onPressed: () {}, //Direct user to About This APP View
+            FlatButton(
+              onPressed: () {launch('https://www.giveshelter.org/about-dchs/contact-us');}, //Direct user to About This APP View
               color: Color(0xff96be04),
-              icon: Icon(Icons.assistant),
-              label: Text(
-                'Version, Support & Privacy',
+              child: Text(
+                'Contact DCHS',
                 style: TextStyle(
                   fontSize: 24.0,
+                  letterSpacing: 2.0,
+                  color: Colors.white,
                   fontFamily: 'SourceSansPro',
                 ),
               ),
             ),
+
 
 
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.home),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Home()),
+          );
+        },
+        backgroundColor: Color(0xffaa295d),
       ),
     );
 

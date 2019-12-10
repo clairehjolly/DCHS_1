@@ -12,7 +12,7 @@ class VV extends StatelessWidget {
           child:Text(
             'Volunteer Veterinarian',
             style: TextStyle(
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
               fontSize: 16.0,
             ),
           ),
@@ -31,25 +31,32 @@ class VV extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            Text(
-              'VolunteerVeterinarian',
-              style: TextStyle(
-                fontFamily: 'SourceSansPro',
-                fontWeight: FontWeight.bold,
-                fontSize: 40.0,
-                color: Color(0xff6b2978),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child:            Text(
+                'VolunteerVeterinarian',
+                style: TextStyle(
+                  fontFamily: 'SourceSansPro',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40.0,
+                  color: Color(0xff6b2978),
+                ),
               ),
             ),
 
-            Text(
-              '\nWith all of the animals that come to us in need of medical care, we need your expert help. We perform high quality and high volume spay and neuter as well as special procedures such as ophthalmology, dentistry and even provide medical care to wildlife. By donating your time and skills to our organization, we are able to help even more animals. \n',
-              style: TextStyle(
-                fontFamily: 'Bitter',
-                fontSize: 18.0,
-                color: Color(0xff48148c),
-              ),
 
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child:            Text(
+                  '\nWith all of the animals that come to us in need of medical care, we need your expert help. We perform high quality and high volume spay and neuter as well as special procedures such as ophthalmology, dentistry and even provide medical care to wildlife. By donating your time and skills to our organization, we are able to help even more animals. \n',
+                  style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    fontSize: 18.0,
+                  ),
+
+                ),
             ),
+
 
             Image.asset('img/VVi.png'),
 

@@ -13,7 +13,8 @@ class EditUserProfile extends StatelessWidget {
   TextEditingController firstNameController = new TextEditingController();
   TextEditingController lastNameController = new TextEditingController();
   TextEditingController profilePicController = new TextEditingController();
-  TextEditingController volunteerController = new TextEditingController();
+  TextEditingController statusController = new TextEditingController();
+
 
  // final FirebaseUser user = auth.currentUser().then((FirebaseUser user) {
  //   final userid = user.uid;
@@ -24,7 +25,7 @@ class EditUserProfile extends StatelessWidget {
   // code has been commented out so that way this works for iteration 2
 
 
-  void updateData(TextEditingController firstName, TextEditingController lastName, TextEditingController DOB, TextEditingController profile) {
+  void updateData(TextEditingController firstName, TextEditingController lastName, TextEditingController DOB, TextEditingController profile, TextEditingController status) {
     try {
       if(firstName.text != '') { // if the field is blank, do not update the database
         databaseReference
@@ -50,6 +51,12 @@ class EditUserProfile extends StatelessWidget {
             .document('1')
             .updateData({'profilePic': profile.text});
       }
+      if(DOB.text != '') {
+        databaseReference
+            .collection('User')
+            .document('1')
+            .updateData({'Status': status.text});
+      }
     } catch (e) {
       print(e.toString());
     }
@@ -64,7 +71,7 @@ class EditUserProfile extends StatelessWidget {
           child: Text(
             'Edit Profile',
             style: TextStyle(
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
               fontSize: 25.0,
             ), //TextStyle
           ),
@@ -98,14 +105,21 @@ class EditUserProfile extends StatelessWidget {
                       padding: EdgeInsets.only(left:15.0, right: 15.0),
                       child: TextField(
                         controller: DOBController,
-                        decoration: InputDecoration(labelText: " Birthday: "),
+                        decoration: InputDecoration(labelText: "Date of Birth: "),
                       ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(left:15.0, right: 15.0),
                       child: TextField(
                         controller: profilePicController,
-                        decoration: InputDecoration(labelText: "ProfilePic Link: "),
+                        decoration: InputDecoration(labelText: "Profile Pic Link: "),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left:15.0, right: 15.0),
+                      child: TextField(
+                        controller: statusController,
+                        decoration: InputDecoration(labelText: "Status: "),
                       ),
                     ),
 
@@ -115,7 +129,7 @@ class EditUserProfile extends StatelessWidget {
                       color: Color(0xffaa295d),
                       onPressed: () {
                         debugPrint("save pressed");
-                        updateData(firstNameController, lastNameController,DOBController, profilePicController);
+                        updateData(firstNameController, lastNameController,DOBController, profilePicController, statusController);
                         Navigator.push(context, MaterialPageRoute(builder: (context) {
                           return UserProfile();
                         }));
@@ -123,8 +137,10 @@ class EditUserProfile extends StatelessWidget {
                       child: Text(
                         'Save',
                         style: TextStyle(
-                          fontSize: 18.0,
-                          fontFamily: 'Bitter',
+                          color: Colors.white,
+                          letterSpacing: 2.0,
+                          fontSize: 20.0,
+                          fontFamily: 'SourceSansPro',
                         ),
                       ),
                     ),

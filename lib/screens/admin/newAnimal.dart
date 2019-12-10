@@ -10,9 +10,10 @@ class NewAnimal{
   String description;
   String lonelyHearts;
   String adoptionFee;
+  String animalID;
 
   NewAnimal(this.name, this.age, this.sex, this.species, this.breed, this.status, this.location,
-      this.animalPic, this.description, this.lonelyHearts, this.adoptionFee);
+      this.animalPic, this.description, this.lonelyHearts, this.adoptionFee, this.animalID);
 
   NewAnimal.map(dynamic obj){
     this.name = obj['name'];
@@ -27,10 +28,11 @@ class NewAnimal{
     this.description = obj['description'];
     this.lonelyHearts = obj['lonelyHearts'];
     this.adoptionFee = obj['adoptionFee'];
+    this.animalID = obj['animalID'];
+
   }
 
   String get _name => name;
-  //String get _animalID => animalID;
   String get _age => age;
   String get _sex => sex;
   String get _species => species;
@@ -41,6 +43,7 @@ class NewAnimal{
   String get _description => description;
   String get _lonelyHearts => lonelyHearts;
   String get _adoptionFee => adoptionFee;
+  String get _animalID => animalID;
 
 
 
@@ -58,6 +61,7 @@ class NewAnimal{
     map['_description'] = description;
     map['_lonelyHearts'] = lonelyHearts;
     map['_adoptionFee'] = adoptionFee;
+    map['_animalID'] = animalID;
 
     return map;
   }
@@ -75,6 +79,7 @@ class NewAnimal{
     this.description = map['_description'];
     this.lonelyHearts = map['_lonelyHearts'];
     this.adoptionFee = map['_adoptionFee'];
+    this.animalID = map['_animalID'];
 
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:project/screens/home/home.dart';
 import 'package:project/screens/settings/editUserProfile.dart';
 
 class UserProfile extends StatelessWidget {
@@ -35,87 +36,175 @@ class UserProfile extends StatelessWidget {
       child:Text(
       'User Profile',
       style: TextStyle(
-        fontFamily: 'Bitter',
+        fontFamily: 'SourceSansPro',
         fontSize: 25.0,
 
       ),
     ),
   ),
-    backgroundColor: Color(0xff6b2978),
+    backgroundColor: Color(0xff96be04),
     ),
-    body: StreamBuilder(
-      stream:  Firestore.instance.collection("User").snapshots(),
-      builder: (context, snapshot){
-        if(!snapshot.hasData) return Text('Loading data... please wait');
-        return Column(
-        children: <Widget>[
-          Container(
-            color: Colors.white,
-            child: Center(
-              child: Text('Welcome, '+ snapshot.data.documents[0]['firstName']+'!',
-              style: TextStyle(
-                fontFamily: 'Bitter',
-                fontSize: 30.0
-              )),
-              //child: Text('DOB:'+ snapshot.data.document[0]['DOB'])]
-            ),
+    body: SingleChildScrollView(
+      child: StreamBuilder(
+        stream:  Firestore.instance.collection("User").snapshots(),
+        builder: (context, snapshot){
+          if(!snapshot.hasData) return Text('Loading data... please wait');
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 10.0),
+                color: Colors.white,
+                child: Center(
+                  child: Text('Welcome, '+ snapshot.data.documents[0]['firstName']+'!',
+                      style: TextStyle(
+                          fontFamily: 'SourceSansPro',
+                          letterSpacing: 2.0,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30.0
+                      )),
+                  //child: Text('DOB:'+ snapshot.data.document[0]['DOB'])]
+                ),
 
-          ),
-          Container(
-            color: Colors.white,
-            child: Center(
-              child: Image.network(snapshot.data.documents[0]['profilePic'])
-              ////child: Text('DOB:'+ snapshot.data.document[0]['DOB'])]
-            ),
-
-          ),
-          Container(
-            color: Colors.white,
-            child: Center(
-              child: Text('Date of Birth: '+ snapshot.data.documents[0]['DOB'],
-                  style: TextStyle(
-                      fontFamily: 'Bitter',
-                      fontSize: 20.0
-                  )),
-              //child: Text('DOB:'+ snapshot.data.document[0]['DOB'])]
-            ),
-
-          ),
-          Container(
-            color: Colors.white,
-            child: Center(
-              child: Text('Email: '+ snapshot.data.documents[0]['email'],
-                  style: TextStyle(
-                      fontFamily: 'Bitter',
-                      fontSize: 20.0
-                  )),
-              //child: Text('DOB:'+ snapshot.data.document[0]['DOB'])]
-            ),
-
-          ),
-          FlatButton.icon(
-            onPressed: () {
-              debugPrint("Edit profile button clicked");
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return EditUserProfile();
-              }));
-            }, //go to user profile
-            color: Color(0xff6b2978),
-            icon: Icon(Icons.account_box),
-            label: Text(
-              'Edit Profile',
-              style: TextStyle(
-                fontSize: 24.0,
-                fontFamily: 'Bitter',
-                color: Colors.white
               ),
-            ),
+              Container(
+                padding: EdgeInsets.only(bottom: 15.0),
+                child: Center(
+                    child: Image.network(snapshot.data.documents[0]['profilePic'],)
+                  ////child: Text('DOB:'+ snapshot.data.document[0]['DOB'])]
+                ),
 
-          )
-        ],
-      );
+              ),
+
+              Card(
+                color: Color(0xffaa295d),
+                elevation: 2.0,
+                margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                child: ListTile(
+                  title: Text('Name: ' + snapshot.data.documents[0]['firstName'] + ' ' + snapshot.data.documents[0]['lastName'],
+                    style: TextStyle(
+                      fontFamily: 'SourceSansPro',
+                      fontSize: 20.0,
+                      letterSpacing: 1.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+
+              Card(
+                color: Color(0xffaa295d),
+                elevation: 2.0,
+                margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                child: ListTile(
+                  title: Text('Date of Birth: ' + snapshot.data.documents[0]['DOB'],
+                    style: TextStyle(
+                      fontFamily: 'SourceSansPro',
+                      fontSize: 20.0,
+                      letterSpacing: 1.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+
+              Card(
+                color: Color(0xffaa295d),
+                elevation: 2.0,
+                margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                child: ListTile(
+                  title: Text('E-mail: ' + snapshot.data.documents[0]['email'],
+                    style: TextStyle(
+                      fontFamily: 'SourceSansPro',
+                      fontSize: 20.0,
+                      letterSpacing: 1.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+
+
+              Card(
+                color: Color(0xffaa295d),
+                elevation: 2.0,
+                margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+                child: ListTile(
+                  title: Text('Status: ' + snapshot.data.documents[0]['status'],
+                    style: TextStyle(
+                      fontFamily: 'SourceSansPro',
+                      fontSize: 20.0,
+                      letterSpacing: 1.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+//          Container(
+//            color: Colors.white,
+//            child: Center(
+//              child: Text('Date of Birth: '+ snapshot.data.documents[0]['DOB'],
+//                  style: TextStyle(
+//                      fontFamily: 'SourceSansPro',
+//                      fontSize: 20.0
+//                  )),
+//              //child: Text('DOB:'+ snapshot.data.document[0]['DOB'])]
+//            ),
+//
+//          ),
+//          Container(
+//            color: Colors.white,
+//            child: Center(
+//              child: Text('Email: '+ snapshot.data.documents[0]['email'],
+//                  style: TextStyle(
+//                      fontFamily: 'SourceSansPro',
+//                      fontSize: 20.0
+//                  )),
+//              //child: Text('DOB:'+ snapshot.data.document[0]['DOB'])]
+//            ),
+//
+//          ),
+              FlatButton(
+                onPressed: () {
+                  debugPrint("Edit profile button clicked");
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return EditUserProfile();
+                  }));
+                }, //go to user profile
+                color: Color(0xff6b2978),
+                child: Text(
+                  'Edit Profile',
+                  style: TextStyle(
+                      fontSize: 24.0,
+                      letterSpacing: 2.0,
+                      fontFamily: 'SourceSansPro',
+                      color: Colors.white
+                  ),
+                ),
+
+              )
+            ],
+          );
+        },
+
+      ),
+    ),
+
+
+
+    floatingActionButton: FloatingActionButton(
+      child: Icon(Icons.home),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Home()),
+        );
       },
-
+      backgroundColor: Color(0xff96be04),
     ),
 
   );

@@ -57,12 +57,12 @@ class _Lost_reportState extends State<Lost_report> {
               fontWeight: FontWeight.bold,
               letterSpacing: 2.0,
               color: Colors.white,
-              fontFamily: 'Bitter',
+              fontFamily: 'SourceSansPro',
             ), //TextStyle
           ),
         ),
         centerTitle: true,
-        backgroundColor: Color(0xff6b2978),
+        backgroundColor: Color(0xff96be04),
       ),
       resizeToAvoidBottomInset: false,
       body: Column(
@@ -187,15 +187,14 @@ class _Lost_reportState extends State<Lost_report> {
                       Navigator.pop(context);
                     });
                   },
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                  ),
+
                   child: Text(
                     'Submit Lost Report',
                     style: TextStyle(
                       color: Colors.white,
+                      letterSpacing: 1.0,
                       fontSize: 18.0,
-                      fontFamily: 'Bitter',
+                      fontFamily: 'SourceSansPro',
                     ),
                   ),
                 ),
