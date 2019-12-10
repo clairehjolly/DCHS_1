@@ -522,7 +522,7 @@ class _AnimalsListPageState extends State<AnimalsListPage> {
                                             },
                                             color: Color(0xffffc50d),
                                             child: Text(
-                                              'Adopt',
+                                              'About',
                                               style: TextStyle(
                                                 fontSize: 16.0,
                                                 fontFamily: 'SourceSansPro',

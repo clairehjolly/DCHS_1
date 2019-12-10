@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/home/home.dart';
+import 'package:project/screens/outreach/donate.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:project/screens/home/outreach.dart';
 
@@ -209,7 +210,7 @@ class Wildlife extends StatelessWidget {
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 //////// Donate page!!!!!!!!!!!!!!
-                return Home();
+                return Donate();
               }));
             },
             //padding: new EdgeInsets.fromLTRB(1.0, 1.0, 1.0, 1.0),

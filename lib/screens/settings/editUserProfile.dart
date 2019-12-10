@@ -78,7 +78,8 @@ class EditUserProfile extends StatelessWidget {
         ),
         backgroundColor: Color(0xff6b2978),
       ),
-      body: new Center(
+      resizeToAvoidBottomPadding: false,
+      body: new SingleChildScrollView(
         child: Column(
             children: <Widget>[
               Container(

@@ -42,7 +42,7 @@ void testNotifications(){
     // Build our app and trigger a frame.
     Widget testWidget = new MediaQuery(
         data: new MediaQueryData(),
-        child: new MaterialApp(home: new Notifications())
+        child: new MaterialApp(home: new notifications())
     );
     await tester.pumpWidget(testWidget);
 

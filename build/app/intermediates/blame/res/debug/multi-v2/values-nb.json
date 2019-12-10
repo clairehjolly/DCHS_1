@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/TrishaBernice/AndroidStudioProjects/DCHSIteration3/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-nb/values-nb.xml",
+            "outputFile": "/Users/TrishaBernice/AndroidStudioProjects/DCHSFinal/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-nb/values-nb.xml",
             "map": [
                 {
                     "source": "/Users/TrishaBernice/.gradle/caches/transforms-2/files-2.1/b33188fcbaeb7c7bddfafb801562007d/play-services-basement-16.2.0/res/values-nb/values.xml",

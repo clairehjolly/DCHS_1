@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/home/home.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 //HAVE ANIMAL LISTED HERE LATER
 
@@ -61,7 +63,7 @@ class Foster extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 FlatButton(
-                  onPressed: () {}, // Direct User to DCHS Link
+                  onPressed: (){launch('https://www.giveshelter.org/assets/images/documents/Companion_Foster_App_Fillable-10-23-2018.pdf');}, // Direct User to DCHS Link
                   // Issues with this: currently adding  the URL_launcher dependency into the Yaml File causes massive Errors at compile time
                   // That have caused me to delete my current repo then reclone from the github.
                   // However, the URL Launcher works on others machines, so I have hope.  This commit does not contain this functionality  because I want

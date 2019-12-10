@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/TrishaBernice/AndroidStudioProjects/DCHSIteration3/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/TrishaBernice/AndroidStudioProjects/DCHSFinal/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/Users/TrishaBernice/.gradle/caches/transforms-2/files-2.1/8eb9738cdbacac100a9d6bb6ecd4b8cf/support-compat-28.0.0/res/values/values.xml",
@@ -37,42 +37,6 @@
                         "startOffsets": "969,1058,1187,3290,7327,7503,7625,7887,8082",
                         "endColumns": "88,70,72,59,65,121,60,65,66",
                         "endOffsets": "1053,1124,1255,3345,7388,7620,7681,7948,8144"
-                    }
-                },
-                {
-                    "source": "/Users/TrishaBernice/AndroidStudioProjects/DCHSIteration3/build/app/generated/res/google-services/debug/values/values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,198,301,382,486,594,714,806",
-                        "endColumns": "142,102,80,103,107,119,91,68",
-                        "endOffsets": "193,296,377,481,589,709,801,870"
-                    },
-                    "to": {
-                        "startLines": "71,72,73,74,75,76,77,78",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "5821,5964,6067,6148,6252,6360,6480,6572",
-                        "endColumns": "142,102,80,103,107,119,91,68",
-                        "endOffsets": "5959,6062,6143,6247,6355,6475,6567,6636"
-                    }
-                },
-                {
-                    "source": "/Users/TrishaBernice/AndroidStudioProjects/DCHSIteration3/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "347"
-                    },
-                    "to": {
-                        "startLines": "80",
-                        "startColumns": "4",
-                        "startOffsets": "6712",
-                        "endLines": "84",
-                        "endColumns": "12",
-                        "endOffsets": "7004"
                     }
                 },
                 {
@@ -128,6 +92,42 @@
                         "startOffsets": "3350,4528",
                         "endColumns": "67,166",
                         "endOffsets": "3413,4690"
+                    }
+                },
+                {
+                    "source": "/Users/TrishaBernice/AndroidStudioProjects/DCHSFinal/build/app/generated/res/google-services/debug/values/values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,198,301,382,486,594,714,806",
+                        "endColumns": "142,102,80,103,107,119,91,68",
+                        "endOffsets": "193,296,377,481,589,709,801,870"
+                    },
+                    "to": {
+                        "startLines": "71,72,73,74,75,76,77,78",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "5821,5964,6067,6148,6252,6360,6480,6572",
+                        "endColumns": "142,102,80,103,107,119,91,68",
+                        "endOffsets": "5959,6062,6143,6247,6355,6475,6567,6636"
+                    }
+                },
+                {
+                    "source": "/Users/TrishaBernice/AndroidStudioProjects/DCHSFinal/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "347"
+                    },
+                    "to": {
+                        "startLines": "80",
+                        "startColumns": "4",
+                        "startOffsets": "6712",
+                        "endLines": "84",
+                        "endColumns": "12",
+                        "endOffsets": "7004"
                     }
                 }
             ]

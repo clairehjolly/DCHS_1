@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:project/screens/home/home.dart';
 
 class Calendar extends StatelessWidget {
   @override
@@ -108,7 +109,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           } else if (newValue == "Dog Training 2") {
             getData(3);
           } else if (newValue == "Volunteer") {
-            getData(3);
+            getData(4);
           } else {
             getData(0);
           }
@@ -209,6 +210,17 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
           ),
         ],
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.home),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Home()),
+          );
+        },
+        backgroundColor: Color(0xff96be04),
       ),
     );
   }
