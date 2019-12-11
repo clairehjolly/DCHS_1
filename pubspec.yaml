@@ -26,7 +26,7 @@ dependencies:
   # Added by LX for about_dchs.dart
   url_launcher: ^5.2.5
 dev_dependencies:
-  test: 1.9.4
+  test: 1.9.4 #replace with 'any' to run testFile2.dart - Claire
   flutter_test:
     sdk: flutter
 # For information on the generic Dart part of this file, see the
