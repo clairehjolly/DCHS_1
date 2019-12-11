@@ -3,9 +3,11 @@ import 'package:project/screens/home/home.dart';
 import 'package:project/screens/settings/userProfile.dart';
 import 'package:project/screens/settings/notifications.dart';
 import 'package:url_launcher/url_launcher.dart';
-
+import 'package:project/services/auth.dart';
 
 class Settings extends StatelessWidget {
+
+  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +92,23 @@ class Settings extends StatelessWidget {
               ),
             ),
 
-
+            FlatButton(
+              onPressed: () {
+                _auth.logOut();
+                Navigator.of(context).popUntil((route) => route.isFirst);
+//                }));
+              }, //turn grey if on
+              color: Color(0xff3a2662),
+              child: Text(
+                'Log Out',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  color: Colors.white,
+                  letterSpacing: 2.0,
+                  fontFamily: 'SourceSansPro',
+                ),
+              ),
+            ),
 
           ],
         ),

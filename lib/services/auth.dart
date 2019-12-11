@@ -8,7 +8,13 @@ class AuthService {
 
   //create user object
   User _localUser(FirebaseUser user) {
-    return user != null ? User(uid: user.uid): null;
+    bool isAdmin = false;
+    if (user != null) {
+      if (user.email == "admin@dchs.org" || user.email == "admin@test.co") {
+        isAdmin = true;
+      }
+    }
+    return user != null ? User(uid: user.uid, adminStatus: isAdmin): null;
   }
 
   //user status stream

@@ -7,12 +7,14 @@ import 'package:project/screens/home/settings.dart';
 import 'package:project/screens/home/serviceMenu.dart';
 import 'package:project/screens/outreach/donate.dart';
 import 'package:project/screens/servicemenu/resources.dart';
+import 'package:project/models/user.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MaterialApp(
   home:Home(),
 ));
 class Home extends StatelessWidget {
-
+  bool status = false;
 //  final SignIn check;
 //  Home({Key key,@required this.check}):super(key:key);
 
@@ -63,10 +65,17 @@ class Home extends StatelessWidget {
       final Color tintColor = Color(0xffaa295d);
       switch (i) {
         case 1:
-          return new Column(
-            children: <Widget>[
-              new Icon(icon, color: tintColor),
-              FlatButton(
+          final user = Provider.of<User>(context);
+          if (user != null) {
+            status = user.adminStatus;
+          }
+          return new Visibility(
+
+              visible: status,
+              child: Column(
+                children: <Widget>[
+                new Icon(icon, color: tintColor),
+                FlatButton(
                 child: new Text(
                   buttonTitle, style: new TextStyle(fontSize: 18.0,
                     fontWeight: FontWeight.w600, color: tintColor,fontFamily: 'SourceSansPro'),),
@@ -88,6 +97,7 @@ class Home extends StatelessWidget {
 
 
             ],
+          ),
           );
           break;
         case 2:
