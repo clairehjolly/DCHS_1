@@ -1,6 +1,10 @@
 # project
 
-A new Flutter project.
+<img width="1143" alt="Screen Shot 2021-09-06 at 11 39 27 AM" src="https://user-images.githubusercontent.com/32503459/132249886-f067b8c0-9d20-4cef-8e5e-183367f62804.png">
+<img width="1157" alt="Screen Shot 2021-09-06 at 11 39 39 AM" src="https://user-images.githubusercontent.com/32503459/132249900-9ccd52ba-cddc-441d-be76-b33c60e228ff.png">
+<img width="1157" alt="Screen Shot 2021-09-06 at 11 39 56 AM" src="https://user-images.githubusercontent.com/32503459/132249922-dbfdfc18-1471-4533-9b44-db74bd8ebf02.png">
+<img width="1124" alt="Screen Shot 2021-09-06 at 11 40 26 AM" src="https://user-images.githubusercontent.com/32503459/132249938-20cc8f93-4b0b-4fb0-b257-9a1659ead479.png">
+
 
 ## Getting Started
 
